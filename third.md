@@ -1,6 +1,7 @@
 ---
 title: thiiiiirrrrd doc
 layout: default
+sort: 2
 ---
 # Another, more structure doc
 ## Paragraph 1
