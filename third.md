@@ -11,6 +11,9 @@ Here is some more
 ```tip
 And I also have a valuable tip for you.
 ```
+```note
+This is a note
+```
 ## Para 3
 And yet some more
 ### Sub1
