@@ -29,7 +29,9 @@ Service Providers will be able to:
 * Develop value added services (e.g. guidance to space, frictionless parking) based on standard, available information.
 
 ## Mission
-The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution was supposed to be based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: [APDS](https://www.allianceforparkingdatastandards.org).
+The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution was supposed to be based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: 
+
+[![APDS](assets/images/intro/apdslogo.png)](https://www.allianceforparkingdatastandards.org).
 
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
