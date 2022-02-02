@@ -5,9 +5,9 @@ sort: 1
 ---
 # National Parking Platform
 ## Vision
-```note
-A publicly owned, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
-```
+
+> A publicly owned, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
+
 This has been the vision driving the NPP pilot project. 
 
 ## Concept
