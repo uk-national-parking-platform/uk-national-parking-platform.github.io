@@ -18,3 +18,14 @@ This data was made available on a set of standard APDS compliant APIs, which wer
 The data is available to other potential publishers. 
 
 ![Phase Scope](assets/images/phases/phase1.png)
+
+## Phase 2: Multi-Vendor
+Phase 2 was about the implementation of use cases aiming at an improved **Customer Journey**.
+
+Three use cases were identified:
+
+![Use Cases](assets/images/intro/usecases.png)
+
+## Phase 3: Go National
+The first two phases of the NPP pilot project have been a success. They proved the feasibility of the general NPP concept as well as the applicability of the APDS standard for this purpose. In order to not stop there, it was agreed to extend the pilot phase and bring additional operators and service providers on board. This extended pilot will provide mid-term empirical data and also keep the system running until a potential beta/production-grade system will take over.
+ 
