@@ -22,7 +22,7 @@ The data is available to other potential publishers.
 
 <br/>
 <br/>
-## Phase 2: Multi-Vendor
+## Phase 2: Multi-Vendor Payment
 Phase 2 was about the implementation of use cases aiming at an improved **Customer Journey**.
 
 Three use cases were identified:
