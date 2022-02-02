@@ -4,7 +4,7 @@ title: NPP
 sort: 1
 ---
 # National Parking Platform
-[Vision]
+## Vision
 ```note
 A publicly owned, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
 ```
