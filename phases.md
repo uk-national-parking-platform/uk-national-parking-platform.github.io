@@ -6,6 +6,7 @@ layout: default
 # NPP Project Phases 
 The NPP project started in 2019. It extended over a total of 3 phases.
 
+<br/>
 ## Phase 1: Offstreet Car Park and Kerbside Availability
 Phase 1, completed at the end of 2019, demonstrated the potential for a platform based on APDS standards.   
  
@@ -19,6 +20,8 @@ The data is available to other potential publishers.
 
 ![Phase Scope](assets/images/phases/phase1.png)
 
+<br/>
+<br/>
 ## Phase 2: Multi-Vendor
 Phase 2 was about the implementation of use cases aiming at an improved **Customer Journey**.
 
@@ -26,6 +29,13 @@ Three use cases were identified:
 
 ![Use Cases](assets/images/intro/usecases.png)
 
+<br/>
+<br/>
 ## Phase 3: Go National
 The first two phases of the NPP pilot project have been a success. They proved the feasibility of the general NPP concept as well as the applicability of the APDS standard for this purpose. In order to not stop there, it was agreed to extend the pilot phase and bring additional operators and service providers on board. This extended pilot will provide mid-term empirical data and also keep the system running until a potential beta/production-grade system will take over.
+<br/>
+<br/>
+## Current Status
+![Operators and Partners](assets/images/phases/snapshot.png)
+
  
