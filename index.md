@@ -4,6 +4,7 @@ title: NPP
 sort: 1
 ---
 # National Parking Platform
+[Vision]
 ```note
 A publicly owned, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
 ```
@@ -26,6 +27,9 @@ Service Providers will be able to:
 * Negotiate rates and access with Operators for their Customers
 * Reserve spaces in Operator’s facilities
 * Develop value added services (e.g. guidance to space, frictionless parking) based on standard, available information.
+
+## Mission
+The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution was supposed to be based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: [APDS](https://www.allianceforparkingdatastandards.org).
 
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
