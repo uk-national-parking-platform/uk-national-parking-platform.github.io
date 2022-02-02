@@ -31,7 +31,7 @@ Service Providers will be able to:
 ## Mission
 The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution was supposed to be based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: 
 
-[<img src="https://npp-uk.org/assets/images/intro/apdslogo.png" width="200px" height="200px">](https://www.allianceforparkingdatastandards.org).
+[<img src="https://npp-uk.org/assets/images/intro/apdslogo.png" width="150px" height="210px">](https://www.allianceforparkingdatastandards.org).
 
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
