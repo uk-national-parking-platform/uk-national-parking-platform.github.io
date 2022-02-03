@@ -13,14 +13,14 @@ This document provides a translation of typical use cases into concrete dialogue
 ![Use Case 2 Flow](assets/images/usecases/usecase2flow.png)
 ### Overview of engaged Endpoints
 #### 1. SP uploads Assigned Rights to Platform
-{:.text-red}&#x278A; **`SP` &#x27A1; `Platform`**
-```bash
+<span style="color: green; font-size: 20px">&#x278A;</span> **`SP` &#x27A1; `Platform`**
+```
 POST /v1/parking/rights/assigned
 ```
 
 #### 2. VRM sent to Platform
-<span style="color: green">&#x278B; **`Operator` &#x27A1; `Platform`**</span>
-```bash
+<span style="color: green; font-size: 20px">&#x278B;</span> **`Operator` &#x27A1; `Platform`**
+```
 GET /v1/parking/rights/assigned/place={locationId}&identifier_id={VRM}
 ```
 Response can include 0 (nothing found), 1 (exactly one match) or more (VRM registered with multiple SPs).
@@ -32,6 +32,46 @@ Response can include 0 (nothing found), 1 (exactly one match) or more (VRM regis
 #### 7. Platform sends Session Details to SP
 #### 8. SP sends Payment Confirmation
 #### 9. Platform sends Payment Details to Operator
+
+### Detailed Request/Response Examples
+#### 1. SP uploads Assigned Rights to Platform
+``` json
+--- REQUEST ---
+
+POST /v1/parking/rights/assigned
+
+{
+    "id": "20410eec-2352-4cc1-820c-21ea6cbce506",
+    "version": 1,
+    "rightHolder": {
+        "credentials": [
+            {
+                "type": "licensePlate",
+                "identifier": {
+                    "id": "BD18SMR",
+                    "className": "UKNumberPlate"
+                }
+            }
+        ]
+    },
+    "rightSpecification": {
+        "id": "0ab95c73-4c2b-4fe3-8528-0403c7734b92",
+        "version": 1
+    },
+    "issuanceTime": "2021-10-18 15:21:00",
+    "expiry": "2024-12-31 23:59:59",
+    "assignedRightIssuer": {
+        "id": "SP0001",
+        "className": "DigitalServiceProvider"
+    },
+    "issueMethod": "electronic"
+}
+
+--- RESPONSE ---
+
+HTTP/1.1 201 CREATED
+
+```
 
 ## Use Case 3: Pay on Departure Ticket Payment
 
