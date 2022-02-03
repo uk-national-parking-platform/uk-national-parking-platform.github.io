@@ -13,13 +13,13 @@ This document provides a translation of typical use cases into concrete dialogue
 ![Use Case 2 Flow](assets/images/usecases/usecase2flow.png)
 ### Overview of engaged Endpoints
 #### 1. SP uploads Assigned Rights to Platform
-<span style="color: red; font-size: 20px">&rarr;</span> **`SP` &#x27A1; `Platform`**
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
 ```
 POST /v1/parking/rights/assigned
 ```
 
 #### 2. VRM sent to Platform
-<span style="color: green; font-size: 20px">&#x278B;</span> **`Operator` &#x27A1; `Platform`**
+<span style="color: green; font-size: 22px">&#x278B;</span> **`Operator` &rarr; `Platform`**
 ```
 GET /v1/parking/rights/assigned/place={locationId}&identifier_id={VRM}
 ```
