@@ -4,7 +4,7 @@ layout: default
 sort: 4 
 ---
 # Pilot Evidence
-This section shows selected scenarios from a user's perspective. 
+This section shows selected scenarios from a user's perspective along with the underlying NPP communication. 
 
 ## 1. Place Information Look-up by Service Provider
 ### Scenario: Occupancy Data Retrieval by Parkopedia
@@ -67,4 +67,7 @@ The following is an extract from the NPP's logging database showing the details 
 **Step 3b: received Information displayed on Handheld Unit**
 The information received from the NPP is then displayed on the enforcement officer's handheld device:
 ![Logging](assets/images/evidence/apcoa_connect4.png)
+
+
+
 
