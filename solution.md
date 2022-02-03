@@ -16,4 +16,8 @@ One might say: a pilot system is no critical infrstructure. However, with increa
 ## Scalability
 While scope and coverage of the pilot system are limited, it has been designed to be scalable moving forward.
 
+``` danger
+Add overview chart of cloud environment
+```
+
 
