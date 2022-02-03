@@ -1,7 +1,7 @@
 ---
 title: Sample Flows
 layout: default
-sort: 4
+sort: 3
 ---
 # Sample Flows/Dialogue Sequences
 This document provides a translation of typical use cases into concrete dialogue sequences. It is meant to provide guidance to APDS adopters on their way to become NPP users.
