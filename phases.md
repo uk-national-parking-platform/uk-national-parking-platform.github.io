@@ -18,6 +18,10 @@ This data was made available on a set of standard APDS compliant APIs, which wer
 
 The data is available to other potential publishers. 
 
+![Phase 1 Scope](assets/images/usecases/usecase0overview.png)
+
+
+
 ![Phase Scope](assets/images/phases/phase1.png)
 
 <br/>
