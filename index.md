@@ -37,7 +37,7 @@ The project's mission was to implement a working prototype system allowing to ex
 [<img src="https://npp-uk.org/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
 
 ## Project Partners
-The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, may partners joined. You can find an overview [here](https://npp-uk.org/phases.html#current-status).
+The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, numerous additional partners joined. You can find an overview [here](https://npp-uk.org/phases.html#current-status).
 
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
