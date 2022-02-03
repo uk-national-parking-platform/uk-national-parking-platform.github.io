@@ -30,7 +30,7 @@ Service Providers will be able to:
 * Develop value added services (e.g. guidance to space, frictionless parking) based on standard, available information.
 
 ## Mission
-The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution was supposed to be based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: 
+The project's mission was to implement a working prototype system allowing to explore the above using real actors and their data. The solution is based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: 
 
 [<img src="https://npp-uk.org/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
 
