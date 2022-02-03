@@ -3,7 +3,10 @@ layout: default
 title: NPP
 sort: 1
 ---
-# National Parking Platform
+<p align="center">
+    <img src="https://npp-uk.org/assets/images/intro/NPP_logo.png" width="120px" height="150px">
+</p>
+# National Parking Platform Pilot
 Project Documentation
 
 ## Vision
