@@ -35,11 +35,12 @@ Response can include 0 (nothing found), 1 (exactly one match) or more (VRM regis
 
 ### Detailed Request/Response Examples
 #### 1. SP uploads Assigned Rights to Platform
-``` json
+```
 --- REQUEST ---
 
 POST /v1/parking/rights/assigned
-
+```
+``` json
 {
     "id": "20410eec-2352-4cc1-820c-21ea6cbce506",
     "version": 1,
@@ -66,7 +67,8 @@ POST /v1/parking/rights/assigned
     },
     "issueMethod": "electronic"
 }
-
+```
+```
 --- RESPONSE ---
 
 HTTP/1.1 201 CREATED
