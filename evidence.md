@@ -1,10 +1,10 @@
 ---
 title: NPP Pilot Evidence
 layout: default
-sort: 10
+sort: 4 
 ---
 # Pilot Evidence
-This section provides evidence for a selection of test cases.
+This section shows selected scenarios from a user's perspective. 
 
 ## Place Information Look-up by Service Provider
 ### Scenario: Occupancy Data Retrieval by Parkopedia
