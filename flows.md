@@ -44,23 +44,50 @@ Payload:
 ``` json
 
 {
-"id": "e2089853-b790-459b-884e-4869b40d193d", "version": 1,
-"initiator": "e0326b5c-d73d-43ab-b274-3ecaea5a80db", "actualStart": "2021-01-16T13:10:02",
-"acutalEnd": "2021-01-16T14:10:02",
-"credentials": [{
-"identifier": {"id": "AB12XYZ", "className": "UKNumberPlate"},
-"type": "licensePlate", "issuer": {"en": "Vehicle Registry"} }],
-"hierarchyElement": {
-"id": "001702e7-99f6-4e48-ac7c-df412907b29b",
-        "version": 1
-    },
-"segments": [{
-"id": "8fff245d-b384-406a-bef2-5e6affbe7609", "version": 1,
-"actualStart": "2021-01-16T13:10:02", "actualEnd": "2021-01-16T14:10:02", "validationType": ["licensePlate"], "financialTransactions": [{
-"dateCollected": "2021-01-16T13:10:02", "segmentValue": 450,
-"serviceProvider": { "en": "RED Parking"}, "taxIncluded": true,
-"transactionId": "TX-ID-PROVIDER-DEFINED-0001" }]
-}] }
+  "id": "e2089853-b790-459b-884e-4869b40d193d",
+  "version": 1,
+  "initiator": "e0326b5c-d73d-43ab-b274-3ecaea5a80db",
+  "actualStart": "2021-01-16T13:10:02",
+  "acutalEnd": "2021-01-16T14:10:02",
+  "credentials": [
+    {
+      "identifier": {
+        "id": "AB12XYZ",
+        "className": "UKNumberPlate"
+      },
+      "type": "licensePlate",
+      "issuer": {
+        "en": "Vehicle Registry"
+      }
+    }
+  ],
+  "hierarchyElement": {
+    "id": "001702e7-99f6-4e48-ac7c-df412907b29b",
+    "version": 1
+  },
+  "segments": [
+    {
+      "id": "8fff245d-b384-406a-bef2-5e6affbe7609",
+      "version": 1,
+      "actualStart": "2021-01-16T13:10:02",
+      "actualEnd": "2021-01-16T14:10:02",
+      "validationType": [
+        "licensePlate"
+      ],
+      "financialTransactions": [
+        {
+          "dateCollected": "2021-01-16T13:10:02",
+          "segmentValue": 450,
+          "serviceProvider": {
+            "en": "RED Parking"
+          },
+          "taxIncluded": true,
+          "transactionId": "TX-ID-PROVIDER-DEFINED-0001"
+        }
+      ]
+    }
+  ]
+}
 
 ```
 
@@ -85,31 +112,42 @@ Payload:
 ``` json
 
 {
-"meta": {
-"referenceInstant": 1610802000, "offset": 0,
-"pageSize": 100,
-"total": 1
-}, "data": [
-{
-"id": "bec97cab-8eb7-4868-be9f-da95fa17d19e", "version": 1,
-"rightHolder": {
-"credentials": [
-{
-"identifier": {
-"id": "MS00MS",
-"className": "UKNumberPlate" },
-"issuer": {
-"en": "DMV" }
-} ]
-}, "rightSpecification": {
-"id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
-                "version": 1
+  "meta": {
+    "referenceInstant": 1610802000,
+    "offset": 0,
+    "pageSize": 100,
+    "total": 1
+  },
+  "data": [
+    {
+      "id": "bec97cab-8eb7-4868-be9f-da95fa17d19e",
+      "version": 1,
+      "rightHolder": {
+        "credentials": [
+          {
+            "identifier": {
+              "id": "MS00MS",
+              "className": "UKNumberPlate"
             },
-"expiry": "2021-01-16T14:10:02", "assignedRightIssuer": {
-"id": "ID_RED_PARKING",
-"className": "DigitalServiceProvider" },
-"issueMethod": "electronic" }
-] }
+            "issuer": {
+              "en": "DMV"
+            }
+          }
+        ]
+      },
+      "rightSpecification": {
+        "id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
+        "version": 1
+      },
+      "expiry": "2021-01-16T14:10:02",
+      "assignedRightIssuer": {
+        "id": "ID_RED_PARKING",
+        "className": "DigitalServiceProvider"
+      },
+      "issueMethod": "electronic"
+    }
+  ]
+}
 
 ```
 
@@ -120,24 +158,32 @@ Payload:
 ``` json
 
 {
-"id": "bec97cab-8eb7-4868-be9f-da95fa17d19e", "version": 1,
-"rightHolder": {
-"credentials": [
-{
-"identifier": {
-"id": "MS00MS",
-"className": "UKNumberPlate" },
-"issuer": {
-"en": "DMV" }
-} ]
-}, "rightSpecification": {
-"id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
-                "version": 1
-            },
-"expiry": "2021-01-16T14:10:02", "assignedRightIssuer": {
-"id": "ID_RED_PARKING",
-"className": "DigitalServiceProvider" },
-"issueMethod": "electronic" }
+  "id": "bec97cab-8eb7-4868-be9f-da95fa17d19e",
+  "version": 1,
+  "rightHolder": {
+    "credentials": [
+      {
+        "identifier": {
+          "id": "MS00MS",
+          "className": "UKNumberPlate"
+        },
+        "issuer": {
+          "en": "DMV"
+        }
+      }
+    ]
+  },
+  "rightSpecification": {
+    "id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
+    "version": 1
+  },
+  "expiry": "2021-01-16T14:10:02",
+  "assignedRightIssuer": {
+    "id": "ID_RED_PARKING",
+    "className": "DigitalServiceProvider"
+  },
+  "issueMethod": "electronic"
+}
 
 ``` 
 
