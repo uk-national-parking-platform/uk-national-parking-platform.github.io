@@ -31,7 +31,7 @@ Phase 2 was about the implementation of use cases aiming at an improved **Custom
 
 Three use cases were identified:
 
-![Use Cases](assets/images/intro/usecases.png)
+![Use Cases](assets/images/intro/phase2_usecases.png)
 
 <br/>
 <br/>
