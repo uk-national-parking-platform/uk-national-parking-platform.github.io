@@ -6,7 +6,7 @@ sort: 3
 # Use Case Overview
 This document provides an overview of the use cases implemented during the various phases of the _National Parking Platform_ pilot project. Software developers implementing such flows, detailed examples can be found [here](flows.md).
 
-## Use Case 0: Semi-static Information and Dynamic Occupancy
+## Use Case 0: Parking Availability
 
 ![Static Information and Dynamic Occupancy](assets/images/usecases/usecase0overview.png)
 
@@ -36,4 +36,5 @@ Alternative process: if the enforcement service provider’s IT system has the c
 ![ANPR Frictionless Payment](assets/images/usecases/usecase2overview.png)
 
 ## Use Case 3: Pay on Departure Ticket Payment
-...
+
+![Payment on Arrival](assets/images/usecases/usecase3overview.png)
