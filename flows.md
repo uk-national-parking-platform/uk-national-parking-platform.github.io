@@ -36,6 +36,7 @@ Response can include 0 (nothing found), 1 (exactly one match) or more (VRM regis
 ### Detailed Request/Response Examples
 #### 1. SP uploads Assigned Rights to Platform
 Request: `POST /v1/parking/rights/assigned`
+
 Payload:
 ``` json
 {
