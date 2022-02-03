@@ -97,9 +97,10 @@ Payload:
 ``` json
 
 {
-    "code": 200,
-"status": "OK",
-"message": "session e2089853-b790-459b-884e-4869b40d193d created" }
+  "code": 200,
+  "status": "OK",
+  "message": "session e2089853-b790-459b-884e-4869b40d193d created"
+}
 
 ```
 
