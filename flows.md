@@ -6,7 +6,143 @@ sort: 5
 # Sample Flows/Dialogue Sequences
 This document provides a translation of typical use cases into concrete dialogue sequences. It is meant to provide guidance to APDS adopters on their way to become NPP users.
 
-## Use Case 1: Pay on Arrival
+## Use Case 1: Payment on Arrival
+### Overall Flow
+![Use Case 1 Overview](assets/images/usecases/usecase1overview.png)
+
+### Overview of engaged Endpoints
+#### 1. SP sends Session to Platform
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+```
+POST /v1/parking/sessions
+```
+
+#### 2. Enforcement Officer checks Assigned Right on Platform
+<span style="color: green; font-size: 22px">&#x278B;</span> **`Enforcement System` &rarr; `Platform`**
+```
+GET /v1/parking/rights/assigned
+```
+
+#### 3. Alternative Enforcement Approach: Subscription
+<span style="color: green; font-size: 22px">&#x278C;</span> **`Platform` &rarr; `Enforcement System`**
+``` note
+As an alternative to adhoc platform queries (see 2.), a platform user can also register a subscription for new/updated information. In this example the enforcement service provider's backend system will then be informed about each new assigned right being created.
+```
+```
+PUT {provider-provided notification endpoint for new assigned rights}
+```
+
+### Detailed Request/Response Examples
+#### 1. SP sends Session to Platform
+``` note
+Normally, the SP would first have to send an Assigned Right to the Platform, followed by a Session record referencing this Assigned Right. For efficiency reasons, the APDS interface allows to just send a Session Record. The APDS-conformant Platform is then expected to automatically create a corresponding Assigned Right.
+```
+
+Request: `POST /v1/parking/sessions`
+
+Payload: 
+``` json
+
+{
+"id": "e2089853-b790-459b-884e-4869b40d193d", "version": 1,
+"initiator": "e0326b5c-d73d-43ab-b274-3ecaea5a80db", "actualStart": "2021-01-16T13:10:02",
+"acutalEnd": "2021-01-16T14:10:02",
+"credentials": [{
+"identifier": {"id": "AB12XYZ", "className": "UKNumberPlate"},
+"type": "licensePlate", "issuer": {"en": "Vehicle Registry"} }],
+"hierarchyElement": {
+"id": "001702e7-99f6-4e48-ac7c-df412907b29b",
+        "version": 1
+    },
+"segments": [{
+"id": "8fff245d-b384-406a-bef2-5e6affbe7609", "version": 1,
+"actualStart": "2021-01-16T13:10:02", "actualEnd": "2021-01-16T14:10:02", "validationType": ["licensePlate"], "financialTransactions": [{
+"dateCollected": "2021-01-16T13:10:02", "segmentValue": 450,
+"serviceProvider": { "en": "RED Parking"}, "taxIncluded": true,
+"transactionId": "TX-ID-PROVIDER-DEFINED-0001" }]
+}] }
+
+```
+
+Response: `HTTP/1.1 200 OK`
+
+Payload:
+``` json
+
+{
+    "code": 200,
+"status": "OK",
+"message": "session e2089853-b790-459b-884e-4869b40d193d created" }
+
+```
+
+#### 2. Enforcement Officer checks Assigned Right on Platform
+Request: `GET /v1/parking/rights/assigned?place=001702e7-99f6-4e48-ac7c-df412907b29b&credential_id=MS00MS&start_after=1610751600`
+
+Response: `HTTP/1.1 200 OK`
+
+Payload: 
+``` json
+
+{
+"meta": {
+"referenceInstant": 1610802000, "offset": 0,
+"pageSize": 100,
+"total": 1
+}, "data": [
+{
+"id": "bec97cab-8eb7-4868-be9f-da95fa17d19e", "version": 1,
+"rightHolder": {
+"credentials": [
+{
+"identifier": {
+"id": "MS00MS",
+"className": "UKNumberPlate" },
+"issuer": {
+"en": "DMV" }
+} ]
+}, "rightSpecification": {
+"id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
+                "version": 1
+            },
+"expiry": "2021-01-16T14:10:02", "assignedRightIssuer": {
+"id": "ID_RED_PARKING",
+"className": "DigitalServiceProvider" },
+"issueMethod": "electronic" }
+] }
+
+```
+
+#### 3. Alternative: Notification based on previous Subscription
+Request: `PUT {provider-provided Notification Endpoint for new Assigned Rights}`
+
+Payload:
+``` json
+
+{
+"id": "bec97cab-8eb7-4868-be9f-da95fa17d19e", "version": 1,
+"rightHolder": {
+"credentials": [
+{
+"identifier": {
+"id": "MS00MS",
+"className": "UKNumberPlate" },
+"issuer": {
+"en": "DMV" }
+} ]
+}, "rightSpecification": {
+"id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
+                "version": 1
+            },
+"expiry": "2021-01-16T14:10:02", "assignedRightIssuer": {
+"id": "ID_RED_PARKING",
+"className": "DigitalServiceProvider" },
+"issueMethod": "electronic" }
+
+``` 
+
+Response: `HTTP/1.1 200 OK`
+
 
 ## Use Case 2: ANPR Frictionless Payment
 ### Overall Flow
