@@ -69,10 +69,11 @@ Payload:
 Response: `HTTP/1.1 201 CREATED`
 
 #### 2. VRM sent to Platform
-Request: `GET /v1/parking/rights/assigned?identifier_id=BD18SMR&place=220001``
+Request: `GET /v1/parking/rights/assigned?identifier_id=BD18SMR&place=220001`
 
 Response: `HTTP/1.1 200 OK`
 
+Response Payload:
 ``` json
 
 {
