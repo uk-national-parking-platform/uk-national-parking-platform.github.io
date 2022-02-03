@@ -1,7 +1,7 @@
 ---
 title: Solution Architecture 
 layout: default
-sort: 4
+sort: 3
 ---
 # Overall Solution Architecture 
 This document provides an overview of the NPP pilot system's overall solution architecture.

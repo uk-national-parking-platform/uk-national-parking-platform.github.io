@@ -1,7 +1,7 @@
 ---
 layout: default
 title: NPP
-sort: 1
+sort: 0
 ---
 <p align="center">
     <img src="https://npp-uk.org/assets/images/intro/NPP_logo.png" width="150px" height="120px">
