@@ -35,11 +35,8 @@ Response can include 0 (nothing found), 1 (exactly one match) or more (VRM regis
 
 ### Detailed Request/Response Examples
 #### 1. SP uploads Assigned Rights to Platform
-```
---- REQUEST ---
-
-POST /v1/parking/rights/assigned
-```
+Request: `POST /v1/parking/rights/assigned`
+Payload:
 ``` json
 {
     "id": "20410eec-2352-4cc1-820c-21ea6cbce506",
@@ -68,12 +65,7 @@ POST /v1/parking/rights/assigned
     "issueMethod": "electronic"
 }
 ```
-```
---- RESPONSE ---
-
-HTTP/1.1 201 CREATED
-
-```
+Response: `HTTP/1.1 201 CREATED`
 
 ## Use Case 3: Pay on Departure Ticket Payment
 
