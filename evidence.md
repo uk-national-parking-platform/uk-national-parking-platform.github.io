@@ -6,7 +6,7 @@ sort: 4
 # Pilot Evidence
 This section shows selected scenarios from a user's perspective. 
 
-## Place Information Look-up by Service Provider
+## 1. Place Information Look-up by Service Provider
 ### Scenario: Occupancy Data Retrieval by Parkopedia
 **Parkopedia** provide parking location related information on their website (see screenshot below) and in their mobile app:
 ![Parkopedia Website](assets/images/evidence/parkopedia1.png)
@@ -18,7 +18,7 @@ Information about the car parks capacity and current space availability is provi
 To the left, you see a zoom-in into the details provided on _Parkopedia_'s website.
 On the right, you see the underlying NPP API request/response.
 
-## Session Example: Ringgo
+## 2. Pay-on-Arrival Session Example: Ringgo
 ### Scenario: End User purchases Parking Session from Ringgo
 #### Purchase Process
 ![Selection](assets/images/evidence/ringgo1.png)
@@ -50,7 +50,7 @@ The NPP is mostly a backend system talking to other machines only ("headless" sy
 
 ![Session Documentation](assets/images/evidence/session_search2.png)
 
-## Enforcement Information
+## 3. Enforcement Information
 ### Scenario: Envorcement Service Provider checks for Sessions on the Platform
 #### Step 1: Customer purchases a Parking Session from the Service Provider
 ![Purchase](assets/images/evidence/apcoa_connect1.png)
@@ -66,5 +66,5 @@ The following is an extract from the NPP's logging database showing the details 
 
 **Step 3b: received Information displayed on Handheld Unit**
 The information received from the NPP is then displayed on the enforcement officer's handheld device:
-![Logging](assets/images/evidence/apcoa_connect3.png)
+![Logging](assets/images/evidence/apcoa_connect4.png)
 
