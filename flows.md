@@ -13,8 +13,18 @@ This document provides a translation of typical use cases into concrete dialogue
 ![Use Case 2 Flow](assets/images/usecases/usecase2flow.png)
 ### Overview of engaged Endpoints
 #### 1. SP uploads Assigned Rights to Platform
-`SP` &rarrow; `Platform`
+**`SP` &#x27A1; `Platform`**
+```bash
+POST /v1/parking/rights/assigned
+```
+
 #### 2. VRM sent to Platform
+**`Operator` &#x27A1; `Platform`**
+```bash
+GET /v1/parking/rights/assigned/place={locationId}&identifier_id={VRM}
+```
+Response can include 0 (nothing found), 1 (exactly one match) or more (VRM registered with multiple SPs).
+
 #### 3. Operator sends Session Details to Platform
 #### 4. Platform sends Sessino to selected SP
 #### 5. Is Session on Platform?
