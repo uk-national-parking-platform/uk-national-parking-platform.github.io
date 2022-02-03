@@ -62,7 +62,8 @@ PUT /v1/parking/sessions/{session id from 3.}
 ```
 
 #### 9. Platform sends Payment Details to Operator
-<span style="color: green; font-size: 22px">&#x2792;</span> **`Platform` &rarr; `Operator`
+<span style="color: green; font-size: 22px">&#x2792;</span> **`Platform` &rarr; `Operator`**
+
 _MISSING_
 
 ### Detailed Request/Response Examples
