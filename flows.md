@@ -68,5 +68,40 @@ Payload:
 ```
 Response: `HTTP/1.1 201 CREATED`
 
+#### 2. VRM sent to Platform
+Request: `GET /v1/parking/rights/assigned?identifier_id=BD18SMR&place=220001``
+
+Response: `HTTP/1.1 200 OK`
+
+``` json
+
+{
+    "id": "20410eec-2352-4cc1-820c-21ea6cbce506",
+    "version": 1,
+    "rightHolder": {
+        "credentials": [
+            {
+                "type": "licensePlate",
+                "identifier": {
+                    "id": "BD18SMR",
+                    "className": "UKNumberPlate"
+                }
+            }
+        ]
+    },
+    "rightSpecification": {
+        "id": "0ab95c73-4c2b-4fe3-8528-0403c7734b92",
+        "version": 1
+    },
+    "issuanceTime": "2021-10-18 15:21:00",
+    "expiry": "2024-12-31 23:59:59",
+    "assignedRightIssuer": {
+        "id": "SP0001",
+        "className": "DigitalServiceProvider"
+    },
+    "issueMethod": "electronic"
+}
+
+```
 ## Use Case 3: Pay on Departure Ticket Payment
 
