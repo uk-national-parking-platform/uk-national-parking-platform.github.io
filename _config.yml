@@ -1,2 +1,4 @@
 remote_theme: rundocs/jekyll-rtd-theme
 title: National Parking Platform
+plugins:
+  - jekyll-pdf-embed
