@@ -24,9 +24,9 @@ GET /v1/parking/places?latitude=53.4806&longitude=-2.2428&radius=1000&expand=all
 The following request first reads right specification / eligibility information about a particular location and then retrieves the corresponding tariff information.
 ```
 // step 1: get right specification
-GET /v1/parking/places/{placeId}?expand=rights
+GET /v1/parking/rights/{rightSpecificationIdForSelectedPlace}?expand=all
 
-// step 2: get rate details
+// step 3: get rate details
 GET /v1/parking/rates/{rateId from previous request}?expand=all
 
 ```
@@ -40,6 +40,154 @@ GET /v1/parking/places/{placeId}?expand=occupancy
 
 ```
 
+### Detailed Request/Response Examples
+
+#### 1. SP queries the Platform for available Parking Locations
+
+#### 2. SP queries the Platform for a Location's Tariffs/Rates
+
+Request (Step 1): `GET /v1/parking/rights/6091d5d0-5264-4d66-a31a-1a9e2c9eed89?expand=all`
+
+Response (Step 1): `HTTP/1.1 200 OK`
+
+Payload: (Step 1): 
+``` json
+{
+    "id": "6091d5d0-5264-4d66-a31a-1a9e2c9eed89",
+    "version": 1,
+    "type": "oneTimeUseParking",
+    "description": {
+        "en": "right specification for Arndale Car Park in Manchester City"
+    },
+    "expiry": "2025-12-31 23:59:59",
+    "hierarchyElements": [
+        {
+            "id": "805432",
+            "version": 1
+        }
+    ],
+    "rateEligibility": [
+        {
+            "id": "b49794f3-a845-4451-8618-641100f49b2e",
+            "version": 1,
+            "rate": {
+                "id": "0376c349-ed20-4f6f-9551-1a82f9f5f734",
+                "version": 1
+            }
+        }
+    ],
+    "validity": {
+        "validPeriods": [
+            {
+                "periodName": {
+                    "en": "all week long"
+                },
+                "recurringDayWeekMonthPeriod": {
+                    "applicableDay": [
+                        "monday",
+                        "tuesday",
+                        "wednesday",
+                        "thursday",
+                        "friday",
+                        "saturday",
+                        "sunday"
+                    ]
+                }
+            }
+        ]
+    }
+}
+
+```
+
+Request (Step 2): `GET /v1/parking/rates/0376c349-ed20-4f6f-9551-1a82f9f5f734?expand=all`
+
+Response (Step 2): `HTTP/1.1 200 OK`
+
+Payload (Step 2):
+``` json
+{
+  "id": "2a00f59e-50b0-4ac1-8733-1b3d23482403",
+  "version": 1,
+  "rateTableName": {
+    "en": "Arndale General Public Tariff"
+  },
+  "availability": "public",
+  "validation": false,
+  "rateResponsibleParty": "Manchester City Council",
+  "rateLineCollections": [
+    {
+      "collectionSequence": 1,
+      "taxIncluded": true,
+      "rateLines": [
+        {
+          "sequence": 1,
+          "description": {
+            "en": "up to 1 hour"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 3.7,
+          "durationStart": "P0S",
+          "durationEnd": "P3599S"
+        },
+        {
+          "sequence": 2,
+          "description": {
+            "en": "up to 2 hours"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 6.7,
+          "durationStart": "P3600S",
+          "durationEnd": "P7199S"
+        },
+        {
+          "sequence": 3,
+          "description": {
+            "en": "up to 3 hours"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 9.2,
+          "durationStart": "P7200S",
+          "durationEnd": "P10799S"
+        },
+        {
+          "sequence": 4,
+          "description": {
+            "en": "up to 4 hours"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 12.2,
+          "durationStart": "P10800S",
+          "durationEnd": "P14399S"
+        },
+        {
+          "sequence": 5,
+          "description": {
+            "en": "up to 5 hours"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 15.2,
+          "durationStart": "P14400S",
+          "durationEnd": "P17999S"
+        },
+        {
+          "sequence": 6,
+          "description": {
+            "en": "up to 24 hours"
+          },
+          "rateLineType": "incrementingRate",
+          "value": 20.5,
+          "durationStart": "P18000S",
+          "durationEnd": "P86399S"
+        }
+      ]
+    }
+  ]
+}
+
+```
+
+#### 3. SP queries the Platform for current Space Availability
 
 ## Use Case 1: Payment on Arrival
 ### Overall Flow
