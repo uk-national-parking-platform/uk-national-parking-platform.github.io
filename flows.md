@@ -12,17 +12,31 @@ This document provides a translation of typical use cases into concrete dialogue
 
 #### 1. SP queries the Platform for available Parking Locations
 <span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+
+The following request finds parking locations within a 1000 metres radius of a particular point:
 ```
-GET /v1/parking/places?latitude=&longitude=&radius=1000
+GET /v1/parking/places?latitude=53.4806&longitude=-2.2428&radius=1000&expand=all
 ```
 
 #### 2. SP queries the Platform for a Location's Tariffs/Rates
 <span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+
 ```
-GET /v1/parking/places?latitude=&longitude=&radius=1000
+// step 1: get right specification
+GET /v1/parking/places/{placeId}?expand=rights
+
+// step 2: get rate details
+GET /v1/parking/rates/{rateId from previous request}?expand=all
+
 ```
 
 #### 3. SP queries the Platform for current Space Availability
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+
+```
+GET /v1/parking/places/{placeId}?expand=occupancy
+
+```
 
 
 ## Use Case 1: Payment on Arrival
