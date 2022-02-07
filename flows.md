@@ -8,6 +8,9 @@ This document provides a translation of typical use cases into concrete dialogue
 
 ## Use Case 0: Parking Availability
 
+### Overview
+![Static Information and Dynamic Occupancy](assets/images/usecases/usecase0overview.png)
+
 ### Overview of engaged Endpoints
 
 #### 1. SP queries the Platform for available Parking Locations
