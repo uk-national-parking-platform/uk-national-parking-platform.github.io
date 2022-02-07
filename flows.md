@@ -8,7 +8,11 @@ This document provides a translation of typical use cases into concrete dialogue
 
 ## Use Case 1: Payment on Arrival
 ### Overall Flow
+#### Overview
 ![Use Case 1 Overview](assets/images/usecases/usecase1overview.png)
+
+#### Flow
+![Use Case 1 Flow](assets/images/usecases/usecase1flow.png)
 
 ### Overview of engaged Endpoints
 #### 1. SP sends Session to Platform
