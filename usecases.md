@@ -7,6 +7,7 @@ sort: 2
 This document provides an overview of the use cases implemented during the various phases of the _National Parking Platform_ pilot project. Software developers implementing such flows, detailed examples can be found [here](flows.md).
 
 ## Use Case 0: Parking Availability
+This first use case was introduced in phase 1 of the product. It provided a central repository with both, (semi-)static and dynamic parking availability information. Data consumers can find available parking locations (on-street and off-street), check their details as well as current space availability.
 
 ![Static Information and Dynamic Occupancy](assets/images/usecases/usecase0overview.png)
 
