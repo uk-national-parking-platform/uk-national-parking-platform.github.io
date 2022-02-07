@@ -14,13 +14,14 @@ This document provides a translation of typical use cases into concrete dialogue
 <span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
 
 The following request finds parking locations within a 1000 metres radius of a particular point:
-```
+``` 
 GET /v1/parking/places?latitude=53.4806&longitude=-2.2428&radius=1000&expand=all
 ```
 
 #### 2. SP queries the Platform for a Location's Tariffs/Rates
 <span style="color: red; font-size: 22px">&#x278B;</span> **`SP` &rarr; `Platform`**
 
+The following request first reads right specification / eligibility information about a particular location and then retrieves the corresponding tariff information.
 ```
 // step 1: get right specification
 GET /v1/parking/places/{placeId}?expand=rights
@@ -33,6 +34,7 @@ GET /v1/parking/rates/{rateId from previous request}?expand=all
 #### 3. SP queries the Platform for current Space Availability
 <span style="color: red; font-size: 22px">&#x278C;</span> **`SP` &rarr; `Platform`**
 
+Current space availability information is retrieved via the _occupancy_ filter of the _/places_ endpoint:
 ```
 GET /v1/parking/places/{placeId}?expand=occupancy
 
