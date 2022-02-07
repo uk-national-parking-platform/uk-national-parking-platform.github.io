@@ -6,6 +6,25 @@ sort: 3
 # Sample Flows/Dialogue Sequences
 This document provides a translation of typical use cases into concrete dialogue sequences. It is meant to provide guidance to APDS adopters on their way to become NPP users.
 
+## Use Case 0: Parking Availability
+
+### Overview of engaged Endpoints
+
+#### 1. SP queries the Platform for available Parking Locations
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+```
+GET /v1/parking/places?latitude=&longitude=&radius=1000
+```
+
+#### 2. SP queries the Platform for a Location's Tariffs/Rates
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+```
+GET /v1/parking/places?latitude=&longitude=&radius=1000
+```
+
+#### 3. SP queries the Platform for current Space Availability
+
+
 ## Use Case 1: Payment on Arrival
 ### Overall Flow
 #### Overview
