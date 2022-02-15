@@ -12,24 +12,28 @@ Phase 1, completed at the end of 2019, demonstrated the potential for a platform
  
 Off street providers (NCP and Q-Park) provided data on occupancy in their Manchester, Salford and Liverpool multi-storey car parks.  
 
-Manchester City Council provided data direct from their TRO database, providing a list of all on-street parking in the City including restrictions and tariffs.
+Manchester City Council provided data direct from their ParkMap TRO database, providing a list of all on-street parking in the City including restrictions and tariffs.
 
 This data was made available on a set of standard APDS compliant APIs, which were used by Parkopedia to enhance the data in their system.
 
 The data is available to other potential publishers. 
 
+![Phase Scope](assets/images/phases/phase1.png)
+
+This platform was aimed at improviung the customer journey. enabling a 'Service Provider' to guide a customer to suitable, avilable parking in real time:
+
 ![Phase 1 Scope](assets/images/usecases/usecase0overview.png)
 
 
 
-![Phase Scope](assets/images/phases/phase1.png)
+
 
 <br/>
 <br/>
 ## Phase 2: Multi-Vendor Payment
-Phase 2 was about the implementation of use cases aiming at an improved **Customer Journey**.
+Phase 2 implemented new use cases aiming at an improved **Customer Journey**.
 
-Three use cases were identified:
+Three use cases were identified, in addition to the original availability use case:
 
 ![Use Cases](assets/images/intro/phase2_usecases.png)
 
