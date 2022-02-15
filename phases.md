@@ -20,7 +20,7 @@ The data is available to other potential publishers.
 
 ![Phase Scope](assets/images/phases/phase1.png)
 
-This platform was aimed at improviung the customer journey. enabling a 'Service Provider' to guide a customer to suitable, avilable parking in real time:
+This platform was aimed at improving the customer journey. enabling a 'Service Provider' to guide a customer to suitable, avilable parking in real time:
 
 ![Phase 1 Scope](assets/images/usecases/usecase0overview.png)
 
