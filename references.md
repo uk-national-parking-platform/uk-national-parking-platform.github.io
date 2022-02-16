@@ -7,6 +7,7 @@ sort: 11
 This section provides a list of reference documents and specifications that have been used as the basis for the development of the _NPP Pilot System_. 
 
 ## APDS Standard Specification Documents
+APDS documents are available from the [APDS website](https://allianceforparkingdatastandards.org)
 * Overview 
 * Information Model
 * Data Dictionary
