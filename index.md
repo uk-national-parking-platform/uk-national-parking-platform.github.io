@@ -43,7 +43,7 @@ The project's mission was to implement a working prototype system allowing to ex
 ![NPP Role](assets/images/intro/npp_role.png)
 
 ## The Customer Journey
-![Customer Journey](assets/images/intro/customer_journey.png)
+![Customer Journey](assets/images/intro/Customer_journey.png)
 
 ## Project Partners
 The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, numerous additional partners joined. You can find an overview [here](https://npp-uk.org/phases.html#current-status).
