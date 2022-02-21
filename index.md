@@ -51,4 +51,3 @@ The **NPP Pilot** started out as a joint project with [Manchester City Council](
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
 
-&copy; 2022 Parking Matters Limited
