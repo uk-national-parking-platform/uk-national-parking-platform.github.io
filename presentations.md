@@ -6,6 +6,8 @@ sort: 12
 # Presentations
 
 ## Information Pack Phase 3
+The information Pack provides an overview of the NPP Pilot, lists the Partners who are actively engaged and identifies others that have expressed an interest in becoming involved.
+
 The Information pack is updated periodically.  Download the latest pack here:
 
 ### Download
