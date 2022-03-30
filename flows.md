@@ -754,4 +754,8 @@ Response: `HTTP/1.1 200 OK`
 _MISSING_
 
 ## Use Case 3: Pay on Departure Ticket Payment
+### Overall Flow
+![Use Case 3 Flow](assets/images/usecases/usecase3flow.png)
+ 
+
 
