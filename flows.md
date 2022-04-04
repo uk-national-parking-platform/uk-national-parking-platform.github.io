@@ -729,5 +729,38 @@ _MISSING\_TBD_
 ### Overall Flow
 ![Use Case 3 Flow](assets/images/usecases/usecase3flow.png)
  
+### Overview of engaged Endpoints
 
+#### 1. SP sends Session Query to Platform
+<span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
+```
+GET /v1/parking/sessions
+```
 
+#### 2. Platform sends Session Query to Operator
+<span style="color: green; font-size: 22px">&#x278B;</span> **`Platform` &rarr; `Operator`**
+```
+GET /v1/parking/sessions
+```
+
+#### 3. SP sends Payment Confirmation to Platform
+<span style="color: red; font-size: 22px">&#x278C;</span> **`SP` &rarr; `Platform`**
+```
+PUT /v1/parking/sessions
+```
+
+#### 4. Platform sends Payment Confirmation to Operator
+<span style="color: green; font-size: 22px">&#x278D;</span> **`Platform` &rarr; `Operator`**
+```
+PUT /v1/parking/sessions
+```
+
+### Detailed Request/Response Examples
+
+#### 1. SP sends Session Query to Platform
+
+#### 2. Platform sends Session Query to Operator
+
+#### 3. SP sends Payment Confirmation to Platform
+
+#### 4. Platform sends Payment Confirmation to Operator
