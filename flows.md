@@ -411,25 +411,25 @@ PUT {SP-provided Notification Endpoint for new Sessions}
 ```
 
 #### 5. Completed Session sent to Platform
-<span style="color: green; font-size: 22px">&#x278F;</span> **`Operator` &rarr; `Platform`**
+<span style="color: green; font-size: 22px">&#x278E;</span> **`Operator` &rarr; `Platform`**
 ```
 PUT /v1/parking/sessions/{session id from 3. }
 ```
 
 #### 6. Platform sends Session Details to SP
-<span style="color: red; font-size: 22px">&#x2790;</span> **`Platform` &rarr; `SP`**
+<span style="color: red; font-size: 22px">&#x278F;</span> **`Platform` &rarr; `SP`**
 ```
 PUT /{SP-provided Notification Endpoint for Session Data Updates}
 ```
 
 #### 7. SP sends Payment Confirmation
-<span style="color: red; font-size: 22px">&#x2791;</span> **`SP` &rarr; `Platform`**
+<span style="color: red; font-size: 22px">&#x2790;</span> **`SP` &rarr; `Platform`**
 ```
 PUT /v1/parking/sessions/{session id from 3.}
 ```
 
 #### 8. Platform sends Payment Details to Operator
-<span style="color: green; font-size: 22px">&#x2792;</span> **`Platform` &rarr; `Operator`**
+<span style="color: green; font-size: 22px">&#x2791;</span> **`Platform` &rarr; `Operator`**
 
 _MISSING\_TBD_
 
