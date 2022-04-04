@@ -505,7 +505,7 @@ Response Payload:
 
 ```
 
-#### 3.	Operator sends Session Details to Platform (incl. Assigned Right)
+#### 3.	Operator sends Details of new Session to Platform (incl. Assigned Right)
 Request: `POST /v1/parking/sessions`
 
 Payload: 
@@ -542,7 +542,7 @@ Payload:
 
 Response: `HTTP/1.1 201 CREATED`
 
-#### 4. Platform sends Session to selected SP
+#### 4. Platform sends new Session to selected SP
 
 Request: `PUT /callbacks.service-provider-001.com/sessions/new`
 
@@ -581,7 +581,7 @@ Payload:
 Response: `HTTP/1.1 200 OK`
 
 
-#### 5. Completed Session sent to Platform
+#### 5. Completed Session sent to Platform (by Operator)
 Request: `PUT /v1/parking/sessions/fe5eea6a-4be3-46fa-b037-20f04334ccdd`
 
 Payload:
@@ -608,6 +608,13 @@ Payload:
             "actualStart": "2020-11-01 13:05:00",
             "actualEnd": "2020-11-01 17:23:01",
             "validationType": ["licensePlate"],
+            "financialTransactions": [
+                {
+                    "segmentValue": 10.80,
+                    "serviceProvider": { "en": "SP0001"},
+                    "taxIncluded": true
+                }
+            ]
         }
     ],
     "hierarchyElement": {
@@ -620,7 +627,7 @@ Payload:
 
 Response: `HTTP/1.1 200 OK`
 
-#### 6. Platform sends Session Details to SP
+#### 6. Platform sends updated Session Details to SP
 Request: `PUT /callbacks.service-provider-001.com/sessions/updated`
 
 Payload:
@@ -647,6 +654,13 @@ Payload:
             "actualStart": "2020-11-01 13:05:00",
             "actualEnd": "2020-11-01 17:23:01",
             "validationType": ["licensePlate"],
+            "financialTransactions": [
+                {
+                    "segmentValue": 10.80,
+                    "serviceProvider": { "en": "SP0001"},
+                    "taxIncluded": true
+                }
+            ]
         }
     ],
     "hierarchyElement": {
