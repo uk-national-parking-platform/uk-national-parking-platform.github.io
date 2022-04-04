@@ -62,7 +62,7 @@ Payload: (Step 1):
     "description": {
         "en": "right specification for Arndale Car Park in Manchester City"
     },
-    "expiry": "2025-12-31 23:59:59",
+    "expiry": "2025-12-31T23:59:59Z",
     "hierarchyElements": [
         {
             "id": "805432",
@@ -237,8 +237,8 @@ Payload:
   "id": "e2089853-b790-459b-884e-4869b40d193d",
   "version": 1,
   "initiator": "e0326b5c-d73d-43ab-b274-3ecaea5a80db",
-  "actualStart": "2021-01-16T13:10:02",
-  "actualEnd": "2021-01-16T14:10:02",
+  "actualStart": "2021-01-16T13:10:02Z",
+  "actualEnd": "2021-01-16T14:10:02Z",
   "credentials": [
     {
       "identifier": {
@@ -259,14 +259,14 @@ Payload:
     {
       "id": "8fff245d-b384-406a-bef2-5e6affbe7609",
       "version": 1,
-      "actualStart": "2021-01-16T13:10:02",
-      "actualEnd": "2021-01-16T14:10:02",
+      "actualStart": "2021-01-16T13:10:02Z",
+      "actualEnd": "2021-01-16T14:10:02Z",
       "validationType": [
         "licensePlate"
       ],
       "financialTransactions": [
         {
-          "dateCollected": "2021-01-16T13:10:02",
+          "dateCollected": "2021-01-16T13:10:02Z",
           "segmentValue": 450,
           "serviceProvider": {
             "en": "RED Parking"
@@ -330,7 +330,7 @@ Payload:
         "id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
         "version": 1
       },
-      "expiry": "2021-01-16T14:10:02",
+      "expiry": "2021-01-16T14:10:02Z",
       "assignedRightIssuer": {
         "id": "ID_RED_PARKING",
         "className": "DigitalServiceProvider"
@@ -368,7 +368,7 @@ Payload:
     "id": "a298d061-a30c-4a5a-bfe0-308f20d3ddc7",
     "version": 1
   },
-  "expiry": "2021-01-16T14:10:02",
+  "expiry": "2021-01-16T14:10:02Z",
   "assignedRightIssuer": {
     "id": "ID_RED_PARKING",
     "className": "DigitalServiceProvider"
@@ -457,8 +457,8 @@ Payload:
         "id": "0ab95c73-4c2b-4fe3-8528-0403c7734b92",
         "version": 1
     },
-    "issuanceTime": "2021-10-18 15:21:00",
-    "expiry": "2024-12-31 23:59:59",
+    "issuanceTime": "2021-10-18T15:21:00Z",
+    "expiry": "2024-12-31T23:59:59Z",
     "assignedRightIssuer": {
         "id": "SP0001",
         "className": "DigitalServiceProvider"
@@ -494,8 +494,8 @@ Response Payload:
         "id": "0ab95c73-4c2b-4fe3-8528-0403c7734b92",
         "version": 1
     },
-    "issuanceTime": "2021-10-18 15:21:00",
-    "expiry": "2024-12-31 23:59:59",
+    "issuanceTime": "2021-10-18T15:21:00Z",
+    "expiry": "2024-12-31T23:59:59Z",
     "assignedRightIssuer": {
         "id": "SP0001",
         "className": "DigitalServiceProvider"
@@ -514,7 +514,7 @@ Payload:
 {
     "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
     "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
+    "actualStart": "2021-11-01T13:05:00Z",
     "credentials": [
         {
             "identifier":
@@ -528,7 +528,7 @@ Payload:
         {
             "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
             "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
+            "actualStart": "2021-11-01T13:05:00Z",
             "validationType": ["licensePlate"],
         }
     ],
@@ -552,7 +552,7 @@ Payload:
 {
     "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
     "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
+    "actualStart": "2021-11-01T13:05:00Z",
     "credentials": [
         {
             "identifier":
@@ -566,7 +566,7 @@ Payload:
         {
             "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
             "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
+            "actualStart": "2021-11-01T13:05:00Z",
             "validationType": ["licensePlate"],
         }
     ],
@@ -590,8 +590,8 @@ Payload:
 {
     "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
     "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
-    "actualEnd": "2021-11-01 17:23:01",
+    "actualStart": "2021-11-01T13:05:00Z",
+    "actualEnd": "2021-11-01T17:23:01Z",
     "credentials": [
         {
             "identifier":
@@ -605,8 +605,8 @@ Payload:
         {
             "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
             "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
-            "actualEnd": "2020-11-01 17:23:01",
+            "actualStart": "2021-11-01T13:05:00Z",
+            "actualEnd": "2021-11-01T17:23:01Z",
             "validationType": ["licensePlate"],
             "financialTransactions": [
                 {
@@ -636,8 +636,8 @@ Payload:
 {
     "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
     "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
-    "actualEnd": "2021-11-01 17:23:01",
+    "actualStart": "2021-11-01T13:05:00Z",
+    "actualEnd": "2021-11-01T17:23:01Z",
     "credentials": [
         {
             "identifier":
@@ -651,8 +651,8 @@ Payload:
         {
             "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
             "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
-            "actualEnd": "2020-11-01 17:23:01",
+            "actualStart": "2021-11-01T13:05:00Z",
+            "actualEnd": "2021-11-01T17:23:01Z",
             "validationType": ["licensePlate"],
             "financialTransactions": [
                 {
@@ -682,8 +682,8 @@ Payload:
 {
     "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
     "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
-    "actualEnd": "2021-11-01 17:23:01",
+    "actualStart": "2021-11-01T13:05:00Z",
+    "actualEnd": "2021-11-01T17:23:01Z",
     "credentials": [
         {
             "identifier":
@@ -697,12 +697,12 @@ Payload:
         {
             "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
             "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
-            "actualEnd": "2020-11-01 17:23:01",
+            "actualStart": "2021-11-01T 13:05:00Z",
+            "actualEnd": "2021-11-01T17:23:01Z",
             "validationType": ["licensePlate"],
             "financialTransactions": [
                 {
-                    "dateCollected": "2021-11-01 17:23:01",
+                    "dateCollected": "2021-11-01T 17:23:01Z",
                     "segmentValue": 10.80,
                     "serviceProvider": { "en": "SP0001"},
                     "taxIncluded": true,
@@ -781,7 +781,7 @@ Response Payload:
             {
                 "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
                 "version": 1,
-                "actualStart": "2021-11-01 13:05:00",
+                "actualStart": "2021-11-01T13:05:00Z",
                 "credentials": [
                     {
                         "identifier":
@@ -795,7 +795,7 @@ Response Payload:
                     {
                         "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
                         "version": 1,
-                        "actualStart": "2020-11-01 13:05:00",
+                        "actualStart": "2021-11-01T13:05:00Z",
                         "validationType": ["licensePlate"],
                         "financialTransactions": [
                             {
@@ -830,7 +830,7 @@ Response Payload:
             {
                 "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
                 "version": 1,
-                "actualStart": "2021-11-01 13:05:00",
+                "actualStart": "2021-11-01T13:05:00Z",
                 "credentials": [
                     {
                         "identifier":
@@ -844,7 +844,7 @@ Response Payload:
                     {
                         "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
                         "version": 1,
-                        "actualStart": "2020-11-01 13:05:00",
+                        "actualStart": "2021-11-01T13:05:00Z",
                         "validationType": ["licensePlate"],
                         "financialTransactions": [
                             {
@@ -873,7 +873,7 @@ Payload:
   {
       "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
       "version": 1,
-      "actualStart": "2021-11-01 13:05:00",
+      "actualStart": "2021-11-01T13:05:00Z",
       "credentials": [
           {
               "identifier":
@@ -887,11 +887,12 @@ Payload:
           {
               "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
               "version": 1,
-              "actualStart": "2020-11-01 13:05:00",
+              "actualStart": "2021-11-01T13:05:00Z",
+              "actualEnd": "2021-11-01T17:23:01Z",
               "validationType": ["licensePlate"],
               "financialTransactions": [
                     {
-                        "dateCollected": "2021-11-01 17:23:01",
+                        "dateCollected": "2021-11-01T17:23:01Z",
                         "segmentValue": 10.80,
                         "serviceProvider": { "en": "SP0001"},
                         "taxIncluded": true,
@@ -916,7 +917,7 @@ Payload:
   {
       "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
       "version": 1,
-      "actualStart": "2021-11-01 13:05:00",
+      "actualStart": "2021-11-01T13:05:00Z",
       "credentials": [
           {
               "identifier":
@@ -930,11 +931,11 @@ Payload:
           {
               "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
               "version": 1,
-              "actualStart": "2020-11-01 13:05:00",
+              "actualStart": "2021-11-01T13:05:00Z",
               "validationType": ["licensePlate"],
               "financialTransactions": [
                     {
-                        "dateCollected": "2021-11-01 17:23:01",
+                        "dateCollected": "2021-11-01T17:23:01Z",
                         "segmentValue": 10.80,
                         "serviceProvider": { "en": "SP0001"},
                         "taxIncluded": true,
