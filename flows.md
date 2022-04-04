@@ -238,7 +238,7 @@ Payload:
   "version": 1,
   "initiator": "e0326b5c-d73d-43ab-b274-3ecaea5a80db",
   "actualStart": "2021-01-16T13:10:02",
-  "acutalEnd": "2021-01-16T14:10:02",
+  "actualEnd": "2021-01-16T14:10:02",
   "credentials": [
     {
       "identifier": {
