@@ -756,11 +756,199 @@ PUT /v1/parking/sessions
 ```
 
 ### Detailed Request/Response Examples
-
 #### 1. SP sends Session Query to Platform
+```
+GET /v1/parking/sessions?credential_id=BD18SMR&place=220001&start_before=now&end_after=now
+```
+_*** (SP is now waiting for platform response...) ***_
 
 #### 2. Platform sends Session Query to Operator
+```
+GET /v1/parking/sessions?credential_id=BD18SMR&place=220001&start_before=now&end_after=now
+``` 
+Response (from Operator): `HTTP/1.1 200 OK`
+
+Response Payload:
+```json
+{
+  "meta": {
+    "referenceInstant": 1635776100,
+    "offset": 0,
+    "pageSize": 100,
+    "total": 1
+  },
+  "data": [
+            {
+                "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
+                "version": 1,
+                "actualStart": "2021-11-01 13:05:00",
+                "credentials": [
+                    {
+                        "identifier":
+                        {
+                            "id":"BD18SMR", 
+                            "className":"UKNumberPlate"
+                        },
+                        "type":"licensePlate"}
+                ],
+                "segments": [
+                    {
+                        "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
+                        "version": 1,
+                        "actualStart": "2020-11-01 13:05:00",
+                        "validationType": ["licensePlate"],
+                        "financialTransactions": [
+                            {
+                                "segmentValue": 10.80,
+                                "taxIncluded": true
+                            }
+                        ]
+                    }
+                ],
+                "hierarchyElement": {
+                    "id": "220001",
+                    "version": 1
+                }
+            }
+  ]
+}
+```
+_*** (platform can now respond to SP) ***_
+
+Response (from Platform to SP): `HTTP/1.1 200 OK`
+
+Response Payload:
+```json
+{
+  "meta": {
+    "referenceInstant": 1635776100,
+    "offset": 0,
+    "pageSize": 100,
+    "total": 1
+  },
+  "data": [
+            {
+                "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
+                "version": 1,
+                "actualStart": "2021-11-01 13:05:00",
+                "credentials": [
+                    {
+                        "identifier":
+                        {
+                            "id":"BD18SMR", 
+                            "className":"UKNumberPlate"
+                        },
+                        "type":"licensePlate"}
+                ],
+                "segments": [
+                    {
+                        "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
+                        "version": 1,
+                        "actualStart": "2020-11-01 13:05:00",
+                        "validationType": ["licensePlate"],
+                        "financialTransactions": [
+                            {
+                                "segmentValue": 10.80,
+                                "taxIncluded": true
+                            }
+                        ]
+                    }
+                ],
+                "hierarchyElement": {
+                    "id": "220001",
+                    "version": 1
+                }
+            }
+  ]
+}
+```
 
 #### 3. SP sends Payment Confirmation to Platform
+_*** (SP collects Payment) ***_
+
+Request: `PUT /v1/parking/sessions/fe5eea6a-4be3-46fa-b037-20f04334ccdd`
+
+Payload:
+```json
+  {
+      "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
+      "version": 1,
+      "actualStart": "2021-11-01 13:05:00",
+      "credentials": [
+          {
+              "identifier":
+              {
+                  "id":"BD18SMR", 
+                  "className":"UKNumberPlate"
+              },
+              "type":"licensePlate"}
+      ],
+      "segments": [
+          {
+              "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
+              "version": 1,
+              "actualStart": "2020-11-01 13:05:00",
+              "validationType": ["licensePlate"],
+              "financialTransactions": [
+                    {
+                        "dateCollected": "2021-11-01 17:23:01",
+                        "segmentValue": 10.80,
+                        "serviceProvider": { "en": "SP0001"},
+                        "taxIncluded": true,
+                        "transactionId": "d9d237be-0432-44eb-9807-91fd01aae835"
+                    }
+              ]
+          }
+      ],
+      "hierarchyElement": {
+          "id": "220001",
+          "version": 1
+      }
+  }
+```
+Platformn Response : `HTTP/1.1 200 OK`
 
 #### 4. Platform sends Payment Confirmation to Operator
+Request: `PUT /v1/parking/sessions/fe5eea6a-4be3-46fa-b037-20f04334ccdd`
+
+Payload:
+```json
+  {
+      "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
+      "version": 1,
+      "actualStart": "2021-11-01 13:05:00",
+      "credentials": [
+          {
+              "identifier":
+              {
+                  "id":"BD18SMR", 
+                  "className":"UKNumberPlate"
+              },
+              "type":"licensePlate"}
+      ],
+      "segments": [
+          {
+              "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
+              "version": 1,
+              "actualStart": "2020-11-01 13:05:00",
+              "validationType": ["licensePlate"],
+              "financialTransactions": [
+                    {
+                        "dateCollected": "2021-11-01 17:23:01",
+                        "segmentValue": 10.80,
+                        "serviceProvider": { "en": "SP0001"},
+                        "taxIncluded": true,
+                        "transactionId": "d9d237be-0432-44eb-9807-91fd01aae835"
+                    }
+              ]
+          }
+      ],
+      "hierarchyElement": {
+          "id": "220001",
+          "version": 1
+      }
+  }
+```
+Operator Response : `HTTP/1.1 200 OK`
+
+_*** (Operator sets Status to "paid") ***_
