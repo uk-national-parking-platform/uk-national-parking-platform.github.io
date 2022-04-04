@@ -410,34 +410,28 @@ POST /v1/parking/sessions
 PUT {SP-provided Notification Endpoint for new Sessions}
 ```
 
-#### 5. Is Session on Platform?
-<span style="color: green; font-size: 22px">&#x278E;</span> **`Operator` &rarr; `Platform`**
-```
-GET /v1/parking/sessions/place={locationId}&identifier_id={VRM}
-```
-
-#### 6. Completed Session sent to Platform
+#### 5. Completed Session sent to Platform
 <span style="color: green; font-size: 22px">&#x278F;</span> **`Operator` &rarr; `Platform`**
 ```
 PUT /v1/parking/sessions/{session id from 3. }
 ```
 
-#### 7. Platform sends Session Details to SP
+#### 6. Platform sends Session Details to SP
 <span style="color: red; font-size: 22px">&#x2790;</span> **`Platform` &rarr; `SP`**
 ```
 PUT /{SP-provided Notification Endpoint for Session Data Updates}
 ```
 
-#### 8. SP sends Payment Confirmation
+#### 7. SP sends Payment Confirmation
 <span style="color: red; font-size: 22px">&#x2791;</span> **`SP` &rarr; `Platform`**
 ```
 PUT /v1/parking/sessions/{session id from 3.}
 ```
 
-#### 9. Platform sends Payment Details to Operator
+#### 8. Platform sends Payment Details to Operator
 <span style="color: green; font-size: 22px">&#x2792;</span> **`Platform` &rarr; `Operator`**
 
-_MISSING_
+_MISSING\_TBD_
 
 ### Detailed Request/Response Examples
 #### 1. SP uploads Assigned Rights to Platform
@@ -586,44 +580,8 @@ Payload:
 
 Response: `HTTP/1.1 200 OK`
 
-#### 5. Is Session on Platform?
-Request: `GET /v1/parking/sessions?identifier_id=BD18SMR&place=220001&start_after=1635724800`
 
-Response: `HTTP/1.1 200 OK` 
-
-Payload: 
-``` json
-
-{
-    "id": "fe5eea6a-4be3-46fa-b037-20f04334ccdd",
-    "version": 1,
-    "actualStart": "2021-11-01 13:05:00",
-    "credentials": [
-        {
-            "identifier":
-            {
-                "id":"BD18SMR", 
-                "className":"UKNumberPlate"
-            },
-            "type":"licensePlate"}
-    ],
-    "segments": [
-        {
-            "id": "9323f1a7-ac48-4ab1-a141-7381373583ca",
-            "version": 1,
-            "actualStart": "2020-11-01 13:05:00",
-            "validationType": ["licensePlate"],
-        }
-    ],
-    "hierarchyElement": {
-        "id": "220001",
-        "version": 1
-    }
-}
-
-```
-
-#### 6. Completed Session sent to Platform
+#### 5. Completed Session sent to Platform
 Request: `PUT /v1/parking/sessions/fe5eea6a-4be3-46fa-b037-20f04334ccdd`
 
 Payload:
@@ -662,7 +620,7 @@ Payload:
 
 Response: `HTTP/1.1 200 OK`
 
-#### 7. Platform sends Session Details to SP
+#### 6. Platform sends Session Details to SP
 Request: `PUT /callbacks.service-provider-001.com/sessions/updated`
 
 Payload:
@@ -701,7 +659,7 @@ Payload:
 
 Response: `HTTP/1.1 200 OK` 
 
-#### 8. SP sends Payment Confirmation
+#### 7. SP sends Payment Confirmation
 Request: `PUT /v1/parking/sessions/fe5eea6a-4be3-46fa-b037-20f04334ccdd`
 
 Payload:
@@ -749,9 +707,9 @@ Payload:
 
 Response: `HTTP/1.1 200 OK` 
 
-#### 9. Platform sends Payment Details to Operator
+#### 8. Platform sends Payment Details to Operator
 
-_MISSING_
+_MISSING\_TBD_
 
 ## Use Case 3: Pay on Departure Ticket Payment
 ### Overall Flow
