@@ -4,7 +4,7 @@ title: NPP Project Phases
 layout: default
 ---
 # NPP Project Phases 
-The NPP project started in 2019 and has extended over a total of 3 phases.
+The NPP project started in 2019 and has extended over a total of 4 phases.
 
 <br/>
 ## Phase 1: Offstreet Car Park and Kerbside Availability
