@@ -21,4 +21,4 @@ The Session Viewer shows all results from the search (max 300 records):
 ## Individual Session Record
 A single result can be downloaded as a pdf (e.g. to be attached to a PCN record):
 
-![Record](assets/images/SessionViewer/Sessionviewer_c.png)
+![Record](assets/images/SessionViewer/Sessionviewer_c.png) 
