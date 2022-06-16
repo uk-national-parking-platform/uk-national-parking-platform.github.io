@@ -1,7 +1,7 @@
 ---
 title: NPP Reporting
 layout: default
-sort: 6
+sort: 7
 ---
 # NPP Reporting
 As explained earlier, the current NPP pilot system is mostly "headless", i.e. the NPP services running in the backend communicate with the partners' backend systems to facilitate the implemented use cases. While it might be desirable to have some basic interactive reporting capability be part of the NPP, this has not been part of the original project scope.
