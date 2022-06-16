@@ -1,7 +1,7 @@
 ---
 title: NPP Session Viewer 
 layout: default
-sort: 7
+sort: 8
 ---
 # NPP Session Viewer 
 The Session Viewer is a web based tool that a parking operator can use to view any of their own parking sessions on the NPP.  The tool allows sessions from all Service Providers to be viewed together, removing the need to log into each Service Provider's system.
