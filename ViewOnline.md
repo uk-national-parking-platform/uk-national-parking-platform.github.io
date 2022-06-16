@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Information Park Presentation
+title: Information Pack Presentation
 sort: 12
 ---
 
