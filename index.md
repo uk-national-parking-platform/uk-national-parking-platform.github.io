@@ -80,13 +80,13 @@ The Platform is open to all Operators and Service Providers, enabling them to ex
 
 ![Concept](assets/images/intro/concept.png)
 
-Operators will be able to:
+Operators are able to:
 * Describe the parking they offer (including rates, times, restrictions etc) 
 * Publicise occupancy in real time
 * Accept payments and reservations from Service Providers without the need for a contract with each one
 * Digitise compliance monitoring without the need for local digital infrastructure
 
-Service Providers will be able to:
+Service Providers are able to:
 * Offer their customers the ability to park in any participating Operator’s facility
 * Pay Operators for parking used by their Customers without the need for a contract with each one
 * Negotiate rates and access with Operators for their Customers
