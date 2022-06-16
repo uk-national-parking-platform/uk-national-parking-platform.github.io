@@ -7,7 +7,9 @@ sort: 0
     <img src="https://npp-uk.org/assets/images/intro/NPP_logo.png" width="150px" height="120px">
 </p>
 # National Parking Platform
+
 ## NPP – A Brief Introduction
+
 Payment for parking is lagging behind developments in other markets and industries. Parking customers, both on-street and in car parks,  face a fragmented market offering a wide variety of payment options making the simple act of parking and paying complex and confusing as options are dependent on where they want to park and which payment app they have (or don’t have). 
 The National Parking Platform (NPP) is a local authority owned and DfT funded pilot project that brings customer experience into the 21st century by facilitating data exchange, digital payments, and a new way of delivering better parking and mobility services.  
 In essence, the NPP:
