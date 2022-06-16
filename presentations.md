@@ -14,9 +14,8 @@ The Information pack is updated periodically.  Download the latest pack here:
 <br/>
 
 ### View Online
-View the Information Pack online by clicking  [here](https://npp-uk.org/ViewOnline.html)
-<iframe src="https://npp-uk.org/assets/pdf/information-pack-phase-3.pdf" width='100%' height='515px' frameborder='0'>
 
+View the Information Pack online by clicking  [here](https://npp-uk.org/ViewOnline.html)
 
 ## Event Presentations
 Presentations used at specific events are available here:
