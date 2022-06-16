@@ -17,7 +17,7 @@ In essence, the NPP:
 1.	Provides a simplified and improved customer journey from start to finish for the end-customer
 2.	Creates a centralised and cost-efficient system supplying data to councils that can inform present and future strategic decisions
 3.	Enables a competitive, innovative market by allowing systems to communicate with each other via open data standards and interfaces (APDS/ISO TS 5206-1)
-4.	Is a publicly owned, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
+4.	Is a publicly owned, not for profit, national facility that enables Parking Operators (public and private) to communicate digitally with Service Providers.
 
 ### The NPP has benefits for everyone
 
@@ -28,25 +28,26 @@ The NPP allows the customer to use their preferred service provider app (or inte
 #### For local authorities 
 
 The NPP can form a central and cost-efficient component of a local authority’s parking technology infrastructure, enabling the supply of open data to app providers and enhancing the Council’s customer service with the involvement of the Council’s existing suppliers. It offers:
-•	Reduced requirement for payment equipment - improved customer experience and more choice encourage greater use of cashless payment
-•	Simplified procurement as the requirement for, and cost of, public procurement of payment providers is removed, and supplier lock-in avoided 
-•	Inexpensive set up and operation (for all sizes of Council) and a reduced cost of collecting parking revenues
-•	Single, auditable session payment schedule from all payment providers 
-•	Secure environment where Councils own and control the data
+* Reduced requirement for payment equipment - improved customer experience and more choice encourage greater use of cashless payment
+* Simplified procurement as the requirement for, and cost of, public procurement of payment providers is removed, and supplier lock-in avoided 
+* Inexpensive set up and operation (for all sizes of Council) and a reduced cost of collecting parking revenues
+* Single, auditable session payment schedule from all payment providers 
+* Secure environment where Councils own and control the data
+
 It enables Councils to make informed strategic decisions on the implementation of policies to: 
-•	Achieve sustainability goals (e.g. differential tariffs)
-•	Provide evidence to support tariff policies
-•	Encourage more sustainable journeys (providing information to support multi modal journeys)
-•	Support local businesses (through validation schemes etc.)
-•	Improve traffic management (through better information on parking availability)
-•	Monitor and optimise service performance and reduce costs e.g. intelligent enforcement
+* Achieve sustainability goals (e.g. differential tariffs)
+* Provide evidence to support tariff policies
+* Encourage more sustainable journeys (providing information to support multi modal journeys)
+* Support local businesses (through validation schemes etc.)
+* Improve traffic management (through better information on parking availability)
+* Monitor and optimise service performance and reduce costs e.g. intelligent enforcement
 
 #### For Private Operators
 
 The NPP has similar benefits for Private Operators, ensuring that: 
-•	Car parks are 'digitally visible' 
-•	Customers can pay using their in-vehicle or favourite phone app
-•	Features such as 'frictionless' parking and pay by app are simple to provide
+* Car parks are 'digitally visible' 
+* Customers can pay using their in-vehicle or favourite phone app
+* Features such as 'frictionless' parking and pay by app are simple to provide
 
 #### For the market
 
@@ -61,12 +62,12 @@ A working group of 19 local authorities all over the country is contributing to 
 
 ### The NPP tomorrow- its potential:
 
-•	To offer dynamic charging for parking e.g. emissions-based tariffs
-•	To offer payments for other purposes e.g. EV charging and emissions zones 
-•	To offer convenient, single payments for multi-modal journeys by integrating with MaaS platforms
-•	As part of a wider kerbside management and monetisation strategy 
-•	To facilitate digitised methods of operation including intelligent deployment, ANPR vehicles etc. 
-•	To provide a fuller picture of the parking market by interrogating data efficiently and effectively
+* To offer dynamic charging for parking e.g. emissions-based tariffs
+* To offer payments for other purposes e.g. EV charging and emissions zones 
+* To offer convenient, single payments for multi-modal journeys by integrating with MaaS platforms
+* As part of a wider kerbside management and monetisation strategy 
+* To facilitate digitised methods of operation including intelligent deployment, ANPR vehicles etc. 
+* To provide a fuller picture of the parking market by interrogating data efficiently and effectively
 
 
 
