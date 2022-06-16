@@ -1,9 +1,9 @@
 ---
 sort: 1
-title: NPP Project Phases 
+title: NPP Pilot Phases 
 layout: default
 ---
-# NPP Project Phases 
+# NPP Pilot Phases 
 The NPP project started in 2019 and has extended over a total of 4 phases.
 
 <br/>
