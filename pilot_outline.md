@@ -1,3 +1,8 @@
+---
+title: NPP Pilot Outline
+layout: default
+sort: 1
+---
 # NPP Pilot Outline
 
 ## Concept
