@@ -43,7 +43,7 @@ Three use cases were identified, in addition to the original availability use ca
 The first two phases of the NPP pilot project have been a success. They proved the feasibility of the general NPP concept as well as the applicability of the APDS standard for this purpose. In order to not stop there, it was agreed to extend the pilot phase and bring additional operators and service providers on board. This extended pilot will provide mid-term empirical data and also keep the system running until a potential beta/production-grade system will take over.
 <br/>
 <br/>
-## Pilot Partners (Current Status)
+## Pilot Partners (Current Status)<a name="current-status"></a>
 ![Operators and Partners](assets/images/phases/snapshot.png)
 
 <br/>
