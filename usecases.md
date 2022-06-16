@@ -1,7 +1,7 @@
 ---
 title: Pilot Use Cases 
 layout: default
-sort: 2
+sort: 3
 ---
 # Pilot Use Cases Overview
 This document provides an overview of the use cases implemented during the various phases of the _National Parking Platform_ pilot project. Software developers implementing such flows, detailed examples can be found [here](flows.md).
