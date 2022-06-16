@@ -29,5 +29,5 @@ This is the presentation used at the TTF Smart Parking Group Working Group Meeti
 ### Parkex June 2022
 This is the presentation used at the Parkex Hub session 'Linking it together: How data can be used to improve customer experience' on 15th June 2022. Download the pack here:
 
-### Download <a download href="https://npp-uk.org/assets/pdf/Parkex-June-2022.pdf"><code class="language-plaintext highlighter-rouge notranslate">MP4</code></a>
+### Download <a download href="https://npp-uk.org/assets/MP4/Parkex-June-2022.mp4"><code class="language-plaintext highlighter-rouge notranslate">MP4</code></a>
 <br/>
