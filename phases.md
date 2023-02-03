@@ -48,6 +48,12 @@ The first two phases of the NPP pilot project have been a success. They proved t
 
 <br/>
 <br/>
-## New! Phase 4:
-DfT has agreed to fund a further expansion of the Pilot in 2022.  Up to 8 Local authorities will join the pay on arrival pilot.
+## Phase 4:
+Continuation and expansion of the Pilot in 2022.  Further on-boarding of operators and service providers plus contract standardisation to simplify the on-boarding process.
+
+<br/>
+<br/>
+## Phase 5:
+Discussions are currently underway to maintain the pilot for a further period, whilst creating the full platform and governance.
+
  
