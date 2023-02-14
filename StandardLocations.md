@@ -25,6 +25,9 @@ Reserved ranges will also allow flexibility if scheme allocations fill and requi
 ## Send us your Location Codes!
 We will add any location codes to our list and allocate a 6 digit equivalent when requested by any Operator or Service Provider.  Where possible we will use the same or similar code by adding a prefix (e.g. where a current code is 54321 we may allocate 854321).  Where a conflict exists with an existing 6 digit number we will notify the Operator or Service Provider concerned and issue a new number.
 
+## Request new Location Codes
+Email us at npp@parkingmatters.com if you would like to create new Standard Location Codes. Please provide us with the number of codes you need, the names of the parking areas and whether they are on or off street.
+
 ## Download the latest Location Code List
 This lists all 6 digit location codes notified to the NPP Pilot. It also lists locations that are currently 4 or 5 digit locations where the Operator or Service Provider has requested that we reserve a 6 digit number.  
 
