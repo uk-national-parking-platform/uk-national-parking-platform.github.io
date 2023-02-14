@@ -1,7 +1,7 @@
 ---
 title: NPP Session Viewer 
 layout: default
-sort: 8
+sort: 9
 ---
 # Standard Location Codes
 To date in the UK, cashless parking zone numbers have been allocated by providers when setting up contracts with operators.  This has created the potential for duplicate numbers across zones in different parts of the UK. 
