@@ -22,7 +22,7 @@ Figure 1 shows the proposed area allocations:
 The reserved ranges are designed to act as buffers and to accommodate existing 6 digit zone codes.  These reservations may need to be adjusted prior to publishing the final scheme. 
 Reserved ranges will also allow flexibility if scheme allocations fill and require extension.
 
-## Send us your Location Codes
+## Send us your Location Codes!
 We will add any location codes to our list and allocate a 6 digit equivalent when requested by any Operator or Service Provider.  Where possible we will use the same or similar code by adding a prefix (e.g. where a current code is 54321 we may allocate 854321).  Where a conflict exists with an existing 6 digit number we will notify the Operator or Service Provider concerned and issue a new number.
 
 ## Download the latest Location Code List
