@@ -16,7 +16,7 @@ A six digit range from 100000 to 999999 would effectively provide a million numb
 Whilst the allocation of numbers need not be systematic, dividing ranges geographically will enable the leading digit in each range to provide a broad area identifier where possible. However, an 'out of area' leading digit will be used where a 6 digit range has already been used or where other factors require a specific leading digit 
 
 Figure 1 shows the proposed area allocations:
-![Code Block Table](assets/images/locations/UK Code Blocks.png)
+![CodeBlockTable](assets/images/locations/UKCodeBlocks.png)
 
 ## Reserved Ranges
 The reserved ranges are designed to act as buffers and to accommodate existing 6 digit zone codes.  These reservations may need to be adjusted prior to publishing the final scheme. 
@@ -28,4 +28,4 @@ We will add any location codes to our list and allocate a 6 digit equivalent whe
 ## Download the latest Location Code List
 This lists all 6 digit location codes notified to the NPP Pilot. It also lists locations that are currently 4 or 5 digit locations where the Operator or Service Provider has requested that we reserve a 6 digit number.  
 
-The latest code list is available [here] (assets/Locations/20230214NatLocCodes.xlsx) as an Excel file (note that this is a large file!)
+The latest code list is available <a download href="https://npp-uk.org/assets/Locations/20230214NatLocCodes.xlsx">here</a> as an Excel file (note that this is a large file!)
