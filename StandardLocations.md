@@ -16,7 +16,7 @@ A six digit range from 100000 to 999999 would effectively provide a million numb
 Whilst the allocation of numbers need not be systematic, dividing ranges geographically will enable the leading digit in each range to provide a broad area identifier where possible. However, an 'out of area' leading digit will be used where a 6 digit range has already been used or where other factors require a specific leading digit 
 
 Figure 1 shows the proposed area allocations:
-![CodeBlockTable](assets/images/locations/UKCodeBlocks.png)
+![CodeBlockTable](https://npp-uk.org/assets/images/locations/UKCodeBlocks.png)
 
 ## Reserved Ranges
 The reserved ranges are designed to act as buffers and to accommodate existing 6 digit zone codes.  These reservations may need to be adjusted prior to publishing the final scheme. 
