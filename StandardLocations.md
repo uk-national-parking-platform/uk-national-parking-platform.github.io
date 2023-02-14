@@ -1,5 +1,5 @@
 ---
-title: NPP Session Viewer 
+title: Standard Location Codes 
 layout: default
 sort: 9
 ---
