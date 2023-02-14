@@ -19,7 +19,7 @@ Figure 1 shows the proposed area allocations:
 <img src="https://npp-uk.org/assets/images//locations/UK Code Blocks.png">
 
 ## Reserved Ranges
-The reserved ranges are designed to act as buffers and to accommodate existing 6 digit zone codes.  These reservations may need to be adjusted prior to publishing the final scheme. 
+The reserved ranges are designed to act as buffers and to accommodate existing 6 digit zone codes and may need to be adjusted as more codes are allocated. 
 Reserved ranges will also allow flexibility if scheme allocations fill and require extension.
 
 ## Send us your Location Codes!
