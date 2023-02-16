@@ -30,6 +30,7 @@ The NPP allows the customer to use their preferred service provider app (or inte
 The NPP can form a central and cost-efficient component of a local authority’s parking technology infrastructure, enabling the supply of open data to app providers and enhancing the Council’s customer service with the involvement of the Council’s existing suppliers. It offers:
 * Reduced requirement for payment equipment - improved customer experience and more choice encourage greater use of cashless payment
 * Simplified procurement as the requirement for, and cost of, public procurement of payment providers is removed, and supplier lock-in avoided 
+* A simple way of publishing details of parking locations in an open data platform
 * Inexpensive set up and operation (for all sizes of Council) and a reduced cost of collecting parking revenues
 * Single, auditable session payment schedule from all payment providers 
 * Secure environment where Councils own and control the data
