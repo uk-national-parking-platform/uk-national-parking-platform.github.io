@@ -23,7 +23,7 @@ In essence, the NPP:
 
 #### For the end-customer
 
-The NPP allows the customer to use their preferred service provider app (or integrated in-vehicle system) to pay for their parking at any participating location. The different service providers will compete for business by offering the best customer experience.  The NPP also offers wider access to parking availability data leading to better journey planning, reducing circulating traffic searching for a place to park and the associated congestion and emissions. 
+The NPP allows the customer to use their preferred service provider app (or integrated in-vehicle system) to find and pay for their parking at any participating location. The different service providers will compete for business by offering the best customer experience.  The NPP also offers wider access to parking availability data leading to better journey planning, reducing circulating traffic searching for a place to park and the associated congestion and emissions. 
 
 #### For local authorities 
 
@@ -52,6 +52,7 @@ The NPP has similar benefits for Private Operators, ensuring that:
 #### For the market
 
 NPP  encourages competition and innovation in the market by managing data on payments and vehicles using open data standards and interfaces (APDS/ISO TS- TS 5206-1), making it easier for systems to communicate with each other. Barriers to entry for new players are removed, new services can gain access to the market, and a stable base for investors is created. 
+As a data source for parking place information, the NPP will also promote high quality data as the data will become the primary source for information supporting parking payments.
 Innovators can use the data to introduce new ways to pay for parking services, enhance  these services,  integrate additional services, and reduce the cost of living for motorists. This aligns the parking industry to today’s expectations of an integrated system for the range of different motorist charges.
 
 ### The NPP today:
