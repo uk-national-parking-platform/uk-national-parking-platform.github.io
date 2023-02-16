@@ -63,6 +63,7 @@ A working group of 19 local authorities all over the country is contributing to 
 
 ### The NPP tomorrow- its potential:
 
+* To be a key source of information on places to park
 * To offer dynamic charging for parking e.g. emissions-based tariffs
 * To offer payments for other purposes e.g. EV charging and emissions zones 
 * To offer convenient, single payments for multi-modal journeys by integrating with MaaS platforms
