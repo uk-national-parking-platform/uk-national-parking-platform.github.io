@@ -31,4 +31,4 @@ Email us at npp@parkingmatters.com if you would like to create new Standard Loca
 ## Download the latest Location Code List
 This lists all 6 digit location codes notified to the NPP Pilot. It also lists locations that are currently 4 or 5 digit locations where the Operator or Service Provider has requested that we reserve a 6 digit number.  
 
-The latest code list is available <a download href="https://npp-uk.org/assets/Locations/20230214NatLocCodes.xlsx">here</a> as an Excel file (note that this is a large file!)
+The latest code list is available <a download href="https://npp-uk.org/assets/Locations/NatLocCodes.xlsx">here</a> as an Excel file (note that this is a large file!)
