@@ -41,13 +41,21 @@ Three use cases were identified, in addition to the original availability use ca
 <br/>
 ## Phase 3: Go National
 The first two phases of the NPP pilot project have been a success. They proved the feasibility of the general NPP concept as well as the applicability of the APDS standard for this purpose. In order to not stop there, it was agreed to extend the pilot phase and bring additional operators and service providers on board. This extended pilot will provide mid-term empirical data and also keep the system running until a potential beta/production-grade system will take over.
+
+
+<br/>
+<br/>
+## Phase 4:
+Continuation and expansion of the Pilot in 2022.  Further on-boarding of operators and service providers plus contract standardisation to simplify the on-boarding process.
+
+<br/>
+<br/>
+## Phase 5:
+Discussions are currently underway to maintain the pilot for a further period, whilst creating the full platform and governance.
+
 <br/>
 <br/>
 ## Pilot Partners (Current Status)<a name="current-status"></a>
 ![Operators and Partners](assets/images/phases/snapshot.png)
 
-<br/>
-<br/>
-## New! Phase 4:
-DfT has agreed to fund a further expansion of the Pilot in 2022.  Up to 8 Local authorities will join the pay on arrival pilot.
  
