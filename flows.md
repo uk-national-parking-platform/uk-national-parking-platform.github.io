@@ -111,83 +111,76 @@ Payload (Step 2):
 ``` json
 {
   "id": "2a00f59e-50b0-4ac1-8733-1b3d23482403",
-  "version": 1,
-  "rateTableName": {
-    "en": "Arndale General Public Tariff"
-  },
-  "availability": "public",
-  "validation": false,
-  "rateResponsibleParty": "Manchester City Council",
-  "rateLineCollections": [
-    {
-      "collectionSequence": 1,
-      "taxIncluded": true,
-      "rateLines": [
+    "version": 1,
+    "rateTableName": {
+        "en": "rate table for Arndale Car Park in Manchester (general public parking)"
+    },
+    "rateLineCollections": [
         {
-          "sequence": 1,
-          "description": {
-            "en": "up to 1 hour"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 3.7,
-          "durationStart": "P0S",
-          "durationEnd": "P3599S"
-        },
-        {
-          "sequence": 2,
-          "description": {
-            "en": "up to 2 hours"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 6.7,
-          "durationStart": "P3600S",
-          "durationEnd": "P7199S"
-        },
-        {
-          "sequence": 3,
-          "description": {
-            "en": "up to 3 hours"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 9.2,
-          "durationStart": "P7200S",
-          "durationEnd": "P10799S"
-        },
-        {
-          "sequence": 4,
-          "description": {
-            "en": "up to 4 hours"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 12.2,
-          "durationStart": "P10800S",
-          "durationEnd": "P14399S"
-        },
-        {
-          "sequence": 5,
-          "description": {
-            "en": "up to 5 hours"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 15.2,
-          "durationStart": "P14400S",
-          "durationEnd": "P17999S"
-        },
-        {
-          "sequence": 6,
-          "description": {
-            "en": "up to 24 hours"
-          },
-          "rateLineType": "incrementingRate",
-          "value": 20.5,
-          "durationStart": "P18000S",
-          "durationEnd": "P86399S"
+            "applicableCurrency": "GBP",
+            "collectionSequence": 0,
+            "rateLines": [
+                {
+                    "sequence": 0,
+                    "description": {
+                        "en": "Up to 1 hour"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 3.7,
+                    "incrementPeriod": "PT1H"
+                },
+                {
+                    "sequence": 1,
+                    "description": {
+                        "en": "Up to 2 hours"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 3.0,
+                    "incrementPeriod": "PT1H"
+                },
+                {
+                    "sequence": 2,
+                    "description": {
+                        "en": "Up to 3 hours"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 2.5,
+                    "incrementPeriod": "PT1H"
+                },
+                {
+                    "sequence": 3,
+                    "description": {
+                        "en": "Up to 4 hours"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 3.0,
+                    "incrementPeriod": "PT1H"
+                },
+                {
+                    "sequence": 4,
+                    "description": {
+                        "en": "Up to 5 hours"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 3.0,
+                    "incrementPeriod": "PT1H"
+                },
+                {
+                    "sequence": 5,
+                    "description": {
+                        "en": "Up to 24 hours"
+                    },
+                    "rateLineType": "incrementingRate",
+                    "value": 5.3,
+                    "incrementPeriod": "PT19H"
+                }
+            ],
+            "relativeTimes": true
         }
-      ]
-    }
-  ]
+    ],
+    "availability": "public",
+    "rateResponsibleParty": "Manchester City Council"
 }
-
 ```
 
 #### 3. SP queries the Platform for current Space Availability
