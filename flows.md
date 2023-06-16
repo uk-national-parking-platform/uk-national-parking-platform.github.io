@@ -47,6 +47,126 @@ GET /v1/parking/places/{placeId}?expand=occupancy
 
 #### 1. SP queries the Platform for available Parking Locations
 
+Request: `GET /v1/parking/places?location_type=off_street`
+
+Response: `HTTP/1.1 200 OK`
+
+Payload: 
+
+```json
+{
+    "meta": {
+        "referenceInstant": 1686889399,
+        "offset": 0,
+        "pageSize": 200,
+        "total": 9
+    },
+    "data": [
+        {
+            "id": "QP_GB_G7HRF7Y",
+            "version": 1,
+            "type": "place",
+            "layer": 1,
+            "name": {
+                "en": "Piazza"
+            },
+            "indicativePointLocation": {
+                "type": "Point",
+                "coordinates": [
+                    -2.2412945,
+                    53.4776558
+                ]
+            },
+            "occupancy": {
+                "supply": {
+                    "supplyQuantity": 225,
+                    "supplyViewType": "vehicleView",
+                    "supplyValidityStart": "2019-01-01 00:00:00",
+                    "supplyValidityEnd": "2025-12-31 23:59:59"
+                },
+                "demand": {
+                    "frequency": "PT3M",
+                    "timestamp": "2023-06-16 04:21:04",
+                    "demandType": [
+                        {
+                            "count": 116,
+                            "recordDateTime": "2023-06-16 04:21:03",
+                            "occupancyCalculation": "counted"
+                        }
+                    ]
+                }
+            },
+            "description": {
+                "en": "Manchester City Council - Chinatown"
+            },
+            "parent": {
+                "id": "bc2b7fdd-b83b-4fcc-a05e-4e42f123c041",
+                "version": 1
+            },
+            "characteristics": {
+                "accessControlled": true,
+                "evChargingPoints": 0,
+                "openToPublic": true,
+                "spacesTotal": 225,
+                "structureGrade": "underground",
+                "structureType": "offStreetStructure"
+            },
+            "contacts": [
+                {
+                    "organisationName": {
+                        "en": "Q-Park"
+                    },
+                    "type": "operator"
+                }
+            ],
+            "rightSpecifications": [
+                {
+                    "id": "53facf38-9b8e-484f-b381-c725c446a26d",
+                    "version": 1
+                },
+                {
+                    "id": "4a4bcba3-2f45-4b39-b038-d1489493b405",
+                    "version": 1
+                },
+                {
+                    "id": "4942671f-56c8-40bd-80ed-804dca62591f",
+                    "version": 1
+                },
+                {
+                    "id": "96bb1226-a734-4489-be72-8c7d8bfe1e1f",
+                    "version": 1
+                }
+            ],
+            "paymentMethods": [
+                {
+                    "paymentMode": [
+                        "payAndExit"
+                    ]
+                }
+            ],
+            "placeStreetAddress": {
+                "postCode": "M1 4BP",
+                "city": {
+                    "en": "Manchester"
+                },
+                "countryCode": "GB",
+                "addressLines": [
+                    {
+                        "type": "street",
+                        "order": 0,
+                        "text": "St James Street"
+                    }
+                ]
+            }
+        },
+        {
+// details about next place
+// contents truncated
+        }
+    ]
+}
+```
+
 #### 2. SP queries the Platform for a Location's Tariffs/Rates
 
 Request (Step 1): `GET /v1/parking/rights/6091d5d0-5264-4d66-a31a-1a9e2c9eed89?expand=all`
