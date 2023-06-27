@@ -573,16 +573,19 @@ Payload:
 Response: `HTTP/1.1 200 OK`
 
 ## Use Case 3: Payment on Check-out
-
+### Overall Flow
+#### Overview
 ![Payment on Check-out](assets/images/usecases/usecase3checkoutnew.png)
 
-### Overall Flow
+#### Flow
+![Use Case 3 Flow](assets/images/usecases/usecase2flow.pngUsecase3newflow.png)
+### Overview of engaged Endpoints
 
 Details to follow
 
 ## Use Case 4: ANPR Frictionless Payment
 ### Overall Flow
-![Use Case 2 Flow](assets/images/usecases/usecase2flow.png)
+![Use Case 4 Flow](assets/images/usecases/usecase2flow.png)
 ### Overview of engaged Endpoints
 #### 1. SP uploads Assigned Rights to Platform
 <span style="color: red; font-size: 22px">&#x278A;</span> **`SP` &rarr; `Platform`**
@@ -926,7 +929,7 @@ _MISSING\_TBD_
 
 ## Use Case 5: Pay on Departure Ticket Payment
 ### Overall Flow
-![Use Case 3 Flow](assets/images/usecases/usecase3flow.png)
+![Use Case 5 Flow](assets/images/usecases/usecase3flow.png)
  
 ### Overview of engaged Endpoints
 
