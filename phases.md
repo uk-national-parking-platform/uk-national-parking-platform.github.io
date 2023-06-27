@@ -51,7 +51,8 @@ Continuation and expansion of the Pilot in 2022.  Further on-boarding of operato
 <br/>
 <br/>
 ## Phase 5:
-This pahse will see the Pilot on-board up to 10 new operators and a number of new service providers as a prelude to the full NPP.
+This phase will see the Pilot on-board up to 10 new operators and a number of new service providers as a prelude to the full NPP. A new use case has also been added:
+![Use Cases for phase 5](assets/images/intro/usecasesphase5.png)
 
 <br/>
 <br/>
