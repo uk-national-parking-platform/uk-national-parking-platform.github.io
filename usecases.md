@@ -38,7 +38,7 @@ The Pay on check out model enables a customer to log when they park and when the
 ![Payment on Check-out](assets/images/usecases/usecase3checkoutnew.png)
 
 
-## Use Case 4: ANPR Frictionless Payment
+## Use Case 4: Frictionless Payment
 
 ![ANPR Frictionless Payment](assets/images/usecases/usecase2overview.png)
 
