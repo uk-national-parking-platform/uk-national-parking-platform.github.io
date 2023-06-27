@@ -578,7 +578,7 @@ Response: `HTTP/1.1 200 OK`
 ![Payment on Check-out](assets/images/usecases/usecase3checkoutnew.png)
 
 #### Flow
-![Use Case 3 Flow](assets/images/usecases/usecase2flow.pngUsecase3newflow.png)
+![Use Case 3 Flow](assets/images/usecases/Usecase3newflow.png)
 ### Overview of engaged Endpoints
 
 Details to follow
