@@ -32,6 +32,11 @@ An enforcement service officer sees the customer’s parked car and wants to che
 
 Alternative process: if the enforcement service provider’s IT system has the capability to temporarily store parking session information, a corresponding subscription for parking session data can be registered. The platform will then pro-actively send all new session information for a particular car park / parking area to the enforcement system backend.
 
+## Use Case 3: Payment on Check-out
+The Pay on check out model enables a customer to log when they park and when they leave.  This can be used at the same locations as 'payment on arrival', the enforcement system will show that a parking session is in progress.
+
+![Payment on Check-out](assets/images/usecases/usecase3checkoutnew.png)
+
 ## Use Case 4: ANPR Frictionless Payment
 
 ![ANPR Frictionless Payment](assets/images/usecases/usecase2overview.png)
