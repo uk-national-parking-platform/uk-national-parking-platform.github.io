@@ -51,7 +51,7 @@ Continuation and expansion of the Pilot in 2022.  Further on-boarding of operato
 <br/>
 <br/>
 ## Phase 5:
-Discussions are currently underway to maintain the pilot for a further period, whilst creating the full platform and governance.
+This pahse will see the Pilot on-board up to 10 new operators and a number of new service providers as a prelude to the full NPP.
 
 <br/>
 <br/>
