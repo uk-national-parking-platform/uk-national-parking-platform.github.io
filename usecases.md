@@ -6,12 +6,12 @@ sort: 3
 # Pilot Use Cases Overview
 This document provides an overview of the use cases implemented during the various phases of the _National Parking Platform_ pilot project. Software developers implementing such flows, detailed examples can be found [here](flows.md).
 
-## Use Case 0: Parking Availability
+## Use Case 1: Availability
 This first use case was introduced in phase 1 of the product. It provided a central repository with both, (semi-)static and dynamic parking availability information. Data consumers can find available parking locations (on-street and off-street), check their details as well as current space availability.
 
 ![Static Information and Dynamic Occupancy](assets/images/usecases/usecase0overview.png)
 
-## Use Case 1: Payment on Arrival
+## Use Case 2: Payment on Arrival
 The first use case introduced in phase 2 of the project was _Payment on Arrival_. Besides the parking end customer, the use case involves two platform users: the pay-by-mobile service provider and the enforcement service provider contracted by the operator.
 
 ![Payment on Arrival](assets/images/usecases/usecase1overview.png)
@@ -32,10 +32,12 @@ An enforcement service officer sees the customer’s parked car and wants to che
 
 Alternative process: if the enforcement service provider’s IT system has the capability to temporarily store parking session information, a corresponding subscription for parking session data can be registered. The platform will then pro-actively send all new session information for a particular car park / parking area to the enforcement system backend.
 
-## Use Case 2: ANPR Frictionless Payment
+## Use Case 4: ANPR Frictionless Payment
 
 ![ANPR Frictionless Payment](assets/images/usecases/usecase2overview.png)
 
-## Use Case 3: Pay on Departure Ticket Payment
+## Use Case 5: Pay on Departure Ticket Payment
 
 ![Payment on Arrival](assets/images/usecases/usecase3overview.png)
+
+Note - use case numbers were changed on 27th June 2023
