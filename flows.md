@@ -6,7 +6,7 @@ sort: 4
 # Sample Flows/Dialogue Sequences
 This document provides a translation of typical use cases into concrete dialogue sequences. It is meant to provide guidance to APDS adopters on their way to become NPP users.
 
-## Use Case 0: Parking Availability
+## Use Case 1: Parking Availability
 
 ### Overview
 ![Static Information and Dynamic Occupancy](assets/images/usecases/usecase0overview.png)
@@ -384,7 +384,7 @@ Payload:
 }
 ```
 
-## Use Case 1: Payment on Arrival
+## Use Case 2: Payment on Arrival
 ### Overall Flow
 #### Overview
 ![Use Case 1 Overview](assets/images/usecases/usecase1overview.png)
@@ -572,8 +572,15 @@ Payload:
 
 Response: `HTTP/1.1 200 OK`
 
+## Use Case 3: Payment on Check-out
 
-## Use Case 2: ANPR Frictionless Payment
+![Payment on Check-out](assets/images/usecases/usecase3checkoutnew.png)
+
+### Overall Flow
+
+Details to follow
+
+## Use Case 4: ANPR Frictionless Payment
 ### Overall Flow
 ![Use Case 2 Flow](assets/images/usecases/usecase2flow.png)
 ### Overview of engaged Endpoints
@@ -917,7 +924,7 @@ Response: `HTTP/1.1 200 OK`
 
 _MISSING\_TBD_
 
-## Use Case 3: Pay on Departure Ticket Payment
+## Use Case 5: Pay on Departure Ticket Payment
 ### Overall Flow
 ![Use Case 3 Flow](assets/images/usecases/usecase3flow.png)
  
