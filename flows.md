@@ -43,6 +43,16 @@ GET /v1/parking/places/{placeId}?expand=occupancy
 
 ```
 
+#### 4. DATA PROVIDER sends Space Availability Update to the Platform
+<span style="color: red; font-size: 22px">&#x278C;</span> **`DP` &rarr; `Platform`**
+
+Current space availability information is sent to the _/places_ endpoint:
+```
+PATCH /v1/parking/places/{placeId}
+
+```
+_(the PATCH method only updates provided information and leaves everything else unchanged)_
+
 ### Detailed Request/Response Examples
 
 #### 1. SP queries the Platform for available Parking Locations
@@ -304,6 +314,75 @@ Payload (Step 2):
 ```
 
 #### 3. SP queries the Platform for current Space Availability
+
+Request: `GET /v1/parking/places/805428?expand=occupancy
+
+Response: `HTTP/1.1 200 OK`
+
+Payload:
+
+```json
+{
+    "id": "805428",
+    "version": 1,
+    "type": "place",
+    "layer": 1,
+    "name": {
+        "en": "Deansgate"
+    },
+    "occupancy": {
+        "supply": {
+            "supplyQuantity": 340,
+            "supplyViewType": "vehicleView",
+            "supplyValidityStart": "2019-01-01 00:00:00",
+            "supplyValidityEnd": "2025-12-31 23:59:59"
+        },
+        "demand": {
+            "frequency": "PTM3M",
+            "timestamp": "2023-06-25 10:30:00",
+            "demandType": [
+                {
+                    "count": 125,
+                    "recordDateTime": "2023-06-25 10:30:00",
+                    "occupancyCalculation": "counted"
+                }
+            ]
+        }
+    },
+    "description": {
+        "en": "Deansgate Car Park in Manchester City"
+    },
+    "areaType": "generalParking"
+}
+```
+
+#### 4. DATA PROVIDER submits Space Availability update to the Platform
+
+Request: `PATCH /v1/parking/places/805428`
+
+Response: `HTTP/1.1 200 OK`
+
+Payload:
+
+```json
+{
+    "id": "805428",
+    "version": 1,
+    "occupancy": {
+        "demand": {
+            "frequency": "PTM3M",
+            "timestamp": "2023-06-25 10:30:00",
+            "demandType": [
+                {
+                    "count": 125,
+                    "recordDateTime": "2023-06-25 10:30:00",
+                    "occupancyCalculation": "counted"
+                }
+            ]
+        }
+    }
+}
+```
 
 ## Use Case 1: Payment on Arrival
 ### Overall Flow
