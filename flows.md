@@ -44,7 +44,7 @@ GET /v1/parking/places/{placeId}?expand=occupancy
 ```
 
 #### 4. DATA PROVIDER sends Space Availability Update to the Platform
-<span style="color: red; font-size: 22px">&#x278C;</span> **`DP` &rarr; `Platform`**
+<span style="color: red; font-size: 22px">&#x278D;</span> **`DP` &rarr; `Platform`**
 
 Current space availability information is sent to the _/places_ endpoint:
 ```
