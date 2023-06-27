@@ -11,4 +11,4 @@ The NPP Pilot is owned by Manchester City Council and operated by [Parking Matte
 The NPP will operate as a Local Authority Trading Company (LATC), the details are currently being worked out by a steering group of local authorities.
 
 ## More details
-For more details on the commercial aspects of the NPP or the Pilot contact Emily at [Parking Matters](mailto:emily@parkingmatters.com)
+For more details on the commercial aspects of the NPP or the Pilot contact us at [Parking Matters](mailto:npp@parkingmatters.com)
