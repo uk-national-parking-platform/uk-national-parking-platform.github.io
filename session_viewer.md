@@ -14,7 +14,7 @@ The Session Viewer Search Tool enables the user to identify specific sessions ba
 ![Search](assets/images/SessionViewer/Sessionviewer_a.png)
 
 ## Search Results
-The Session Viewer shows all results from the search (max 300 records):
+The Session Viewer shows all results from the search (max 1000 records):
 
 ![Results](assets/images/SessionViewer/Sessionviewer_b.png)
 
