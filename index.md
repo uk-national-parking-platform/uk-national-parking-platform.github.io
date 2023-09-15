@@ -59,7 +59,7 @@ Innovators can use the data to introduce new ways to pay for parking services, e
 ### The NPP today:
 
 Since 2019, the NPP is a strategic initiative from the parking industry with strong support from a wide range of partners including equipment and technology suppliers, commercial operators, Councils, and payment service providers. 
-The pilot platform provides parking locations, tariffs and occupancy to service providers and hence to customers. Customers in Manchester and Oxford can now make payments through their service provider of choice at participating car parks and on-street locations. 
+The pilot platform provides parking locations, tariffs and occupancy data from 11 local authorities to service providers and hence to customers. In addition, customers in Manchester, Oxford, Cheshire West and Chester and Coventry can now make payments through their service provider of choice at participating car parks and on-street locations. 
 A working group of 19 local authorities all over the country is contributing to the NPP project, working with 28 private companies (equipment suppliers, service providers etc).
 
 ### The NPP tomorrow- its potential:
