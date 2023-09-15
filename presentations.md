@@ -16,6 +16,6 @@ The Information pack is updated periodically.  Download the latest pack here:
 <br/>
 ### View Online
 
-View the Information Pack online by clicking  [here](https://npp-uk.org/ViewOnline.html)
+View the Opertor's Information Pack online by clicking  [here](https://npp-uk.org/ViewOnline.html)
 
 
