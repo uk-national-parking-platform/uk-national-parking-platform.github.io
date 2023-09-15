@@ -4,7 +4,7 @@ title: NPP Pilot Phases
 layout: default
 ---
 # NPP Pilot Phases 
-The NPP project started in 2019 and has extended over a total of 4 phases.
+The NPP project started in 2019 and has extended over a total of 5 phases.
 
 <br/>
 ## Phase 1: Offstreet Car Park and Kerbside Availability
@@ -58,6 +58,6 @@ This phase will see the Pilot on-board up to 10 new operators and a number of ne
 <br/>
 <br/>
 ## Pilot Partners (Current Status)<a name="current-status"></a>
-![Operators and Partners](assets/images/phases/snapshot.png)
+![Operators and Partners](assets/images/phases/partnerssnapshot.png)
 
  
