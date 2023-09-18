@@ -1,7 +1,7 @@
 ---
 title: Join the NPP
 layout: default
-sort: 14
+sort: 12
 ---
 # Join us!
 Joining the NPP pilot is straighforward and free.  Whether you are an operator (local authority or private) or a service provider we would love to hear from you and explore how you can use the NPP.
