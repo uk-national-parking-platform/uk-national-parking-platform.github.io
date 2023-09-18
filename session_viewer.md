@@ -17,6 +17,7 @@ The Session Viewer Search Tool enables the user to identify specific sessions ba
 The Session Viewer shows all results from the search (max 1000 records):
 
 ![Results](assets/images/SessionViewer/Sessionviewer_b.png)
+Note: details are of a live test session.
 
 ## Individual Session Record
 A single result can be downloaded as a pdf (e.g. to be attached to a PCN record):
