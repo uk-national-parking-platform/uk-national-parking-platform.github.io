@@ -732,6 +732,7 @@ Payload:
             "version": 1,
             "actualStart": "2021-11-01T13:05:00Z",
             "validationType": ["licensePlate"],
+			"assignedRight": { "id": "20410eec-2352-4cc1-820c-21ea6cbce506", "version": 1}
         }
     ],
     "hierarchyElement": {
@@ -770,6 +771,7 @@ Payload:
             "version": 1,
             "actualStart": "2021-11-01T13:05:00Z",
             "validationType": ["licensePlate"],
+			"assignedRight": { "id": "20410eec-2352-4cc1-820c-21ea6cbce506", "version": 1}
         }
     ],
     "hierarchyElement": {
@@ -816,7 +818,8 @@ Payload:
                     "serviceProvider": { "en": "SP0001"},
                     "taxIncluded": true
                 }
-            ]
+            ],
+			"assignedRight": { "id": "20410eec-2352-4cc1-820c-21ea6cbce506", "version": 1}
         }
     ],
     "hierarchyElement": {
@@ -862,7 +865,8 @@ Payload:
                     "serviceProvider": { "en": "SP0001"},
                     "taxIncluded": true
                 }
-            ]
+            ],
+			"assignedRight": { "id": "20410eec-2352-4cc1-820c-21ea6cbce506", "version": 1}
         }
     ],
     "hierarchyElement": {
@@ -910,7 +914,8 @@ Payload:
                     "taxIncluded": true,
                     "transactionId": "d9d237be-0432-44eb-9807-91fd01aae835"
                 }
-            ]
+            ],
+			"assignedRight": { "id": "20410eec-2352-4cc1-820c-21ea6cbce506", "version": 1}
         }
     ],
     "hierarchyElement": {
@@ -923,9 +928,6 @@ Payload:
 
 Response: `HTTP/1.1 200 OK` 
 
-#### 8. Platform sends Payment Details to Operator
-
-_MISSING\_TBD_
 
 ## Use Case 5: Pay on Departure Ticket Payment
 ### Overall Flow
