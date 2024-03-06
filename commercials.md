@@ -11,4 +11,4 @@ The NPP Pilot is owned by Manchester City Council and operated by [Parking Matte
 The NPP will initially operate as an arms length company from DfT, the details are currently being worked out by a steering group.
 
 ## More details
-For more details on the commercial aspects of the NPP or the Pilot contact us at [Parking Matters](mailto:npp@parkingmatters.com)
+For more details on the commercial aspects of the NPP Pilot contact us at [Parking Matters](mailto:npp@parkingmatters.com)
