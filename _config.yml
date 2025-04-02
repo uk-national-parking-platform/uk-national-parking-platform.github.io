@@ -1,5 +1,5 @@
 remote_theme: pages-themes/architect@v0.2.0
-title: National Parking Platform
+title: UK National Parking Platform
 google-analytics-id: G-B44QGPWWHK
 plugins:
 - jekyll-remote-theme
