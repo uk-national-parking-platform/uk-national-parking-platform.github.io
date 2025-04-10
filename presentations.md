@@ -10,12 +10,12 @@ The information Pack provides an overview of the NPP Pilot, lists the Partners w
 
 The Information pack is updated periodically.  Download the latest pack here:
 
-### For Operators <a download href="https://npp-uk.org/assets/pdf/op-information-pack.pdf"><code class="language-plaintext highlighter-rouge notranslate">PDF</code></a>
+### For Operators <a download href="https://docs.npp.org.uk/assets/pdf/op-information-pack.pdf"><code class="language-plaintext highlighter-rouge notranslate">PDF</code></a>
 <br/>
-### For Service Providers <a download href="https://npp-uk.org/assets/pdf/sp-information-pack.pdf"><code class="language-plaintext highlighter-rouge notranslate">PDF</code></a>
+### For Service Providers <a download href="https://docs.npp.org.uk/assets/pdf/sp-information-pack.pdf"><code class="language-plaintext highlighter-rouge notranslate">PDF</code></a>
 <br/>
 ### View Online
 
-View the Operator's Information Pack online by clicking  [here](https://npp-uk.org/ViewOnline.html)
+View the Operator's Information Pack online by clicking  [here](https://docs.npp.org.uk/ViewOnline.html)
 
-View the Service Provider's Information Pack online by clicking  [here](https://npp-uk.org/SPViewOnline.html)
+View the Service Provider's Information Pack online by clicking  [here](https://docs.npp.org.uk/SPViewOnline.html)
