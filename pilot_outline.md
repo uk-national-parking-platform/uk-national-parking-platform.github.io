@@ -26,13 +26,13 @@ Service Providers are able to:
 ## Mission
 The Pilot's mission is to implement a working prototype system allowing to explore the above using real actors and their data. The solution is based on a standard specification issued by the **Alliance for Parking Data Standards (APDS)**. Details on the standard and the _Alliance_ can be found here: 
 
-[<img src="https://npp-uk.org/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
+[<img src="https://docs.npp.org.uk/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
 
 ## The Customer Journey
 ![Customer Journey](assets/images/intro/Customer_journey.png)
 
 ## Project Partners
-The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, numerous additional partners joined. You can find an overview [here](https://npp-uk.org/phases.html#current-status).
+The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, numerous additional partners joined. You can find an overview [here](https://docs.npp.org.uk/phases.html#current-status).
 
 ## Resources
 This site provides deeper insight into the details of the NPP pilot project.
