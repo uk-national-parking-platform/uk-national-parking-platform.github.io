@@ -1,6 +1,8 @@
 ---
 title: Presentations
-layout: default
+layout: home
+sidebar:
+  nav: sidemain
 sort: 11
 ---
 # Presentations

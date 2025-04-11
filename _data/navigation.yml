@@ -9,4 +9,21 @@ main:
     url: /session_viewer
   - title: "Presentations"
     url: /presentations
-  
+
+sidemain:
+  - title: "Pilot"
+    children:
+      - title: "Pilot Outline"
+        url: /pilot_outline
+      - title: "Pilot Phases"  
+        url: /phases
+  - title: "Pilot Use Cases"
+    children:
+      - title: "Use Cases"
+        url: /usecases
+      - title: "Sample Flows"
+        url: /flows
+  - title: "Information Packs"
+    children:
+      - title: "Presentations"
+        url: /presentations

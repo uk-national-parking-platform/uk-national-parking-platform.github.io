@@ -1,6 +1,8 @@
 ---
 title: NPP Pilot Outline
-layout: default
+layout: home
+sidebar:
+  nav: sidemain
 sort: 1
 ---
 # NPP Pilot Outline

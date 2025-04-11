@@ -1,7 +1,7 @@
 ---
 layout: home 
 sidebar:
-  nav: main
+  nav: sidemain
 title: NPP
 sort: 0
 ---
