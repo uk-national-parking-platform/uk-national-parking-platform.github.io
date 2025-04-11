@@ -1,6 +1,12 @@
 main:
-  - title: "ONE"
-    url: /evidence
-  - title: "TWO"
-    url: /flows.md
+  - title: "Pilot Outline"
+    url: /pilot_outline
+  - title: "Use Cases"
+    url: /usecases
+  - title: "Flows"
+    url: /flows
+  - title: "Session Viewer"
+    url: /session_viewer
+  - title: "Presentations"
+    url: /presentations
   
