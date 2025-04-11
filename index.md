@@ -1,5 +1,7 @@
 ---
 layout: home 
+sidebar:
+  nav: main
 title: NPP
 sort: 0
 ---
