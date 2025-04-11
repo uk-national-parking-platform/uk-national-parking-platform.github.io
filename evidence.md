@@ -1,6 +1,8 @@
 ---
 title: NPP Pilot Evidence
-layout: default
+layout: home 
+sidebar:
+  nav: sidemain
 sort: 5 
 ---
 # Pilot Evidence
