@@ -1,6 +1,7 @@
 ---
-title: Pilot Use Cases 
-layout: default
+layout: home 
+sidebar:
+  nav: sidemain
 sort: 3
 ---
 # Pilot Use Cases Overview

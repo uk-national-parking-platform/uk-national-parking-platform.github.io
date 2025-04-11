@@ -34,6 +34,7 @@ sidemain:
       - title: "Presentations"
         url: /presentations
       - title: "Operator Info Pack"
+        url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
         url: /assets/pdf/sp-information-pack.pdf
 
