@@ -1,6 +1,5 @@
 ---
 sort: 2
-title: NPP Pilot Phases 
 layout: home 
 sidebar:
   nav: sidemain

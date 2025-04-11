@@ -29,10 +29,13 @@ sidemain:
     url: /session_viewer
   - title: "Standard Location Codes"
     url: /StandardLocations
-  - title: "Information Packs"
+  - title: "Presentations"
     children:
       - title: "Presentations"
         url: /presentations
+      - title: "Operator Info Pack"
+      - title: "Service Provider Info Pack"
+        url: /assets/pdf/sp-information-pack.pdf
 
 
 # Reference Documents
