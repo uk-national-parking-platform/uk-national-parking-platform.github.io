@@ -1,6 +1,6 @@
 ---
 title: NPP Pilot Outline
-layout: single
+layout: home
 sidebar:
   nav: sidemain
 sort: 1
