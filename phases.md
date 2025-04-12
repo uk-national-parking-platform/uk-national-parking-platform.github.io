@@ -1,10 +1,10 @@
 ---
+title: NPP Pilot Phases
 sort: 2
 layout: home 
 sidebar:
   nav: sidemain
 ---
-# NPP Pilot Phases 
 The NPP project started in 2019 and has extended over a total of 5 phases.
 
 <br/>

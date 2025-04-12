@@ -1,10 +1,10 @@
 ---
+title: NPP Pilot Outline
 layout: home
 sidebar:
   nav: sidemain
 sort: 1
 ---
-# NPP Pilot Outline
 
 ## Concept
 The Platform is open to all Operators and Service Providers, enabling them to exchange the full range of parking information using APDS (ISO) standard interfaces. 
