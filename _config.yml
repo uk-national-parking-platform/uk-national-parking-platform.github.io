@@ -4,3 +4,10 @@ google-analytics-id: G-B44QGPWWHK
 plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
