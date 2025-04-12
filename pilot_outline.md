@@ -1,5 +1,4 @@
 ---
-title: NPP Pilot Outline
 layout: home
 sidebar:
   nav: sidemain
