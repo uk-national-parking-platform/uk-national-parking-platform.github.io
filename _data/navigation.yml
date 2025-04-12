@@ -1,14 +1,6 @@
 main:
-  - title: "Pilot Outline"
-    url: /pilot_outline
-  - title: "Use Cases"
-    url: /usecases
-  - title: "Flows"
-    url: /flows
-  - title: "Session Viewer"
-    url: /session_viewer
-  - title: "Presentations"
-    url: /presentations
+  - title: Home 
+    url: /index
 
 sidemain:
   - title: "Pilot"
