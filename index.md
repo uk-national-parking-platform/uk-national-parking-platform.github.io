@@ -11,9 +11,8 @@ sort: 0
 
 # National Parking Platform
 > **&#9432;**  
-> **This website has now been superseded.**
-
-This website is for information about the Pilot and Early Access only. For information about the full NPP please go to  [https://npp.org.uk](https://npp.org.uk)
+> **This website has now been superseded.**  
+> This website is for information about the Pilot and Early Access only. For information about the full NPP please go to  [https://npp.org.uk](https://npp.org.uk)
 
 ## NPP – A Brief Introduction
 
