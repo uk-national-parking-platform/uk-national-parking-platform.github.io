@@ -2,16 +2,16 @@
 layout: home 
 sidebar:
   nav: sidemain
-title: NPP
+title: NPP - National Parking Platform
 sort: 0
 ---
 <p align="center">
     <img src="https://uk-national-parking-platform.github.io/assets/images/intro/NPP_logo.png" width="150px" height="120px">
 </p>
 
-# National Parking Platform
-> *&#9432;*  
-> *This website has now been superseded.*  
+
+> **&#9432;**  
+> **This website has now been superseded.**  
 > This website is for information about the Pilot and Early Access only. For information about the full NPP please go to  [https://npp.org.uk](https://npp.org.uk)
 
 ## NPP – A Brief Introduction
