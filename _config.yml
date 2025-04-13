@@ -5,6 +5,7 @@ plugins:
 - jekyll-remote-theme
 - jekyll-include-cache
 - jekyll-titles-from-headings
+- jekyll-gfm-admonitions
 defaults:
   # _pages
   - scope:
