@@ -6,6 +6,7 @@ plugins:
 - jekyll-include-cache
 - jekyll-titles-from-headings
 - jekyll-gfm-admonitions
+markdown: GFM
 defaults:
   # _pages
   - scope:
