@@ -1,5 +1,5 @@
 ---
 title: NPP API Specification
-layout: home
+layout: default
 sort: 1
 ---
