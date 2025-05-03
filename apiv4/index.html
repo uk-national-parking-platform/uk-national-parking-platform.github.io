@@ -10,17 +10,10 @@
     <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
   </head>
 
-  <body onload="hideTopBar()">
+  <body>
     <div id="swagger-ui"></div>
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script src="./swagger-initializer.js" charset="UTF-8"> </script>
-	<script>
-		function hideTopBar() {
-			alert(collection.length);
-			var collection = document.getElementsByClassName("topbar");
-			collection[0].style.display = "none";
-		}
-	</script>
   </body>
 </html>
