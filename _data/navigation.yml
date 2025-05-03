@@ -29,6 +29,10 @@ sidemain:
         url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
         url: /assets/pdf/sp-information-pack.pdf
+  - title: Full Platform
+    children:
+      - title: API Specification
+        url: /apiv4/index.html
 
 
 # Reference Documents
