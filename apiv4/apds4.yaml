@@ -13,21 +13,8 @@ info:
    * Connected Supplier
                    
    The NPP is a so-called headless system, mainly communicating via an application programming interface (API). This API is based on APDS, the parking data exchange model and format standardised by the Alliance for Parking Data Standards. This document specifies the APDS subset used by the NPP, supplemented by some extensions the publication of which is still pending. The currently released version of APDS is version 4.  
-                
-   <div>
-   <table> 
-   <tr><td>&nbsp;</td></tr>
-   <tr><td>&nbsp; All connected NPP clients must adhere to the interface specification set out here.</td></tr>
-   <tr><td>&nbsp;</td></tr>
-   </table>
-   </div>
-                         
-   Allows the standard CRUD operations, as well as listing/search of:
-   * Places
-   * RightSpecifications
-   * Rates
-   * Sessions
-   * AssignedRights
+
+   ### >>> All connected NPP clients must adhere to the interface specification set out here.                
 
 servers:
   - url: "https://staging-api.npp.org.uk"
