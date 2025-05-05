@@ -45,7 +45,10 @@ tags:
       * checking a challenged PCN (e.g. via the _Session Viewer_ application)
       * checking the details of a parking session (via an enforcement system)
   - name: Reconciliation
-    description: Interactions related to Reconciliation
+    description: |-
+      Whilst the multi-vendor capability introduced by the NPP provides a high level of convenience to drivers, it makes the reconciliation process more complicated. The NPP offers a monthly consolidated reconciliation report. Operators can thus ensure that they have received all the parking fees to which they are entitled from the service providers.
+<br/>
+For this purpose, all service providers must submit detailed reconciliation information to the NPP, which then creates the above-mentioned consolidated view based on this input.
   - name: Observability
     description: Alerts, Health, Performance Status Information
   - name: Subscription
