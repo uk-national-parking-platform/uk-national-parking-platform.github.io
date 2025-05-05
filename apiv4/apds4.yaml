@@ -7,20 +7,20 @@ info:
   description: |-
    # Introduction
    The National Parking Platform (NPP) is a backend system that enables all connected clients  to exchange parking information, considering their respective roles:
-   <br/>
+               
    * Parking Operator
    * Parking Service Provider
    * Connected Supplier
-   <br/>
+                   
    The NPP is a so-called headless system, mainly communicating via an application programming interface (API). This API is based on APDS, the parking data exchange model and format standardised by the Alliance for Parking Data Standards. This document specifies the APDS subset used by the NPP, supplemented by some extensions the publication of which is still pending. The currently released version of APDS is version 4.  
-
+                
    <div><table style="border-left: 3px solid #1A5276">
    <tr><td>&nbsp;</td></tr>
    <tr><td>&nbsp; All connected NPP clients must adhere to the interface specification set out here.</td></tr>
    <tr><td>&nbsp;</td></tr>
    </table>
    </div>
-   <br/>
+                         
    Allows the standard CRUD operations, as well as listing/search of:
    * Places
    * RightSpecifications
