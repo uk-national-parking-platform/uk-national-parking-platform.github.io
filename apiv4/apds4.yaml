@@ -14,7 +14,7 @@ info:
                    
    The NPP is a so-called headless system, mainly communicating via an application programming interface (API). This API is based on APDS, the parking data exchange model and format standardised by the Alliance for Parking Data Standards. This document specifies the APDS subset used by the NPP, supplemented by some extensions the publication of which is still pending. The currently released version of APDS is version 4.  
 
-   ### >>> All connected NPP clients must adhere to the interface specification set out here.                
+   ### All connected NPP clients must adhere to the interface specification set out here.                
 
 servers:
   - url: "https://staging-api.npp.org.uk"
@@ -25,11 +25,14 @@ tags:
     description: |- 
       In APDS, _Assigned Rights_ are the representation of parking rights. _Assigned Rights_ are issued by parking operators and/or service providers. As soon as a parking right has been issued to a driver, it is sent to the NPP by the issuing entity. _Assigned Rights_ are the most important source of information for connected enforcement systems to check the eligibility of a parked vehicle.
   - name: Places
-    description: Interactions related to Places.
+    description: |-
+      The _Place_ Hierarchy endpoints accept/provide details about parking locations (_Places_).
   - name: Rate Tables
-    description: Interactions related to Rate Tables.
+    description: |-
+      The _Rates_ endpoints accept/provide information about tariffs. While a tariff is a separately identifyable entity, its applicability is defined via a referencing _RateEligibility_ definition (as part of a corresponding _Right Specification_).
   - name: Right Specifications
-    description: Interactions related to Right Specifications.
+    description: |-
+      The _Right Specifications_ endpoints accept/provide information about charging hours, eligibility criteria and point to applicable tariffs. Each _Right Specification_ applies to one or more _Places_. 
   - name: Sessions
     description: |-
       In APDS, _Sessions_ describe the act of actively making use of a previously-obtained parking right (_Assigned Right_). When drivers park their vehicles or leave the parking location, the service provider’s backend or the operator’s parking management system report this to the NPP. _Session_ data can later be read from the NPP to support use cases like .e.g.
@@ -38,10 +41,13 @@ tags:
   - name: Reconciliation
     description: |-
       Whilst the multi-vendor capability introduced by the NPP provides a high level of convenience to drivers, it makes the reconciliation process more complicated. The NPP offers a monthly consolidated reconciliation report. Operators can thus ensure that they have received all the parking fees to which they are entitled from the service providers. For this purpose, all service providers must submit detailed reconciliation information to the NPP, which then creates the above-mentioned consolidated view based on this input.
-  - name: Observability
-    description: Alerts, Health, Performance Status Information
+  - name: Observability (Alerts, Health, Performance Status Information)
+    description: |-
+      The NPP is constantly monitoring pre-defined performance indicators. Events that require connected clients to be notified, will trigger a corresponding alert. The NPP differentiates between one-time alerts and repeating alerts. Whilst one-time alerts do not repeat, repeating alerts can recur as long as the undesirable state persists. The standard mechanism to share an alert is defined by its action (e.g. send email notification, push to client-provided notification endpoint). In addition, the NPP offers an endpoint for querying alerts/events that have occurred within a specified period of time. To subscribe to push alerts, please use the NPP’s /webhooks endpoint (see _Subscriptions_). The topic to subscribe to is _SystemEvents_. Please note that the push mechanism considers client roles and permissions.
+
   - name: Subscription
-    description: Topic Subscription 
+    description: |-
+      For _Assigned Right_ information, _Session Data_, and _System Events_, the NPP offers both, PULL and PUSH mode. The latter is implemented in form of webhooks. An interested entity can subscribe to one or more topics, potentially for a subset of the active NPP parking locations. 
 
 paths:
 
