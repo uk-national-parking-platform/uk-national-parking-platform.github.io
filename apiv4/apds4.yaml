@@ -16,6 +16,31 @@ info:
 
    ### All connected NPP clients must adhere to the interface specification set out here.                
 
+   # APDS Scope
+   ## APDS Data Domains
+   The APDS model defines a number of data domains:
+   * Place
+   * Occupancy
+   * Rate
+   * Right
+   * Session
+   * Quote
+   * Oberservation
+
+   The official APDS specification documents can be request via the [APDS website](https://www.allianceforparkingdatastandards.org 'APDS website').
+
+   ## APDS Domains NOT used by the NPP
+   The current version of the NPP does not engage all APDS-defined data domains / model packages. In particular, the following parts are not used:
+
+   * Quote
+   * Observation
+   * Electrical Infrastructure (sub-package of Place) – might be added later
+
+   ## Non-APDS Domains used by the NPP
+   Note: the NPP endpoints defined to cover __Reconciliation__ and __Observability__ are not defined in the APDS standard and hence have been specified as project-specific interface components.
+
+
+
 servers:
   - url: "https://staging-api.npp.org.uk"
   - url: "https://api.npp.org.uk"
