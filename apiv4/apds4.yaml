@@ -41,8 +41,9 @@ tags:
   - name: Reconciliation
     description: |-
       Whilst the multi-vendor capability introduced by the NPP provides a high level of convenience to drivers, it makes the reconciliation process more complicated. The NPP offers a monthly consolidated reconciliation report. Operators can thus ensure that they have received all the parking fees to which they are entitled from the service providers. For this purpose, all service providers must submit detailed reconciliation information to the NPP, which then creates the above-mentioned consolidated view based on this input.
-  - name: Observability (Alerts, Health, Performance Status Information)
+  - name: Observability
     description: |-
+      Alerts, Health, Performance Status Information  
       The NPP is constantly monitoring pre-defined performance indicators. Events that require connected clients to be notified, will trigger a corresponding alert. The NPP differentiates between one-time alerts and repeating alerts. Whilst one-time alerts do not repeat, repeating alerts can recur as long as the undesirable state persists. The standard mechanism to share an alert is defined by its action (e.g. send email notification, push to client-provided notification endpoint). In addition, the NPP offers an endpoint for querying alerts/events that have occurred within a specified period of time. To subscribe to push alerts, please use the NPP’s /webhooks endpoint (see _Subscriptions_). The topic to subscribe to is _SystemEvents_. Please note that the push mechanism considers client roles and permissions.
 
   - name: Subscription
