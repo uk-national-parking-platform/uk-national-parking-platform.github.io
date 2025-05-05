@@ -40,7 +40,10 @@ tags:
   - name: Right Specifications
     description: Interactions related to Right Specifications.
   - name: Sessions
-    description: Interactions related to Sessions.
+    description: |-
+      In APDS, _Sessions_ describe the act of actively making use of a previously-obtained parking right (_Assigned Right_). When drivers park their vehicles or leave the parking location, the service provider’s backend or the operator’s parking management system report this to the NPP. _Session_ data can later be read from the NPP to support use cases like .e.g.
+      * checking a challenged PCN (e.g. via the _Session Viewer_ application)
+      * checking the details of a parking session (via an enforcement system)
   - name: Reconciliation
     description: Interactions related to Reconciliation
   - name: Observability
