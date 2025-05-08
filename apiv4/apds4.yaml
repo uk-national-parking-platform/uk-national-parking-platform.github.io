@@ -46,9 +46,6 @@ servers:
   - url: "https://api.npp.org.uk"
 
 tags:
-  - name: Assigned Rights
-    description: |- 
-      In APDS, _Assigned Rights_ are the representation of parking rights. _Assigned Rights_ are issued by parking operators and/or service providers. As soon as a parking right has been issued to a driver, it is sent to the NPP by the issuing entity. _Assigned Rights_ are the most important source of information for connected enforcement systems to check the eligibility of a parked vehicle.
   - name: Places
     description: |-
       The _Place_ Hierarchy endpoints accept/provide details about parking locations (_Places_).
@@ -58,6 +55,9 @@ tags:
   - name: Right Specifications
     description: |-
       The _Right Specifications_ endpoints accept/provide information about charging hours, eligibility criteria and point to applicable tariffs. Each _Right Specification_ applies to one or more _Places_. 
+  - name: Assigned Rights
+    description: |- 
+      In APDS, _Assigned Rights_ are the representation of parking rights. _Assigned Rights_ are issued by parking operators and/or service providers. As soon as a parking right has been issued to a driver, it is sent to the NPP by the issuing entity. _Assigned Rights_ are the most important source of information for connected enforcement systems to check the eligibility of a parked vehicle.
   - name: Sessions
     description: |-
       In APDS, _Sessions_ describe the act of actively making use of a previously-obtained parking right (_Assigned Right_). When drivers park their vehicles or leave the parking location, the service provider’s backend or the operator’s parking management system report this to the NPP. _Session_ data can later be read from the NPP to support use cases like .e.g.
@@ -1435,6 +1435,123 @@ paths:
                 '200':
                   description: OK
 
+  /observability/events:
+    get:
+      operationId: get-events
+      tags:
+        - Observability
+      summary: retrieve a list of recent events/system alerts
+      description: get a list of events that occurred within the period of time specified via the __mandatatory__ _modified-since_ http request header
+      parameters:
+        - in: header
+          name: modified-since
+          schema:
+            type: integer
+          required: true
+          description: epoch timestamp to specify how far to go back (maximum is two weeks)
+      responses:
+        200:
+          description: paginated list is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemAlertList'
+              examples:
+                ok:
+                  value:
+                    meta:
+                      referenceInstant: 1746684020
+                      pageSize: 100
+                      offset: 0
+                      total: 1
+                    data:
+                      - id: c7874361-cdca-467d-a389-f9ab6b8e411c
+                        timestamp: 2025-05-01T17:12:02Z
+                        affectedSystem: NPP
+                        start: 2025-05-01T17:11:52Z
+                        type: triggered
+                        metric: npp.api.responsetime.average
+                        condition: "acceptable threshold of 10 seconds exceeded for more than 5 minutes"
+                        description: "The average response time continues to be above the acceptable threshold of 10 seconds. The NPP team has identified the issue and is working on its resolution."
+                        impact: [responseTime]
+
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 400
+                    message: invalid request (modified-since header is missing)
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: internal server error
+                    code: 500
+                    message: the response could not be compiled due to an internal server error
+
+    post:
+      operationId: post-event
+      tags:
+        - Observability
+      summary: a connected system posts an event
+      description: send a system event that occurred in a connected system and might be relevant for other clients
+      requestBody:
+        required: true
+        description: |-
+          details of the occurred event (in form of a single SystemAlert record)
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemAlert'
+      responses:
+        200:
+          description: noted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                ok:
+                  value:
+                    status: ok
+                    code: 200
+                    message: system alert successfully recorded
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 400
+                    message: invalid/unexpected payload format
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: internal server error
+                    code: 500
+                    message: the event could not be stored due to an internal NPP error, please try again later
+
   /observability/status:
     put:
       operationId: get-status-snapshot
@@ -1507,6 +1624,167 @@ paths:
                         ]
                       }
                     ]
+  /reconciliation/submittals:
+    post:
+      operationId: submit-reconciliation-report
+      tags:
+        - Reconciliation
+      summary: submit a new reconciliation report
+      description: a service provide submits a new monthly reconciliation report
+      requestBody:
+        required: true
+        description: the complete monthly reconciliation report of the service provider
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReconciliationSubmittal'
+      responses:
+        201:
+          description: created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                ok:
+                  value:
+                    status: created
+                    code: 201
+                    message: the reconciliation submittal has been successfully recorded
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 400
+                    message: invalid/unexpected payload format
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: internal server error
+                    code: 500
+                    message: the report could not be stored due to an internal NPP error, please try again later
+
+  /reconciliation/submittals/{id}:
+    get:
+      operationId: get-reconciliation-submittal
+      tags:
+        - Reconciliation
+      summary: retrieve a reconciliation submittal
+      description: read a previously submitted report
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: submittal id of previously provided reconciliation report
+      responses:
+        '200':
+          description: found submittal with id {id} and included it in the response payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReconciliationSubmittal'
+        '404':
+          description: no submittal found with id {id}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+        '500':
+          description: internal server error, try again later
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+
+    delete:
+      operationId: invalidate-reconciliation-submittal
+      tags:
+        - Reconciliation
+      summary: invalidate a reconciliation submittal
+      description: invalidate a previously submitted report
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: submittal id of previously provided reconciliation report
+      responses:
+        '200':
+          description: found submittal with id {id} and invalidated as requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+        '404':
+          description: no submittal found with id {id}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+        '500':
+          description: internal server error, try again later
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+
+  /reconciliation/reports:
+    get:
+      operationId: get-reconciliation-report
+      tags:
+        - Reconciliation
+      summary: retrieve a reconciliation report for specific month and year
+      description: read the consolidated report for the specified month and year
+      parameters:
+        - in: query
+          name: month
+          required: true
+          description: requested month
+          schema:
+            type: integer
+        - in: query
+          name: year
+          required: true
+          description: report year
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: found requested report and included it in the response payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReconciliationReport'
+        '400':
+          description: bad request, missing mandatory query parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+        '404':
+          description: no report available for this year and month
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+        '500':
+          description: internal server error, try again later
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+
 
 components:
 
@@ -6604,6 +6882,10 @@ components:
           type: string
           format: date-time
           examples: ["2025-05-01T23:17:02Z"]
+        affectedSystem:
+          description: the system in which the event occurred (names to be agreed upon)
+          type: string
+          examples: ["NPP","APCOA","APPYWAY","CAURA","JUSTPARK","PAYBYPHONE","RINGGO"]
         start:
           description: timestamp when the event first occurred
           type: string
@@ -6637,6 +6919,7 @@ components:
         {
           "id": "c7874361-cdca-467d-a389-f9ab6b8e411c",
           "timestamp": "2025-05-01T17:12:02Z",
+          "affectedSystem": "NPP",
           "start": "2025-05-01T17:11:52Z",
           "type": "triggered",
           "metric": "npp.api.responsetime.average",
@@ -6646,5 +6929,435 @@ components:
         }
       ]
 
+    SystemAlertList:
+      title: SystemAlertList
+      description: Paginated list of SystemAlert records
+      type: object
+      x-package: observability
+      allOf:
+        - $ref: "#/components/schemas/PaginatedList"
+        - type: object
+          properties:
+            data:
+              type: array
+              description: List of SystemAlerts
+              items:
+                $ref: "#/components/schemas/SystemAlert"
 
 
+    ReconciliationTransaction:
+      title: ReconciliationTransaction
+      description: single transaction record (as part of a ReconciliationSubmittal)
+      type: object
+      x-package: reconciliation
+      properties:
+        id:
+          type: string
+        providerId:
+          description: the id of the provider (must be agreed-upon)
+          type: string
+        locationId:
+          description: the id of the location 
+          type: string
+        vatPercentage:
+          description: the VAT rate to be applied at this location
+          type: integer
+          examples: [0,20]
+        periodStart:
+          description: start date and time of the reporting period
+          type: string
+          format: date-time
+        periodEnd:
+          description: end date and time of the reporting period
+          type: string
+          format: date-time
+        parkingFees:
+          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
+          type: object
+          properties:
+            transactionsQuantity:
+              description: total number of transactions at this location
+              type: integer
+            totalIncludingVAT:
+              description: total amount of parking fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of parking fees excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        parkingFeeRefunds:
+          description: the total amounts of parking fees refunded to customer at this location
+          type: object
+          properties:
+            refundsQuantity:
+              description: total number of refunds
+              type: integer
+            totalIncludingVAT:
+              description: total amount refunded including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount refunded excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        consumerFees:
+          description: consumer fees charged to the customers at this location
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of collected consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of collected consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        consumerFeeRefunds:
+          description: consumer fees refunded to customers at this location
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of refunded consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of refunded consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        providerCommission:
+          description: commision charged to the operator
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of commission including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of commission excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        remittanceTotal:
+          description: the (net) amount paid to the operator for the period
+          type: number
+        
+    ReconciliationLocationSummary:
+      title: ReconciliationLocationSummary
+      description: monthly reconciliation information from service provider, aggregated for one location
+      type: object
+      x-package: reconciliation
+      properties:
+        providerId:
+          description: the id of the provider (must be agreed-upon)
+          type: string
+        locationId:
+          description: the id of the location 
+          type: string
+        vatPercentage:
+          description: the VAT rate to be applied at this location
+          type: integer
+          examples: [0,20]
+        periodStart:
+          description: start date and time of the reporting period
+          type: string
+          format: date-time
+        periodEnd:
+          description: end date and time of the reporting period
+          type: string
+          format: date-time
+        parkingFees:
+          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
+          type: object
+          properties:
+            transactionsQuantity:
+              description: total number of transactions at this location
+              type: integer
+            totalIncludingVAT:
+              description: total amount of parking fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of parking fees excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        parkingFeeRefunds:
+          description: the total amounts of parking fees refunded to customer at this location
+          type: object
+          properties:
+            refundsQuantity:
+              description: total number of refunds
+              type: integer
+            totalIncludingVAT:
+              description: total amount refunded including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount refunded excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        consumerFees:
+          description: consumer fees charged to the customers at this location
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of collected consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of collected consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        consumerFeeRefunds:
+          description: consumer fees refunded to customers at this location
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of refunded consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of refunded consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        providerCommission:
+          description: commision charged to the operator
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of commission including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of commission excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        remittanceTotal:
+          description: the (net) amount paid to the operator for the period
+          type: number
+            
+                
+    ReconciliationSubmittal:
+      title: ReconciliationSubmittal
+      description: monthly reconciliation information from service provider
+      type: object
+      x-package: reconciliation
+      properties:
+        id: 
+          description: the provider-generated, unique id for the ReconciliationSubmittal
+          type: string
+        providerId:
+          description: the id of the provider (must be agreed-upon)
+        created:
+          description: date and time when the provider compiled this ReconciliationSubmittal
+          type: string
+          format: date-time
+        periodStart:
+          description: start date and time of the reporting period
+          type: string
+          format: date-time
+        periodEnd:
+          description: end date and time of the reporting period
+          type: string
+          format: date-time
+        parkingFees:
+          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
+          type: object
+          properties:
+            transactionsQuantity:
+              description: total number of transactions 
+              type: integer
+            totalIncludingVAT:
+              description: total amount of parking fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of parking fees excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        parkingFeeRefunds:
+          description: the total amounts of parking fees refunded to customer
+          type: object
+          properties:
+            refundsQuantity:
+              description: total number of refunds
+              type: integer
+            totalIncludingVAT:
+              description: total amount refunded including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount refunded excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        consumerFees:
+          description: consumer fees charged to the customers 
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of collected consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of collected consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        consumerFeeRefunds:
+          description: consumer fees refunded to customers
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of refunded consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of refunded consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        providerCommission:
+          description: commision charged to the operator
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of commission including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of commission excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        remittanceTotal:
+          description: the (net) amount paid to the operator for the period
+          type: number
+        locationSummaries:
+          description: per-location summary for the reporting period
+          type: array
+          items:
+            $ref: '#/components/schemas/ReconciliationLocationSummary'
+        singleTransactions:
+          description: list of single transactions included in this report
+          type: array
+          items:
+            $ref: '#/components/schemas/ReconciliationTransaction'
+
+    ReconciliationReport:
+      title: ReconciliationReport
+      description: monthly reconciliation report (across all service providers)
+      type: object
+      x-package: reconciliation
+      properties:
+        id: 
+          description: the NPP-generated, unique id for the ReconciliationReport
+          type: string
+        created:
+          description: date and time when the NPP compiled this ReconciliationReport
+          type: string
+          format: date-time
+        periodStart:
+          description: start date and time of the reporting period
+          type: string
+          format: date-time
+        periodEnd:
+          description: end date and time of the reporting period
+          type: string
+          format: date-time
+        parkingFees:
+          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
+          type: object
+          properties:
+            transactionsQuantity:
+              description: total number of transactions 
+              type: integer
+            totalIncludingVAT:
+              description: total amount of parking fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of parking fees excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        parkingFeeRefunds:
+          description: the total amounts of parking fees refunded to customer
+          type: object
+          properties:
+            refundsQuantity:
+              description: total number of refunds
+              type: integer
+            totalIncludingVAT:
+              description: total amount refunded including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount refunded excluding VAT
+              type: number
+            vatTotal: 
+              description: included VAT
+              type: number
+        consumerFees:
+          description: consumer fees charged to the customers 
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of collected consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of collected consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        consumerFeeRefunds:
+          description: consumer fees refunded to customers
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of refunded consumer fees including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of refunded consumer fees excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        providerCommission:
+          description: commision charged to the operator
+          type: object
+          properties:
+            totalIncludingVAT:
+              description: total amount of commission including VAT
+              type: number
+            totalExcludingVAT:
+              description: total amount of commission excluding VAT
+              type: number
+            vatTotal:
+              description: included VAT
+              type: number
+        remittanceTotal:
+          description: the (net) amount paid to the operator for the period
+          type: number
+        locationSummaries:
+          description: per-location summary for the reporting period
+          type: array
+          items:
+            $ref: '#/components/schemas/ReconciliationLocationSummary'
+        singleTransactions:
+          description: list of single transactions included in this report
+          type: array
+          items:
+            $ref: '#/components/schemas/ReconciliationTransaction'
+
+      
