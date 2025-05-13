@@ -4775,6 +4775,9 @@ components:
                 Either all RateTables associated to a RightSpecification with a common Eligibility can be combined or they cannot.
               items:
                 $ref: '#/components/schemas/RateEligibility'
+            rateTransition:
+              $ref: '#/components/schemas/RateTransition'
+
           required:
             - issuer
             - transferable
@@ -5118,6 +5121,33 @@ components:
               description: List of Rates
               items:
                 $ref: "#/components/schemas/RateTable"
+    
+
+    OverpaymentPolicyTypeEnum:
+      title: OverpaymentPolicyTypeEnum
+      description: list of overpayment policy types
+      x-package: right_specification
+      type: string
+      enum:
+        - rateEndCutOff
+        - fullTimePurchased
+        - creditCarryOver
+
+    RateTransition:
+      title: RateTransition
+      description: describes rate transition rules
+      type: object
+      x-package: right_specification
+      properties:
+        overpaymentPolicy:
+          $ref: '#/components/schemas/OverpaymentPolicyTypeEnum'
+        followThroughAllowed:
+          type: boolean
+        prepaymentAllowed:
+          type: boolean
+        reservationAvailable:
+          type: boolean
+
 
     #=== Rate Tables - Payment ===#
 
@@ -5636,6 +5666,59 @@ components:
               items:
                 $ref: '#/components/schemas/AssignedRightHolder'
 
+    UnitOfMeasureEnum:
+      title: UnitOfMeasureEnum
+      description: emission-related units of measure
+      x-package: rate.eligibility.enums
+      type: string
+      enum:
+       - cubicCentimetres
+       - year
+       - gkm
+       - kWh
+       - eurolevel
+
+    ValueRangeBoundary:
+      title: ValueRangeBoundary
+      description: boundary within a value range
+      x-package: common
+      type: object
+      properties:
+        value:
+          type: number
+        comparisonOperator:
+          $ref: '#/components/schemas/ComparisonOperatorEnum'
+
+    ValueRangeClassEnum:
+      title: ValueRangeClassEnum
+      description: class of value range specification
+      x-package: rate.eligibility.enums
+      type: string
+      enum:
+        - batteryCapacity
+        - engineCapacityPetrol
+        - emissionStandard
+        - engineCapacityDiesel
+        - manufactureDate
+        - emissionValue
+
+    ValueRange:
+      title: ValueRange
+      description: value range for emission criteria
+      x-package: common
+      type: object
+      properties:
+        class: 
+          $ref: '#/components/schemas/ValueRangeClassEnum'
+        unit: 
+          $ref: '#/components/schemas/UnitOfMeasureEnum'
+        boundaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValueRangeBoundary'
+          minItems: 1
+          maxItems: 2
+
     Emissions:
       title: Emissions
       description: Emission characteristics of vehicles.
@@ -5644,13 +5727,24 @@ components:
       properties:
         emissionClassification:
           $ref: '#/components/schemas/ReferencedCodeListEntry'
-        emissionClassificationOthers:
+        emissionClassificationOther:
           type: array
           description: Some other (probably locally defined) value(s) for emission classification.
           items:
             type: string
         emissionLevel:
           $ref: '#/components/schemas/LowEmissionLevelEnum'
+        vehicleCharacteristics:
+          description: emission characteristics of vehicle
+          type: array
+          items:
+            $ref: '#/components/schemas/ValueRange'
+          examples:
+            - class: manufactureDate
+              unit: year
+              boundaries:
+                - value: 2000
+                  comparisonOperator: lessThanOrEqualTo
 
     GrossWeightCharacteristic:
       title: GrossWeightCharacteristic
