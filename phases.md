@@ -8,6 +8,7 @@ sidebar:
 The NPP project started in 2019 and has extended over a total of 5 phases.
 
 <br/>
+
 ## Phase 1: Offstreet Car Park and Kerbside Availability
 Phase 1, completed at the end of 2019, demonstrated the potential for a platform based on APDS standards.   
  
@@ -31,6 +32,7 @@ This platform was aimed at improving the customer journey. enabling a 'Service P
 
 <br/>
 <br/>
+
 ## Phase 2: Multi-Vendor Payment
 Phase 2 implemented new use cases aiming at an improved **Customer Journey**.
 
@@ -40,17 +42,20 @@ Three use cases were identified, in addition to the original availability use ca
 
 <br/>
 <br/>
+
 ## Phase 3: Go National
 The first two phases of the NPP pilot project have been a success. They proved the feasibility of the general NPP concept as well as the applicability of the APDS standard for this purpose. In order to not stop there, it was agreed to extend the pilot phase and bring additional operators and service providers on board. This extended pilot will provide mid-term empirical data and also keep the system running until a potential beta/production-grade system will take over.
 
 
 <br/>
 <br/>
+
 ## Phase 4:
 Continuation and expansion of the Pilot in 2022.  Further on-boarding of operators and service providers plus contract standardisation to simplify the on-boarding process.
 
 <br/>
 <br/>
+
 ## Phase 5:
 This phase will see the Pilot on-board up to 10 new operators and a number of new service providers as a prelude to the full NPP. A new use case has also been added.
 
@@ -58,6 +63,7 @@ This phase will see the Pilot on-board up to 10 new operators and a number of ne
 
 <br/>
 <br/>
+
 ## Pilot Partners (Current Status)<a name="current-status"></a>
 ![Operators and Partners](assets/images/phases/partnerssnapshot.png)
 
