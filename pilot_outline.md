@@ -29,8 +29,10 @@ The Pilot's mission is to implement a working prototype system allowing to explo
 
 [<img src="https://docs.npp.org.uk/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
 
-## The Customer Journey
-![Customer Journey](assets/images/intro/Customer_journey.png)
+## The Principle 
+The NPP essentially is a central database receiving and providing data based on registered user roles and permissions.  
+
+![NPP Principle](assets/images/intro/principle.png)
 
 ## Project Partners
 The **NPP Pilot** started out as a joint project with [Manchester City Council](https://www.manchester.gov.uk), [DfT](https://www.gov.uk/government/organisations/department-for-transport) and [Parking Matters](https://parkingmatters.com). Over the time, numerous additional partners joined. You can find an overview [here](https://docs.npp.org.uk/phases.html#current-status).
