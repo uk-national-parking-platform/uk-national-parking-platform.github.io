@@ -25,6 +25,8 @@ sidemain:
     children:
       - title: "Presentations"
         url: /presentations
+      - title: "APDS Overview"
+        url: /assets/pdf/APDS-Introduction-v1.1.pdf
       - title: "Operator Info Pack"
         url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
