@@ -30,7 +30,7 @@ The Pilot's mission is to implement a working prototype system allowing to explo
 [<img src="https://docs.npp.org.uk/assets/images/intro/apdslogo.png" width="210px" height="150px">](https://www.allianceforparkingdatastandards.org).
 
 ## The Principle 
-The NPP essentially is a central database receiving and providing data based on registered user roles and permissions.  
+The NPP essentially is a central database receiving and providing data based on registered user roles and permissions. The system resides in the Google Cloud Platform (GCP) environment.  
 
 ![NPP Principle](assets/images/intro/principle.png)
 
