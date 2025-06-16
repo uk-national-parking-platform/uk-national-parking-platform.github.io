@@ -8,28 +8,28 @@ sort: 1
 
 ## Use Cases - Current Scope
 ### Inventory Data
-* Operator: uploads new static inventory information, updates existing inventory information (locations, charging hours, tariffs)
-* Service Provider: loads all location, charging hours, tariff details to feed their rate engine
-* Connected Supplier: loads list of locations to be offered on handheld units (including grouping information)
+* _Operator_: uploads new static inventory information, updates existing inventory information (locations, charging hours, tariffs)
+* _Service Provider_: loads all location, charging hours, tariff details to feed their rate engine
+* _Connected Supplier_: loads list of locations to be offered on handheld units (including grouping information)
 
 ### Occupancy Information
-* Operator: continuously updates occupancy information (via their PMS/sensor system)
-* Connected Supplier, (Service Provider): reads occupancy information to feed their app/website
+* _Operator_: continuously updates occupancy information (via their PMS/sensor system)
+* _Connected Supplier_, (Service Provider): reads occupancy information to feed their app/website
 
 ### Pay on Arrival
-* Operator: reads session information to pre-check challenged PCNs (via the session viewer application)
-* Service Provider: reports issued parking rights as well as new and updated session information
+* _Operator_: reads session information to pre-check challenged PCNs (via the session viewer application)
+* _Service Provider_: reports issued parking rights as well as new and updated session information
 
 ### Check in/out  
-* Operator: reads session information to pre-check challenged PCNs (via the session viewer application)
-* Service Provider: reports issued parking rights as well as new and updated session information. Motorists don't prepay for a fixed period, the amount due is calculated, charged and reported upon departure (check out)
+* _Operator_: reads session information to pre-check challenged PCNs (via the session viewer application)
+* _Service Provider_: reports issued parking rights as well as new and updated session information. Motorists don't prepay for a fixed period, the amount due is calculated, charged and reported upon departure (check out)
 
 ### Enforcement
-* Connected Supplier: reads assigned right (and session) information to assess the legitimisation of a parked vehicle
+* _Connected Supplier_: reads assigned right (and session) information to assess the legitimisation of a parked vehicle
 
 ### Reconciliation
-* Operator: downloads consolidated information for reconciliation process
-* Service Provider: submits details required for the reconciliation process
+* _Operator_: downloads consolidated information for reconciliation process
+* _Service Provider_: submits details required for the reconciliation process
   
   
   
@@ -37,23 +37,23 @@ sort: 1
 
 ## Intended Future Use Cases
 ### Adjacent Session Handling
-* Service Provider: retrieves (trimmed) session information to prevent policy circumvention via "provider hopping"
+* _Service Provider_: retrieves (trimmed) session information to prevent policy circumvention via "provider hopping"
 
 ### PODBA (Pay On Departure By App)
-Service Provider: reads session information and posts payment information to support PODBA to their end users
-Operator (via PMS): provides sessions and assigned right information to support PODBA flow
+_Service Provider_: reads session information and posts payment information to support PODBA to their end users
+_Operator (via PMS)_: provides sessions and assigned right information to support PODBA flow
 
 ### Permit Parking
-Service Provider: reports issued parking rights (of type "permit", i.e. multi-use parking rights), does NOT provide session information
-Connected Supplier: checks the existence of a parking right
+_Service Provider_: reports issued parking rights (of type "permit", i.e. multi-use parking rights), does NOT provide session information
+_Connected Supplier_: checks the existence of a parking right
 
 ### Frictionless Parking
-Service Provider: offers frictionless parking based on pre-registered user accounts
-Operator (via PMS): supports frictionless flow
+_Service Provider_: offers frictionless parking based on pre-registered user accounts
+_Operator (via PMS)_: supports frictionless flow
 
 ### Observability / Health and Performance
-All: receive events/alerts, inquire platform status information
-Operator: receive statistics
+_All_: receive events/alerts, inquire platform status information
+_Operator_: receive statistics
 
 
 
