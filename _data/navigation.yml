@@ -33,6 +33,8 @@ sidemain:
         url: /assets/pdf/sp-information-pack.pdf
   - title: Full Platform
     children:
+      - title: NPP Principle
+        url: /principle
       - title: API Specification
         url: /apiv4/index.html
       - title: Use Cases
