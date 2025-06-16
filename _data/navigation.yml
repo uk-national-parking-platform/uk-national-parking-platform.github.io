@@ -35,6 +35,8 @@ sidemain:
     children:
       - title: API Specification
         url: /apiv4/index.html
+      - title: Use Cases
+        url: /full-platform-use-cases
 
 
 # Reference Documents
