@@ -20,6 +20,10 @@ sort: 1
 * Operator: reads session information to pre-check challenged PCNs (via the session viewer application)
 * Service Provider: reports issued parking rights as well as new and updated session information
 
+### Check in/out  
+* Operator: reads session information to pre-check challenged PCNs (via the session viewer application)
+* Service Provider: reports issued parking rights as well as new and updated session information. Motorists don't prepay for a fixed period, the amount due is calculated, charged and reported upon departure (check out)
+
 ### Enforcement
 * Connected Supplier: reads assigned right (and session) information to assess the legitimisation of a parked vehicle
 
