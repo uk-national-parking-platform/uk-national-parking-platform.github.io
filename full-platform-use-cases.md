@@ -27,6 +27,8 @@ sort: 1
 * Operator: downloads consolidated information for reconciliation process
 * Service Provider: submits details required for the reconciliation process
 
+---
+
 ## Intended Future Use Cases
 ### Adjacent Session Handling
 * Service Provider: retrieves (trimmed) session information to prevent policy circumvention via "provider hopping"
