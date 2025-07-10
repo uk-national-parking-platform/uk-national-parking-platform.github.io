@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.0"
+  version: "1.0.1"
 
   description: |-
    # Introduction
@@ -5673,10 +5673,13 @@ components:
       type: string
       enum:
        - cubicCentimetres
+       - cubicInches
        - year
        - gkm
+       - gpm
        - kWh
        - eurolevel
+
 
     ValueRangeBoundary:
       title: ValueRangeBoundary
@@ -7453,5 +7456,4 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ReconciliationTransaction'
-
-      
+     
