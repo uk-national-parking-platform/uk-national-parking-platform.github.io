@@ -2856,7 +2856,7 @@ components:
         Defines the supported lists of types of parking hierarchy elements permissible
         * campus : a data structure holding information about a large, often ill-defined area, which may contain many parking structures.
         * identifiedArea : a data structure holding information about a coherent feature, such as a set of parking spaces that all share the same characteristics.
-        * parkingPlace : a data structure holding information about a single identifiable parking place.
+        * place : a data structure holding information about a single identifiable parking place.
         * space : a data structure holding information about a single space for parking, usually designed for one vehicle, which may be denoted by painted or other road surface markers.
         * subplaceElement : a sub-division of a place for the convenience of the operator that may be used for parking related or other purposes.
         * specificArea : a specialisation of an identified area that denotes a specific geographic area in a place that has a common physical infrastructure purpose and common characteristics.
@@ -2869,7 +2869,7 @@ components:
       enum:
         - campus
         - identifiedArea
-        - parkingPlace
+        - place
         - space
         - subplaceElement
         #- specificArea
@@ -3164,7 +3164,7 @@ components:
         propertyName: type
         mapping:
           campus: '#/components/schemas/Campus'
-          parkingPlace: '#/components/schemas/Place'
+          place: '#/components/schemas/Place'
           space: '#/components/schemas/Space'
           #subplaceElement: '#/components/schemas/SubPlace'
           #identifiedArea: '#/components/schemas/IdentifiedArea'
