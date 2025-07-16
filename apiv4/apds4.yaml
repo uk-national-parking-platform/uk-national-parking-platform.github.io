@@ -4937,11 +4937,14 @@ components:
             incrementPeriod:
               $ref: '#/components/schemas/Duration'
             value:
-              $ref: '#/components/schemas/AmountInCurrency'
+              type: number
+              format: float
             minValue:
-              $ref: '#/components/schemas/AmountInCurrency'
+              type: number
+              format: float
             maxValue:
-              $ref: '#/components/schemas/AmountInCurrency'
+              type: number
+              format: float
             usageCondition:
               $ref: '#/components/schemas/RateUsageConditionsTypeEnum'
             rateLineTax:
