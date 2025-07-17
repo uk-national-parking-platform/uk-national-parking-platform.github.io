@@ -7348,10 +7348,24 @@ components:
       properties:
         summaryByProvider:
           description: summary broken down by service provider
-          $ref: "#/components/schemas/ReconciliationReportSummaryLine"
+          type: array
+          items:
+            $ref: "#/components/schemas/ReconciliationReportSummaryLine"
         totals:
           description: grand total of the provider-specific summaries
           $ref: "#/components/schemas/ReconciliationReportSummaryLine"
+      examples:
+        - summaryByProvider:
+            - providerId: PROVIDER1
+              providerName: "Service Provider 1"
+              transactionsQuantity: 200
+            - providerId: PROVIDER2
+              providerName: "Service Provider 2"
+              transactionsQuantity: 120
+          totals:
+            providerId: ALL
+            providerName: TOTAL
+            transactionsQuantity: 320
 
     ReconciliationReportLocationSubTotals:
       title: ReconciliationReportLocationSubTotals
