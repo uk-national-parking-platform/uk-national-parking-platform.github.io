@@ -7376,6 +7376,52 @@ components:
         locationId:
           description: the id of the location
           type: string         
+        costCode:
+          description: operator-defined cost code of the location
+        vatPercentage:
+          description: the VAT rate that applies to this location
+          type: number
+          format: float
+          examples: [0,20]
+        providerId:
+          description: unique service provider identifier
+          type: string
+          examples: ["PROVIDER1"]
+        providerName:
+          description: service provider name
+          type: string
+          examples: ["Service Provider 1"]
+        transactionsQuantity:
+          description: total number of payment transactions in the reported period
+          type: integer
+        parkingFeeTotalIncVAT:
+          description: total amount of collected parking fees including VAT
+          type: number
+          format: float
+        parkingFeeTotalExVAT:
+          description: total net amount of collected parking fees (i.e. excluding VAT)
+          type: number
+          format: float
+        parkingFeeTotalVAT:
+          description: total amount of VAT (in transactions)
+          type: number
+          format: float
+        refundsQuantity:
+          description: total number of refunds reported for the period
+          type: integer
+        refundsTotalIncVAT:
+          description: total amount of refunds (including VAT)
+          type: number
+          format: float
+        refundsTotalExVAT:
+          description: total net amount of refunds (i.e. excluding VAT)
+          type: number
+          format: float
+        refundsTotalVAT:
+          description: total amount of VAT (in refunds)
+          type: number
+          format: float
+        
 
     ReconciliationReport:
       title: ReconciliationReport
