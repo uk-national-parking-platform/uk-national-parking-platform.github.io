@@ -2,9 +2,10 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.2"
+  version: "1.0.3"
 
   description: |-
+   # [DRAFT VERSION 1.0.3 - Reconciliation API under refactoring]
    # Introduction
    The National Parking Platform (NPP) is a backend system that enables all connected clients  to exchange parking information, considering their respective roles:
                
@@ -1624,6 +1625,56 @@ paths:
                         ]
                       }
                     ]
+  /reconciliation/transactions:
+    post:
+      operationId: submit-reconciliation-transaction
+      tags:
+        - Reconciliation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReconciliationTransaction'
+      responses:
+        202:
+          description: accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                ok:
+                  value:
+                    status: accepted
+                    code: 202
+                    message: the reconciliation submittal has been successfully recorded
+        400:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 400
+                    message: invalid/unexpected payload format
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: internal server error
+                    code: 500
+                    message: the transaction could not be stored due to an internal NPP error, please try again later
+
+
   /reconciliation/submittals:
     post:
       operationId: submit-reconciliation-report
@@ -7044,207 +7095,97 @@ components:
               items:
                 $ref: "#/components/schemas/SystemAlert"
 
+    TextFormat:
+      title: TextFormat
+      description: indicates text format
+      type: string
+      enum:
+        - plain
+        - html
+        - markdown
+
+    ReconciliationTransactionType:
+      title: ReconciliationTransactionType
+      description: |-
+        enumeration of possible transaction types 
+        * payment: a parking right was purchased
+        * refund: a previous payment was refunded
+        * cancellation: a previous payment transaction was cancelled
+      x-package: reconciliation
+      type: string
+      enum:
+        - payment
+        - refund
+        - cancellation
 
     ReconciliationTransaction:
       title: ReconciliationTransaction
-      description: single transaction record (as part of a ReconciliationSubmittal)
+      description: single transaction record (to be included in the consolidated reconciliation report)
       type: object
       x-package: reconciliation
       properties:
-        id:
-          type: string
         providerId:
-          description: the id of the provider (must be agreed-upon)
+          description: service provider identifier
           type: string
+        operatorId:
+          description: parking operator identifier
+          type: string
+        transactionId: 
+          description: unique identifier for the transaction
+          type: string
+        transactionType:
+          $ref: "#/components/schemas/ReconciliationTransactionType"
+        transactionTime:
+          description: transaction timestamp
+          type: string
+          format: date-time
+        transactionReference:
+          description: |-
+            in case of refund/cancellation: id of the original transaction (if available)
         locationId:
-          description: the id of the location 
+          description: the id of the location for which the parking right was purchased
           type: string
-        vatPercentage:
-          description: the VAT rate to be applied at this location
+        vatRate:
+          description: the VAT rate to be applied at this location (percentage, currently 0 or 20)
           type: integer
           examples: [0,20]
-        periodStart:
-          description: start date and time of the reporting period
-          type: string
-          format: date-time
-        periodEnd:
-          description: end date and time of the reporting period
-          type: string
-          format: date-time
-        parkingFees:
-          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
-          type: object
-          properties:
-            transactionsQuantity:
-              description: total number of transactions at this location
-              type: integer
-            totalIncludingVAT:
-              description: total amount of parking fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of parking fees excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        parkingFeeRefunds:
-          description: the total amounts of parking fees refunded to customer at this location
-          type: object
-          properties:
-            refundsQuantity:
-              description: total number of refunds
-              type: integer
-            totalIncludingVAT:
-              description: total amount refunded including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount refunded excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        consumerFees:
-          description: consumer fees charged to the customers at this location
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of collected consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of collected consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        consumerFeeRefunds:
-          description: consumer fees refunded to customers at this location
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of refunded consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of refunded consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        providerCommission:
-          description: commision charged to the operator
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of commission including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of commission excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        remittanceTotal:
-          description: the (net) amount paid to the operator for the period
+        totalAmount:
+          description: total transaction amount (including potential VAT)
           type: number
+          format: float
+        netAmount:
+          description: net transaction amount (excluding potential VAT)
+          type: number
+          format: float
+        vatAmount:
+          description: VAT amount included in total amount (if any)
+          type: number
+          format: float
+        commissionRate:
+          description: the applied commission rate (percentage, e.g. 2.5)
+          type: number
+          format: float
+          examples: [2.5]
+        commissionVatRate:
+          description: VAT rate applied to the commission (percentage, currently 20)
+          type: number
+          format: float
+          examples: [20]
+        commissionTotalAmount:
+          description: total amount charged by SP to the operator (including VAT)
+          type: number
+          format: float
+        commissionNetAmount:
+          description: net amount of commission charged to operator (excluding VAT)
+          type: number
+          format: float
+        commissionVatAmount:
+          description: VAT amount included in commission total
+          type: number
+          format: float
+        remittanceTotal:
+          description: amount paid to the operator
         
-    ReconciliationLocationSummary:
-      title: ReconciliationLocationSummary
-      description: monthly reconciliation information from service provider, aggregated for one location
-      type: object
-      x-package: reconciliation
-      properties:
-        providerId:
-          description: the id of the provider (must be agreed-upon)
-          type: string
-        locationId:
-          description: the id of the location 
-          type: string
-        vatPercentage:
-          description: the VAT rate to be applied at this location
-          type: integer
-          examples: [0,20]
-        periodStart:
-          description: start date and time of the reporting period
-          type: string
-          format: date-time
-        periodEnd:
-          description: end date and time of the reporting period
-          type: string
-          format: date-time
-        parkingFees:
-          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
-          type: object
-          properties:
-            transactionsQuantity:
-              description: total number of transactions at this location
-              type: integer
-            totalIncludingVAT:
-              description: total amount of parking fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of parking fees excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        parkingFeeRefunds:
-          description: the total amounts of parking fees refunded to customer at this location
-          type: object
-          properties:
-            refundsQuantity:
-              description: total number of refunds
-              type: integer
-            totalIncludingVAT:
-              description: total amount refunded including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount refunded excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        consumerFees:
-          description: consumer fees charged to the customers at this location
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of collected consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of collected consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        consumerFeeRefunds:
-          description: consumer fees refunded to customers at this location
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of refunded consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of refunded consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        providerCommission:
-          description: commision charged to the operator
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of commission including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of commission excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        remittanceTotal:
-          description: the (net) amount paid to the operator for the period
-          type: number
-            
                 
     ReconciliationSubmittal:
       title: ReconciliationSubmittal
@@ -7252,107 +7193,42 @@ components:
       type: object
       x-package: reconciliation
       properties:
-        id: 
-          description: the provider-generated, unique id for the ReconciliationSubmittal
-          type: string
         providerId:
-          description: the id of the provider (must be agreed-upon)
-        created:
-          description: date and time when the provider compiled this ReconciliationSubmittal
+          description: service provider identifier
+          type: string
+        operatorId:
+          description: parking operator identifier
+          type: string
+        submittalId:
+          description: unique identifier for this close-out submittal
+          type: string
+        submittalCreated:
+          description: time when the close-out message was compiled by the service provider
           type: string
           format: date-time
-        periodStart:
-          description: start date and time of the reporting period
+        periodStartTime:
+          description: start time of reconciliation period
           type: string
           format: date-time
-        periodEnd:
-          description: end date and time of the reporting period
+        periodEndTime:
+          description: end time of reconciliation period
           type: string
           format: date-time
-        parkingFees:
-          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
-          type: object
-          properties:
-            transactionsQuantity:
-              description: total number of transactions 
-              type: integer
-            totalIncludingVAT:
-              description: total amount of parking fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of parking fees excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        parkingFeeRefunds:
-          description: the total amounts of parking fees refunded to customer
-          type: object
-          properties:
-            refundsQuantity:
-              description: total number of refunds
-              type: integer
-            totalIncludingVAT:
-              description: total amount refunded including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount refunded excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        consumerFees:
-          description: consumer fees charged to the customers 
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of collected consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of collected consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        consumerFeeRefunds:
-          description: consumer fees refunded to customers
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of refunded consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of refunded consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        providerCommission:
-          description: commision charged to the operator
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of commission including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of commission excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        remittanceTotal:
-          description: the (net) amount paid to the operator for the period
-          type: number
-        locationSummaries:
-          description: per-location summary for the reporting period
+        periodName:
+          description: name of the reconciliation period
+          type: string
+          examples: ["November 2025"]
+        transactionIds:
+          description: list of transaction ids to be included in the report
           type: array
           items:
-            $ref: '#/components/schemas/ReconciliationLocationSummary'
-        singleTransactions:
-          description: list of single transactions included in this report
-          type: array
-          items:
-            $ref: '#/components/schemas/ReconciliationTransaction'
+            type: string
+        providerNotesText:
+          description: optional notes/comments from the provider
+          type: string
+        providerNotesFormat:
+          $ref: "#/components/schemas/TextFormat"
+
 
     ReconciliationReport:
       title: ReconciliationReport
@@ -7363,100 +7239,3 @@ components:
         id: 
           description: the NPP-generated, unique id for the ReconciliationReport
           type: string
-        created:
-          description: date and time when the NPP compiled this ReconciliationReport
-          type: string
-          format: date-time
-        periodStart:
-          description: start date and time of the reporting period
-          type: string
-          format: date-time
-        periodEnd:
-          description: end date and time of the reporting period
-          type: string
-          format: date-time
-        parkingFees:
-          description: the count and total amounts charged to the customers for parking (not including any additional convenience fee)
-          type: object
-          properties:
-            transactionsQuantity:
-              description: total number of transactions 
-              type: integer
-            totalIncludingVAT:
-              description: total amount of parking fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of parking fees excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        parkingFeeRefunds:
-          description: the total amounts of parking fees refunded to customer
-          type: object
-          properties:
-            refundsQuantity:
-              description: total number of refunds
-              type: integer
-            totalIncludingVAT:
-              description: total amount refunded including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount refunded excluding VAT
-              type: number
-            vatTotal: 
-              description: included VAT
-              type: number
-        consumerFees:
-          description: consumer fees charged to the customers 
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of collected consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of collected consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        consumerFeeRefunds:
-          description: consumer fees refunded to customers
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of refunded consumer fees including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of refunded consumer fees excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        providerCommission:
-          description: commision charged to the operator
-          type: object
-          properties:
-            totalIncludingVAT:
-              description: total amount of commission including VAT
-              type: number
-            totalExcludingVAT:
-              description: total amount of commission excluding VAT
-              type: number
-            vatTotal:
-              description: included VAT
-              type: number
-        remittanceTotal:
-          description: the (net) amount paid to the operator for the period
-          type: number
-        locationSummaries:
-          description: per-location summary for the reporting period
-          type: array
-          items:
-            $ref: '#/components/schemas/ReconciliationLocationSummary'
-        singleTransactions:
-          description: list of single transactions included in this report
-          type: array
-          items:
-            $ref: '#/components/schemas/ReconciliationTransaction'
-     
