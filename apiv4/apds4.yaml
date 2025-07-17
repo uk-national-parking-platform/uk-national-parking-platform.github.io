@@ -7358,14 +7358,47 @@ components:
         - summaryByProvider:
             - providerId: PROVIDER1
               providerName: "Service Provider 1"
-              transactionsQuantity: 200
+              transactionsQuantity: 217
+              parkingFeeTotalIncVAT: 1234.40
+              parkingFeeTotalExVAT: 1111
+              parkingFeeTotalVAT: 123.40
+              refundsQuantity: 2
+              refundsTotalIncVAT: 12
+              refundsTotalExVAT: 10
+              refundsTotalVAT: 2
+              providerCommissionTotalIncVAT: 37.07
+              providerCommissionTotalExVAT: 30.86
+              providerCommmissionTotalVAT: 6.17
+              remittanceTotal: 1184.47
             - providerId: PROVIDER2
               providerName: "Service Provider 2"
-              transactionsQuantity: 120
+              transactionsQuantity: 434
+              parkingFeeTotalIncVAT: 2468.80
+              parkingFeeTotalExVAT: 2222
+              parkingFeeTotalVAT: 234.80
+              refundsQuantity: 4
+              refundsTotalIncVAT: 24
+              refundsTotalExVAT: 20
+              refundsTotalVAT: 4
+              providerCommissionTotalIncVAT: 74.06
+              providerCommissionTotalExVAT: 61.72
+              providerCommmissionTotalVAT: 12.34
+              remittanceTotal: 2368.94
           totals:
             providerId: ALL
-            providerName: TOTAL
-            transactionsQuantity: 320
+            providerName: "Total"
+            transactionsQuantity: 651
+            parkingFeeTotalIncVAT: 3703.20
+            parkingFeeTotalExVAT: 3333
+            parkingFeeTotalVAT: 370.20
+            refundsQuantity: 6
+            refundsTotalIncVAT: 36
+            refundsTotalExVAT: 30
+            refundsTotalVAT: 6
+            providerCommissionTotalIncVAT: 111.09
+            providerCommissionTotalExVAT: 92.58
+            providerCommmissionTotalVAT: 18.51
+            remittanceTotal: 3553.41
 
     ReconciliationReportLocationSubTotals:
       title: ReconciliationReportLocationSubTotals
