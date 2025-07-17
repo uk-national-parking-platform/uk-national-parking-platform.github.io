@@ -1630,6 +1630,8 @@ paths:
       operationId: submit-reconciliation-transaction
       tags:
         - Reconciliation
+      summary: a service provider sends a new transaction
+      description: a service provider sends a new individual transaction record  (payment / refund)
       requestBody:
         required: true
         content:
@@ -1677,10 +1679,10 @@ paths:
 
   /reconciliation/submittals:
     post:
-      operationId: submit-reconciliation-report
+      operationId: submit-reconciliation-close-out
       tags:
         - Reconciliation
-      summary: submit a new reconciliation report
+      summary: submit a new reconciliation close-out message
       description: a service provide submits a new monthly reconciliation report
       requestBody:
         required: true
@@ -7104,6 +7106,14 @@ components:
         - html
         - markdown
 
+    ReconciliationSubmittalStatus:
+      title: ReconciliationSubmittalStatus
+      description: status of a reconciliation submittal
+      type: string
+      enum:
+        - confirmed
+        - revoked
+
     ReconciliationTransactionType:
       title: ReconciliationTransactionType
       description: |-
@@ -7206,6 +7216,12 @@ components:
           description: time when the close-out message was compiled by the service provider
           type: string
           format: date-time
+        submittalRevoked:
+          description: date when the submittal was revoked
+          type: string
+          format: date-time
+        submittalStatus:
+          $ref: "#/components/schemas/ReconciliationSubmittalStatus"
         periodStartTime:
           description: start time of reconciliation period
           type: string
