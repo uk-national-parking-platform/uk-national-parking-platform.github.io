@@ -3,6 +3,9 @@ openapi: 3.1.0
 info:
   title: "NPP API Specification" 
   version: "1.0.3"
+  contact:
+    name: API Support
+    email: development@npp.uk.net
 
   description: |-
    # Introduction
@@ -117,7 +120,7 @@ paths:
         - $ref: '#/components/parameters/places_expand'
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        "200":
           description: Ok
           content:
             application/json:
@@ -140,7 +143,7 @@ paths:
             schema:
               $ref: '#/components/schemas/HierarchyElement'
       responses:
-        201:
+        "201":
           description: Created
           content:
             application/json:
@@ -152,7 +155,7 @@ paths:
                     status: ok
                     code: 201
                     message: Place created successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -164,7 +167,7 @@ paths:
                     status: error
                     code: 400
                     message: Place can not be created due to missing required attributes.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -203,13 +206,13 @@ paths:
       tags:
         - Places
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HierarchyElement'
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -238,7 +241,7 @@ paths:
             schema:
               $ref: '#/components/schemas/HierarchyElement'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -250,7 +253,7 @@ paths:
                     status: ok
                     code: 200
                     message: Place updated successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -262,7 +265,7 @@ paths:
                     status: error
                     code: 400
                     message: Place can not be updated due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -274,7 +277,7 @@ paths:
                     status: error
                     code: 404
                     message: Place can not be updated as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -297,7 +300,7 @@ paths:
       tags:
         - Places
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -309,7 +312,7 @@ paths:
                     status: ok
                     code: 200
                     message: Place deleted successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -321,7 +324,7 @@ paths:
                     status: error
                     code: 400
                     message: Place can not be deleted due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -333,7 +336,7 @@ paths:
                     status: error
                     code: 404
                     message: Place can not be deleted as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -400,7 +403,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RightSpecification'
       responses:
-        201:
+        "201":
           description: Created
           content:
             application/json:
@@ -412,7 +415,7 @@ paths:
                     status: ok
                     code: 201
                     message: RightSpecification created successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -424,7 +427,7 @@ paths:
                     status: error
                     code: 400
                     message: RightSpecification can not be created due to missing required attributes.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -463,13 +466,13 @@ paths:
         - $ref: '#/components/parameters/version'
         - $ref: '#/components/parameters/right_specs_expand'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RightSpecification'
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -498,7 +501,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RightSpecification'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -510,7 +513,7 @@ paths:
                     status: ok
                     code: 200
                     message: RightSpecification updated successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -522,7 +525,7 @@ paths:
                     status: error
                     code: 400
                     message: RightSpecification can not be updated due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -534,7 +537,7 @@ paths:
                     status: error
                     code: 404
                     message: RightSpecification can not be updated as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -557,7 +560,7 @@ paths:
       tags:
         - Right Specifications
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -569,7 +572,7 @@ paths:
                     status: ok
                     code: 200
                     message: RightSpecification deleted successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -581,7 +584,7 @@ paths:
                     status: error
                     code: 400
                     message: RightSpecification can not be deleted due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -593,7 +596,7 @@ paths:
                     status: error
                     code: 404
                     message: RightSpecification can not be deleted as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -638,7 +641,7 @@ paths:
         - $ref: "#/components/parameters/rates_expand"
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -661,7 +664,7 @@ paths:
             schema:
               $ref: "#/components/schemas/RateTable"
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -695,13 +698,13 @@ paths:
         - $ref: "#/components/parameters/version"
         - $ref: "#/components/parameters/rates_expand"
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/RateTable"
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -731,13 +734,13 @@ paths:
             schema:
               $ref: "#/components/schemas/RateTable"
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseStatus"
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -749,7 +752,7 @@ paths:
                     status: error
                     code: 400
                     message: Rate table can not be updated due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -761,7 +764,7 @@ paths:
                     status: error
                     code: 404
                     message: Rate table can not be updated as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -784,7 +787,7 @@ paths:
       tags:
         - Rate Tables
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -796,7 +799,7 @@ paths:
                     status: ok
                     code: 200
                     message: Rate table deleted successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -808,7 +811,7 @@ paths:
                     status: error
                     code: 400
                     message: Rate table can not be deleted due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -820,7 +823,7 @@ paths:
                     status: error
                     code: 404
                     message: Rate table can not be deleted as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -878,7 +881,7 @@ paths:
         - $ref: "#/components/parameters/sessions_expand"
         - $ref: '#/components/parameters/page'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -902,7 +905,7 @@ paths:
             schema:
               $ref: "#/components/schemas/Session"
       responses:
-        201:
+        "201":
           description: Created
           content:
             application/json:
@@ -914,7 +917,7 @@ paths:
                     status: ok
                     code: 201
                     message: Session created successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -926,7 +929,7 @@ paths:
                     status: error
                     code: 400
                     message: Session can not be created due to missing required attributes.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -965,13 +968,13 @@ paths:
         - $ref: "#/components/parameters/version"
         - $ref: "#/components/parameters/sessions_expand"
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Session"
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -1000,7 +1003,7 @@ paths:
             schema:
               $ref: "#/components/schemas/Session"
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -1012,7 +1015,7 @@ paths:
                     status: ok
                     code: 200
                     message: Session updated successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1024,7 +1027,7 @@ paths:
                     status: error
                     code: 400
                     message: Session can not be updated due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -1036,7 +1039,7 @@ paths:
                     status: error
                     code: 404
                     message: Session can not be updated as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -1059,7 +1062,7 @@ paths:
       tags:
         - Sessions
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -1071,7 +1074,7 @@ paths:
                     status: ok
                     code: 200
                     message: Session deleted successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1083,7 +1086,7 @@ paths:
                     status: error
                     code: 400
                     message: Session can not be deleted due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -1095,7 +1098,7 @@ paths:
                     status: error
                     code: 404
                     message: Session can not be deleted as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -1177,7 +1180,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AssignedRight'
       responses:
-        201:
+        "201":
           description: Created
           content:
             application/json:
@@ -1189,7 +1192,7 @@ paths:
                     status: ok
                     code: 200
                     message: Assigned right created successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1201,7 +1204,7 @@ paths:
                     status: error
                     code: 400
                     message: Assigned right can not be created due to missing required attributes.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -1240,13 +1243,13 @@ paths:
         - $ref: '#/components/parameters/version'
         - $ref: '#/components/parameters/assigned_expand'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AssignedRight'
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -1275,7 +1278,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AssignedRight'
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -1287,7 +1290,7 @@ paths:
                     status: ok
                     code: 200
                     message: Assigned right updated successfully.
-        201:
+        "201":
           description: Created
           content:
             application/json:
@@ -1299,7 +1302,7 @@ paths:
                     status: ok
                     code: 200
                     message: Assigned right created successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1311,7 +1314,7 @@ paths:
                     status: error
                     code: 400
                     message: Assigned right can not be created due to missing required attributes.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -1334,7 +1337,7 @@ paths:
       tags:
         - Assigned Rights
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -1346,7 +1349,7 @@ paths:
                     status: ok
                     code: 200
                     message: Assigned right deleted successfully.
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1358,7 +1361,7 @@ paths:
                     status: error
                     code: 400
                     message: Assigned right can not be deleted due to missing required attributes.
-        404:
+        "404":
           description: Not Found
           content:
             application/json:
@@ -1370,7 +1373,7 @@ paths:
                     status: error
                     code: 404
                     message: Assigned right can not be deleted as it has not been found.
-        409:
+        "409":
           description: Conflict
           content:
             application/json:
@@ -1386,6 +1389,7 @@ paths:
   /webhooks:
     post:
       summary: subscribe to one or more event topics
+      description: adds a new subscription (with the specified endpoint receiving notifications on selected topics for selected locations)
       operationId: post-webhooks
       tags:
         - Subscription
@@ -1450,7 +1454,7 @@ paths:
           required: true
           description: epoch timestamp to specify how far to go back (maximum is two weeks)
       responses:
-        200:
+        "200":
           description: paginated list is returned
           content:
             application/json:
@@ -1475,7 +1479,7 @@ paths:
                         description: "The average response time continues to be above the acceptable threshold of 10 seconds. The NPP team has identified the issue and is working on its resolution."
                         impact: [responseTime]
 
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1487,7 +1491,7 @@ paths:
                     status: error
                     code: 400
                     message: invalid request (modified-since header is missing)
-        500:
+        "500":
           description: Internal Server Error
           content:
             application/json:
@@ -1496,7 +1500,7 @@ paths:
               examples:
                 missing-data:
                   value:
-                    status: internal server error
+                    status: error 
                     code: 500
                     message: the response could not be compiled due to an internal server error
 
@@ -1515,7 +1519,7 @@ paths:
             schema:
               $ref: '#/components/schemas/SystemAlert'
       responses:
-        200:
+        "200":
           description: noted
           content:
             application/json:
@@ -1527,7 +1531,7 @@ paths:
                     status: ok
                     code: 200
                     message: system alert successfully recorded
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1539,7 +1543,7 @@ paths:
                     status: error
                     code: 400
                     message: invalid/unexpected payload format
-        500:
+        "500":
           description: Internal Server Error
           content:
             application/json:
@@ -1548,7 +1552,7 @@ paths:
               examples:
                 missing-data:
                   value:
-                    status: internal server error
+                    status: error
                     code: 500
                     message: the event could not be stored due to an internal NPP error, please try again later
 
@@ -1580,7 +1584,7 @@ paths:
                         values: ["PROVIDER1","PROVIDER2"]
 
       responses:
-        200:
+        "200":
           description: list of KPIs
           content:
             application/json:
@@ -1638,7 +1642,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ReconciliationTransaction'
       responses:
-        202:
+        "202":
           description: accepted
           content:
             application/json:
@@ -1647,10 +1651,10 @@ paths:
               examples:
                 ok:
                   value:
-                    status: accepted
+                    status: ok
                     code: 202
                     message: the reconciliation submittal has been successfully recorded
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1662,7 +1666,7 @@ paths:
                     status: error
                     code: 400
                     message: invalid/unexpected payload format
-        500:
+        "500":
           description: Internal Server Error
           content:
             application/json:
@@ -1671,7 +1675,7 @@ paths:
               examples:
                 missing-data:
                   value:
-                    status: internal server error
+                    status: error
                     code: 500
                     message: the transaction could not be stored due to an internal NPP error, please try again later
 
@@ -1691,7 +1695,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ReconciliationSubmittal'
       responses:
-        201:
+        "201":
           description: created
           content:
             application/json:
@@ -1700,10 +1704,10 @@ paths:
               examples:
                 ok:
                   value:
-                    status: created
+                    status: ok
                     code: 201
                     message: the reconciliation submittal has been successfully recorded
-        400:
+        "400":
           description: Bad Request
           content:
             application/json:
@@ -1715,7 +1719,7 @@ paths:
                     status: error
                     code: 400
                     message: invalid/unexpected payload format
-        500:
+        "500":
           description: Internal Server Error
           content:
             application/json:
@@ -1724,7 +1728,7 @@ paths:
               examples:
                 missing-data:
                   value:
-                    status: internal server error
+                    status: error
                     code: 500
                     message: the report could not be stored due to an internal NPP error, please try again later
 
@@ -1815,6 +1819,17 @@ paths:
           description: report year
           schema:
             type: integer
+        - in: query
+          name: includeDetails
+          required: false
+          description: indicates whether or not to include all individual transaction records
+          schema:
+            type: string
+            enum:
+              - yes
+              - no
+            default: no
+          
       responses:
         '200':
           description: found requested report and included it in the response payload
@@ -7130,6 +7145,7 @@ components:
         - payment
         - refund
         - cancellation
+      examples: ["payment"]
 
     ReconciliationTransaction:
       title: ReconciliationTransaction
@@ -7151,7 +7167,6 @@ components:
           examples: ["ba6792fa-942d-47fb-bc12-9ca00ae80ad6"]
         transactionType:
           $ref: "#/components/schemas/ReconciliationTransactionType"
-          examples: ["payment"]
         transactionTime:
           description: transaction timestamp
           type: string
@@ -7253,6 +7268,100 @@ components:
         providerNotesFormat:
           $ref: "#/components/schemas/TextFormat"
 
+    ReconciliationReportSummaryLine:
+      title: ReconciliationReportSummaryLine
+      description: summary line with a summary for one service provider
+      type: object
+      properties:
+        providerId:
+          description: unique service provider identifier
+          type: string
+          examples: ["PROVIDER1"]
+        providerName:
+          description: service provider name
+          type: string
+          examples: ["Service Provider 1"]
+        transactionsQuantity:
+          description: total number of payment transactions in the reported period
+          type: integer
+        parkingFeeTotalIncVAT:
+          description: total amount of collected parking fees including VAT
+          type: number
+          format: float
+        parkingFeeTotalExVAT:
+          description: total net amount of collected parking fees (i.e. excluding VAT)
+          type: number
+          format: float
+        parkingFeeTotalVAT:
+          description: total amount of VAT (in transactions)
+          type: number
+          format: float
+        refundsQuantity:
+          description: total number of refunds reported for the period
+          type: integer
+        refundsTotalIncVAT:
+          description: total amount of refunds (including VAT)
+          type: number
+          format: float
+        refundsTotalExVAT:
+          description: total net amount of refunds (i.e. excluding VAT)
+          type: number
+          format: float
+        refundsTotalVAT:
+          description: total amount of VAT (in refunds)
+          type: number
+          format: float
+        providerCommissionTotalIncVAT:
+          description: total amount of provider commission (including VAT)
+          type: number
+          format: float
+        providerCommissionTotalExVAT:
+          description: total net amount of provider commission (i.e. excluding VAT)
+          type: number
+          format: float
+        providerCommissionTotalVAT:
+          description: total amount of VAT (in provider commission)
+        remittanceTotal:
+          description: total amount of remittance
+      examples:
+        - providerId: PROVIDER2
+          providerName: "Service Provider 2"
+          transactionsQuantity: 100
+          parkingFeeTotalIncVAT: 600
+          parkingFeeTotalExVAT: 500
+          parkingFeeTotalVAT: 100
+          refundsQuantity: 1
+          refundsTotalIncVAT: 6
+          refundsTotalExVAT: 5
+          refundsTotalVAT: 1
+          providerCommissionTotalIncVAT: 18
+          providerCommissionTotalExVAT: 15
+          providerCommissionTotalVAT: 3
+          remittanceTotal: 76
+
+
+    ReconciliationReportSummary:
+      title: ReconciliationReportSummary
+      description: the summary part of a reconciliation report
+      x-package: reconciliation
+      type: object
+      properties:
+        summaryByProvider:
+          description: summary broken down by service provider
+          $ref: "#/components/schemas/ReconciliationReportSummaryLine"
+        totals:
+          description: grand total of the provider-specific summaries
+          $ref: "#/components/schemas/ReconciliationReportSummaryLine"
+
+    ReconciliationReportLocationSubTotals:
+      title: ReconciliationReportLocationSubTotals
+      description: sub-totals for a specific location
+      x-package: reconciliation
+      type: object
+      properties:
+        locationId:
+          description: the id of the location
+          type: string         
 
     ReconciliationReport:
       title: ReconciliationReport
@@ -7263,3 +7372,32 @@ components:
         id: 
           description: the NPP-generated, unique id for the ReconciliationReport
           type: string
+        created:
+          description: time when the report was compiled
+          type: string
+          format: date-time
+        periodStart: 
+          description: start time of the reported period
+          type: string
+          format: date-time
+        periodEnd:
+          description: end time of the reported period
+          type: string
+          format: date-time
+        periodName:
+          description: name for the reported period
+          type: string
+          examples: ["November 2025"]
+        summary:
+          description: the summary broken down by service provider
+          $ref: "#/components/schemas/ReconciliationReportSummary"
+        summaryByLocation:
+          description: sub-totals by location
+          type: array
+          items:
+            $ref: "#/components/schemas/ReconciliationReportLocationSubTotals"
+        individualTransactions:
+          description: list of all included transactions
+          type: array
+          items:
+            $ref: "#/components/schemas/ReconciliationTransaction"
