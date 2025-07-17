@@ -7137,14 +7137,18 @@ components:
         providerId:
           description: service provider identifier
           type: string
+          examples: ["PROVIDER1"]
         operatorId:
           description: parking operator identifier
           type: string
+          examples: ["OPERATOR1"]
         transactionId: 
           description: unique identifier for the transaction
           type: string
+          examples: ["ba6792fa-942d-47fb-bc12-9ca00ae80ad6"]
         transactionType:
           $ref: "#/components/schemas/ReconciliationTransactionType"
+          examples: ["payment"]
         transactionTime:
           description: transaction timestamp
           type: string
@@ -7155,6 +7159,7 @@ components:
         locationId:
           description: the id of the location for which the parking right was purchased
           type: string
+          examples: ["909007"]
         vatRate:
           description: the VAT rate to be applied at this location (percentage, currently 0 or 20)
           type: integer
