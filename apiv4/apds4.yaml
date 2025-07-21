@@ -7409,6 +7409,9 @@ components:
         locationId:
           description: the id of the location
           type: string         
+        locationName:
+          description: the name of the location
+          type: string
         costCode:
           description: operator-defined cost code of the location
         vatPercentage:
