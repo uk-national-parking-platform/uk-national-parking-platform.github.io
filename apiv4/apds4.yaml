@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.4"
+  version: "1.0.5"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -368,7 +368,7 @@ paths:
           required: false
           description: filter by this type of organisation/contact
           schema:
-            $ref: '#/components/schemas/ContactTypeEnum'
+            $ref: '#/components/schemas/ContactPointTypeEnum'
             
 
       tags:
@@ -386,7 +386,7 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/ContactPointTypeEnum'
+                      $ref: '#/components/schemas/ContactPoint'
 
 
   # ===== Right Specifications ===== #
