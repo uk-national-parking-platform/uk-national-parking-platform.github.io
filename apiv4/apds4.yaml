@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.3"
+  version: "1.0.4"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -3260,7 +3260,7 @@ components:
               items:
                 $ref: '#/components/schemas/MultilingualString'
             operatorDefinedReference:
-              $ref: '#/components/schemas/MultilingualString'
+              $ref: '#/components/schemas/VersionedReference'
             parentId:
               $ref: '#/components/schemas/VersionedReference'
             childIds:
