@@ -386,7 +386,7 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/ContactPoint'
+                      $ref: '#/components/schemas/ContactPointTypeEnum'
 
 
   # ===== Right Specifications ===== #
