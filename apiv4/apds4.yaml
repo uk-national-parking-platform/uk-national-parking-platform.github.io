@@ -349,6 +349,46 @@ paths:
                     code: 409
                     message: Place can not be deleted due to conflicting data.
 
+  # ===== Operational Data ===== #
+  /contacts:
+
+    get:
+      summary: Get List of Organisations (Contacts)
+      security:
+        - oAuth:
+            - po
+            - sp
+            - ep
+            - ad
+      description: Returns the latest list of all organisations and their public ids
+      operationId: get-contacts
+      parameters:
+        - in: query
+          name: type
+          required: false
+          description: filter by this type of organisation/contact
+          schema:
+            $ref: '#/components/schemas/ContactTypeEnum'
+            
+
+      tags:
+        - Operational Data
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    $ref: "#/components/schemas/PaginatedListMeta"
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ContactPoint'
+
+
   # ===== Right Specifications ===== #
 
   /rights/specs:
