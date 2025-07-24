@@ -3442,7 +3442,7 @@ components:
               description: roles and responsibilities
               type: array
               items:
-               $ref: '#components/schemas/ResponsibilityRoleAssignment'
+               $ref: '#/components/schemas/ResponsibilityRoleAssignment'
 
       required:
         - type
