@@ -387,7 +387,75 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/ContactPoint'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                internal-error:
+                  value:
+                    status: error
+                    code: 500
+                    message: internal server error
 
+  /contacts/{contactId}:
+
+    parameters:
+      - schema:
+          type: string
+        name: contactId
+        in: path
+        required: true
+        description: Unique identifier for the contact/organisation.
+
+    get:
+      summary: get details of particular contact / organisation
+      security:
+        - oAuth:
+            - po
+            - sp
+            - ep
+            - ad
+      description: returns the details of the contact identified by {contactId}
+      operationId: get-single-contact
+
+      tags:
+        - Operational Data
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactPoint'
+
+        "404":
+          description: contact not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                not-found:
+                  value:
+                    status: not found
+                    code: 404
+                    message: contact not found
+
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                internal-error:
+                  value:
+                    status: error
+                    code: 500
+                    message: internal server error
 
   # ===== Right Specifications ===== #
 
