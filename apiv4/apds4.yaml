@@ -387,6 +387,22 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/ContactPoint'
+              examples:
+                found:
+                  value:
+                    - id: TESTCOUNCIL
+                      version: 1
+                      organisationName:
+                        - language: en
+                          string: Test Council
+                      type: operator
+                    - id: PROVIDER1
+                      version: 1
+                      organisationName:
+                        - language: en
+                          string: Service Provider 1
+                      type: serviceProvider
+
         "500":
           description: Internal Server Error
           content:
@@ -430,6 +446,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ContactPoint'
+              examples:
+                found:
+                  value:
+                    id: TESTCOUNCIL
+                    version: 1
+                    organisationName:
+                      - language: en
+                        string: Test Council
+                    type: operator
 
         "404":
           description: contact not found
@@ -2960,6 +2985,21 @@ components:
           description: The email address
           $ref : '#/components/schemas/EMail'
 
+    ResponsibilityRoleAssignment:
+      title: ResponsibilityRoleAssignment
+      description: describes roles and responsibilites for a particular location (e.g. operator)
+      type: object
+      x-package: contact
+      properties:
+        type:
+          description: the type of contact/organisation (e.g. operator)
+          $ref: '#/components/schemas/ContactPointTypeEnum'
+        contactPoints:
+          description: list with contact details
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactPoint'
+
     ImageAlbum:
       title: ImageAlbum
       description: A class defining information relating to images for a parking facility.
@@ -3398,6 +3438,12 @@ components:
               $ref: '#/components/schemas/HierarchyElementReference'
             occupancyLevel:
               $ref: '#/components/schemas/OccupancyLevel'
+            responsibilityRoleAssignments:
+              description: roles and responsibilities
+              type: array
+              items:
+               $ref: '#components/schemas/ResponsibilityRoleAssignment'
+
       required:
         - type
         - name
