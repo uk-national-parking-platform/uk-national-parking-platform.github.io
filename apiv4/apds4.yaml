@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.5"
+  version: "1.0.6"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -5312,20 +5312,8 @@ components:
               $ref: "#/components/schemas/RateTypeEnum"
             additionalInformation:
               $ref: "#/components/schemas/Url"
-            validityStart:
-              type: string
-              description: Validity start datetime of the RateTable when its pricing become active.
-              format: date-time
-            validityEnd:
-              type: string
-              description: Validity end datetime of RateTable when its pricing expire and are no longer used.
-              format: date-time
-            activeTimes:
-              type: array
-              minItems: 1
-              description: Periods during which the RateTable is to be applied.
-              items:
-                $ref: "#/components/schemas/Duration"
+            validity:
+              $ref: "#/components/schemas/Validity"
             rateLineCollections:
               type: array
               description: List of RateLineCollection that defines this RateTable.
