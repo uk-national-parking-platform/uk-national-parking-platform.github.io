@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.6"
+  version: "1.0.7"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -2401,6 +2401,11 @@ components:
         message:
           type: string
           description: Descriptive message for error statuses.
+        ids:
+          description: list of conflicting/missing ids (if applicable)
+          type: array
+          items:
+            type: string
       required:
         - status
 
