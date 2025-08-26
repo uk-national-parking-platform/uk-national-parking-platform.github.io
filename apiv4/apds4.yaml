@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.8"
+  version: "1.0.10"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -101,6 +101,7 @@ paths:
         * __structure_grade__ : retrieve all places associated with the specified structure grade,
         * __name__ : retrieve all places which match the name of the facilities,
         * __layer__ : specify the maximum hierarchy element layer desired,
+        * __operator__ : the id of the operator of this location
         * __modified_since__ : retrieve all places that have changed from that given instant onwards,
         * __expand__ : a comma-separated list of optional object attributes associated to a place that should be included in the result set.
       operationId: get-places
@@ -116,6 +117,7 @@ paths:
         - $ref: '#/components/parameters/structure_grade'
         - $ref: '#/components/parameters/place_name'
         - $ref: '#/components/parameters/place_layer'
+        - $ref: '#/components/parameters/operator'
         - $ref: '#/components/parameters/modified_since'
         - $ref: '#/components/parameters/places_expand'
         - $ref: '#/components/parameters/page'
@@ -498,6 +500,7 @@ paths:
         Returns a list of right specifications potentially filtered by a combination of :
         * __latitude__, __longitude__ and __radius__ : retrieve all right specifications used in a geographic area (via their associated place),
         * a list of __Places__ : retrieve all right specifications connected to any of the given places,
+        * __issuer__ : the id of the entity that issued the right specification
         * __modified_since__ : retrieve all right specifications that have changed from that given instant onwards, 
         * __expand__ : a comma-separated list of optional object attributes associated to a right specification that should be included in the result set.
       operationId: get-right_specs
@@ -510,6 +513,7 @@ paths:
         - $ref: "#/components/parameters/place_ids"
         - $ref: "#/components/parameters/place_types"
         - $ref: "#/components/parameters/modified_since"
+        - $ref: "#/components/parameters/issuer"
         - $ref: '#/components/parameters/right_specs_expand'
         - $ref: '#/components/parameters/page'
       responses:
@@ -759,6 +763,7 @@ paths:
         * __latitude__, __longitude__ and __radius__ : retrieve all rates used in a geographic area (via their associated assigned rights and place), 
         * a list of __places__ : retrieve all rates connected to assigned rights that belong to any of the given places, 
         * a list of __right specifications__ : retrieve all rates connected to any of the given right specifications, 
+        * __issuer__ : the id of the rate responsible party (i.e. the issuer of the rate table)
         * __modified_since__ : retrieve all rates that have changed from that given instant onwards, 
         * __expand__ : a comma-separated list of optional object attributes associated to a rate that should be included in the result set.
       operationId: get-rates
@@ -772,6 +777,7 @@ paths:
         - $ref: "#/components/parameters/right_spec_ids"
         - $ref: "#/components/parameters/modified_since"
         - $ref: "#/components/parameters/rates_expand"
+        - $ref: "#/components/parameters/issuer"
         - $ref: '#/components/parameters/page'
       responses:
         "200":
@@ -2089,6 +2095,20 @@ components:
       in: query
       name: modified_since
       description: Unix epoch __instant__ to filter results that have changed or have been deleted after the given instant. If __expand__ attributes are requested, then this parameter will also apply to those objects. When this attribute is used, the result set will also include a list of deleted references to avoid storing stale data.
+
+    issuer:
+      schema:
+        type: string
+      in: query
+      name: issuer
+      description: id of the entity that issued the returned records
+
+    operator:
+      schema:
+        type: string
+      in: query
+      name: operator
+      description: id of the parking operator in charge of the location(s)
 
     # ===== Credentials ===== #
 
@@ -6486,7 +6506,6 @@ components:
               $ref: "#/components/schemas/MultilingualString"
           required:
             - identifier
-            - issuer
             - type
 
     CustomerCredential:
