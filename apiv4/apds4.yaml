@@ -1768,52 +1768,6 @@ paths:
                       }
                     ]
 
-  /reconciliation/transactions/{txnId}:
-    get:
-      operationId: get-reconciliation-transactions
-      tags:
-        - Reconciliation
-      summary: service provider reads back a single transaction
-      description: for verfication purposes, a service provider reads back a previously submitted transaction record
-      parameters:
-        - in: path
-          name: txnId
-          required: true  
-          description: unique id of previously provided transaction
-          schema:
-            type: string
-      responses:
-        "200":
-          description: OK, transaction is returned
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReconciliationTransaction'
-        "404":
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseStatus'
-              examples:
-                missing-data:
-                  value:
-                    status: not found
-                    code: 404
-                    message: transaction not found
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseStatus'
-              examples:
-                missing-data:
-                  value:
-                    status: error
-                    code: 500
-                    message: the transaction could not be retrieved due to an internal NPP error, please try again later
-
   /reconciliation/transactions:
     post:
       operationId: submit-reconciliation-transaction
@@ -1913,6 +1867,51 @@ paths:
                     code: 500
                     message: the transaction list could not be compiled due to an internal NPP error, please try again later
 
+  /reconciliation/transactions/{txnId}:
+    get:
+      operationId: get-reconciliation-transactions
+      tags:
+        - Reconciliation
+      summary: service provider reads back a single transaction
+      description: for verfication purposes, a service provider reads back a previously submitted transaction record
+      parameters:
+        - in: path
+          name: txnId
+          required: true  
+          description: unique id of previously provided transaction
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK, transaction is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReconciliationTransaction'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: not found
+                    code: 404
+                    message: transaction not found
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 500
+                    message: the transaction could not be retrieved due to an internal NPP error, please try again later
 
   /reconciliation/submittals:
     post:
