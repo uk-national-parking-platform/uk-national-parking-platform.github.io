@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.10"
+  version: "1.0.11"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -1767,6 +1767,53 @@ paths:
                         ]
                       }
                     ]
+
+  /reconciliation/transactions/{txnId}:
+    get:
+      operationId: get-reconciliation-transactions
+      tags:
+        - Reconciliation
+      summary: service provider reads back a single transaction
+      description: for verfication purposes, a service provider reads back a previously submitted transaction record
+      parameters:
+        - in: path
+          name: txnId
+          required: true  
+          description: unique id of previously provided transaction
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK, transaction is returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReconciliationTransaction'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: not found
+                    code: 404
+                    message: transaction not found
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 500
+                    message: the transaction could not be retrieved due to an internal NPP error, please try again later
+
   /reconciliation/transactions:
     post:
       operationId: submit-reconciliation-transaction
@@ -1817,6 +1864,54 @@ paths:
                     status: error
                     code: 500
                     message: the transaction could not be stored due to an internal NPP error, please try again later
+
+    get:
+      operationId: get-reconciliation-transactions
+      tags:
+        - Reconciliation
+      summary: a service provider reads a list of previously submitted transactions 
+      description: a service provider reads a list of previously submitted transactions 
+      parameters:
+        - $ref: '#/components/parameters/operator'
+        - $ref: '#/components/parameters/since'
+      responses:
+        "200":
+          description: OK, list is returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    $ref: "#/components/schemas/PaginatedListMeta"
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReconciliationTransaction'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 400
+                    message: invalid set of query parameters
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 500
+                    message: the transaction list could not be compiled due to an internal NPP error, please try again later
 
 
   /reconciliation/submittals:
@@ -2109,6 +2204,14 @@ components:
       in: query
       name: operator
       description: id of the parking operator in charge of the location(s)
+
+    since:
+      schema:
+        type: integer
+      in: query
+      name: since
+      description: Unix epoch instant to filter results that have been sent after the given instant. If this parameter is not specified, it is set the the first day of the previous month. Results going back more than two months will not be returned.
+
 
     # ===== Credentials ===== #
 
