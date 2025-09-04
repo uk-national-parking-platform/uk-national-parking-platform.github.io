@@ -7484,7 +7484,8 @@ components:
           format: float
         remittanceTotal:
           description: amount paid to the operator
-        
+          type: number
+          format: float        
                 
     ReconciliationSubmittal:
       title: ReconciliationSubmittal
