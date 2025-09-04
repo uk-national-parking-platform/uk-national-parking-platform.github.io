@@ -3682,10 +3682,7 @@ components:
               type: string
               description: 'IANA time-zone (see https://www.iana.org/time-zones)'
             placeStreetAddress:
-              type: array
-              description: Place street address
-              items:
-                $ref: '#/components/schemas/Address'
+              $ref: '#/components/schemas/Address'
             placeBoundedZone:
               type: array
               description: Place bounded zone
