@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.11"
+  version: "1.0.12"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -4348,6 +4348,8 @@ components:
           $ref: '#/components/schemas/OperatingRestrictionTypeEnum'
         operatingRestrictionContext:
           $ref: '#/components/schemas/MultilingualString'
+        times:
+          $ref: '#/components/schemas/OverallPeriod'
       required:
         - operatingRestriction
 
