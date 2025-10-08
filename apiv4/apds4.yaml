@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.12"
+  version: "1.0.14"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -392,18 +392,26 @@ paths:
               examples:
                 found:
                   value:
-                    - id: TESTCOUNCIL
-                      version: 1
-                      organisationName:
-                        - language: en
-                          string: Test Council
-                      type: operator
-                    - id: PROVIDER1
-                      version: 1
-                      organisationName:
-                        - language: en
-                          string: Service Provider 1
-                      type: serviceProvider
+                    meta:
+                      referenceInstant: 1746684020
+                      pageSize: 100
+                      offset: 0
+                      total: 2
+                    data:
+                      - id: TESTCOUNCIL
+                        version: 1
+                        organisationName:
+                          - language: en
+                            string: Test Council
+                        type: operator
+                        contactType: contactPoint
+                      - id: PROVIDER1
+                        version: 1
+                        organisationName:
+                          - language: en
+                            string: Service Provider 1
+                        type: serviceProvider
+                        contactType: contactPoint
 
         "500":
           description: Internal Server Error
@@ -451,6 +459,7 @@ paths:
               examples:
                 found:
                   value:
+                    contactType: contactPoint
                     id: TESTCOUNCIL
                     version: 1
                     organisationName:
@@ -467,7 +476,7 @@ paths:
               examples:
                 not-found:
                   value:
-                    status: not found
+                    status: error 
                     code: 404
                     message: contact not found
 
@@ -1869,7 +1878,7 @@ paths:
 
   /reconciliation/transactions/{txnId}:
     get:
-      operationId: get-reconciliation-transactions
+      operationId: get-reconciliation-transaction
       tags:
         - Reconciliation
       summary: service provider reads back a single transaction
@@ -1897,7 +1906,7 @@ paths:
               examples:
                 missing-data:
                   value:
-                    status: not found
+                    status: error 
                     code: 404
                     message: transaction not found
         "500":
@@ -1964,6 +1973,60 @@ paths:
                     status: error
                     code: 500
                     message: the report could not be stored due to an internal NPP error, please try again later
+
+    get:
+      operationId: get-reconciliation-close-out-history
+      tags:
+        - Reconciliation
+      summary: get the history of (own) reconciliation close-out messages
+      description: a service provider wants to check their history of close-out messages (confirmed and revoked)
+      parameters:
+        - in: query
+          name: operator 
+          required: false
+          description: filter by this operator id 
+          schema:
+            type: string
+        - in: query
+          name: since
+          description: only return submittals with a periodStartTime after this timestamp (specified as epoch second)
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/ReconciliationSubmittal'
+        "400":
+          description: BAD REQUEST
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error 
+                    code: 400
+                    message: "invalid since parameter: ABC"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 500
+                    message: the information could not be retrieved due to an internal error, please try again later 
+
+
 
   /reconciliation/submittals/{id}:
     get:
@@ -5283,10 +5346,10 @@ components:
               $ref: '#/components/schemas/MultilingualString'
             durationStart:
               type: string
-              description: If used, indicates the start time for the applicability of the specific RateLine, generally with respect to the start of the parking Session, e.g. the start of a time-based tier charge rate.
+              description: If used, indicates the start time for the applicability of the specific RateLine, generally with respect to the start of the parking Session, e.g. the start of a time-based tier charge rate. The format can be either of _hh:mm_ (hours and minutes) or _dd:hh:mm_ (days, hours and minutes).
             durationEnd:
               type: string
-              description: If used, indicates the end time for the applicability of the specific RateLine, generally with respect to the end of the parking or other mobility Session, e.g. the end of a time-based tier charge rate.
+              description: If used, indicates the end time for the applicability of the specific RateLine, generally with respect to the end of the parking or other mobility Session, e.g. the end of a time-based tier charge rate.The format can be either of _hh:mm_ (hours and minutes) or _dd:hh:mm_ (days, hours and minutes).
             incrementPeriod:
               $ref: '#/components/schemas/Duration'
             value:
