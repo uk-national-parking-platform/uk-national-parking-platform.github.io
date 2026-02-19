@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.16"
+  version: "1.0.17"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -5777,11 +5777,15 @@ components:
         * biodiesel : Biodiesel
         * diesel : Fuel used for compression - ignition (CI) engines
         * dieselBatteryHybrid : Diesel and battery hybrid
-        * ethanol : Ethanol\n* hydrogen: Hydrogen
+        * ethanol : Ethanol
+        * hydrogen: Hydrogen
         * liquidGas : Liquid gas of any type including LPG
-        * lpg : Liquid petroleum gas\n* methane: Methane gas
-        * other : Other\n* petrol: Fuel used for positive-ignition (PI) engines
-        * petrol95Octane : Petrol with 95 octane\n* petrol98Octane: Petrol with 98 octane
+        * lpg : Liquid petroleum gas
+        * methane: Methane gas
+        * other : Other
+        * petrol: Fuel used for positive-ignition (PI) engines
+        * petrol95Octane : Petrol with 95 octane
+        * petrol98Octane: Petrol with 98 octane
         * petrolBatteryHybrid : Petrol and battery hybrid
         * petrolLeaded : Leaded petrol
         * petrolUnleaded : Unleaded petrol
