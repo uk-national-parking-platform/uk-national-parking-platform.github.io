@@ -6,7 +6,7 @@ title: NPP - National Parking Platform
 sort: 0
 ---
 <p align="center">
-    <img src="https://uk-national-parking-platform.github.io/assets/images/intro/NPP_logo.png" width="150px" height="120px">
+    <img src="https://uk-national-parking-platform.github.io/assets/images/intro/nppco_logo_text.png" width="150px"> 
 </p>
 
 
