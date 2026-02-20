@@ -2,7 +2,7 @@
 layout: home 
 sidebar:
   nav: sidemain
-title: &nbsp;
+title:   
 sort: 0
 ---
 <p>
