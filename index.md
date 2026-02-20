@@ -5,7 +5,7 @@ sidebar:
 title: &nbsp;
 sort: 0
 ---
-<p align="center">
+<p>
     <img src="https://uk-national-parking-platform.github.io/assets/images/intro/nppco_logo_text.png" width="300px"> 
 </p>
 
