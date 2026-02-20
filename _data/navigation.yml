@@ -11,8 +11,10 @@ sidemain:
         url: "/assets/pdf/20260218 NPP Developer Guide v2.14.pdf"
   - title: "Platform API"
     children:
-      - title: "API Specification (OpenAPI)"
+      - title: "API Specification (Swagger)"
         url: /apiv4/index.html
+      - title: "API Specification (OpenAPI YAML)"
+        url: /apiv4/apdsv4.yaml
   - title: "Standard Location Codes"
     children:
       - title: "Coordinated Allocation"
