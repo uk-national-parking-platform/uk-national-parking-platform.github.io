@@ -3,25 +3,7 @@ main:
     url: /index
 
 sidemain:
-  - title: "Pilot"
-    children:
-      - title: "Pilot Outline"
-        url: /pilot_outline
-      - title: "Pilot Phases"  
-        url: /phases
-  - title: "Pilot Use Cases"
-    children:
-      - title: "Use Cases"
-        url: /usecases
-      - title: "Sample Flows"
-        url: /flows
-      - title: "Evidence"
-        url: /evidence 
-  - title: "NPP Session Viewer"
-    url: /session_viewer
-  - title: "Standard Location Codes"
-    url: /StandardLocations
-  - title: "Presentations"
+  - title: Developer Guidance 
     children:
       - title: "Presentations"
         url: /presentations
@@ -31,16 +13,12 @@ sidemain:
         url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
         url: /assets/pdf/sp-information-pack.pdf
-  - title: Full Platform
+
+  - title: Platform API
     children:
-      - title: NPP Principle
-        url: /principle
       - title: API Specification
         url: /apiv4/index.html
-      - title: Use Cases
-        url: /full-platform-use-cases
 
+  - title: "Standard Location Codes"
+    url: /StandardLocations
 
-# Reference Documents
-# Join the NPP
-# Commercials
