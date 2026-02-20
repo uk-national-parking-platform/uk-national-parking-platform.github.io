@@ -13,12 +13,10 @@ sidemain:
         url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
         url: /assets/pdf/sp-information-pack.pdf
-
   - title: Platform API
     children:
       - title: API Specification
         url: /apiv4/index.html
-
   - title: "Standard Location Codes"
     url: /StandardLocations
 
