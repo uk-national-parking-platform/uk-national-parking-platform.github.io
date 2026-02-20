@@ -3,7 +3,7 @@ main:
     url: /index
 
 sidemain:
-  - title: Developer Guidance 
+  - title: "Developer Guidance"
     children:
       - title: "Presentations"
         url: /presentations
@@ -13,10 +13,11 @@ sidemain:
         url: /assets/pdf/op-information-pack.pdf
       - title: "Service Provider Info Pack"
         url: /assets/pdf/sp-information-pack.pdf
-  - title: Platform API
+  - title: "Platform API"
     children:
-      - title: API Specification
+      - title: "API Specification"
         url: /apiv4/index.html
   - title: "Standard Location Codes"
     url: /StandardLocations
 
+#
