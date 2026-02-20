@@ -2,11 +2,11 @@
 layout: home 
 sidebar:
   nav: sidemain
-title: NPP - National Parking Platform
+title: &nbsp;
 sort: 0
 ---
 <p align="center">
-    <img src="https://uk-national-parking-platform.github.io/assets/images/intro/nppco_logo_text.png" width="150px"> 
+    <img src="https://uk-national-parking-platform.github.io/assets/images/intro/nppco_logo_text.png" width="300px"> 
 </p>
 
 
