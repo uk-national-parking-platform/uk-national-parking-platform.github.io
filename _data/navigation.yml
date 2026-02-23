@@ -15,9 +15,7 @@ sidemain:
         url: /apiv4/index.html
       - title: "API Specification (OpenAPI YAML)"
         url: /apiv4/apds4.yaml
-#  - title: "Standard Location Codes"
-#    children:
-#      - title: "Coordinated Allocation"
-#        url: /StandardLocations
-
-#
+  - title: Configuration
+    children:
+      - title: Conventions
+        url: /conventions
