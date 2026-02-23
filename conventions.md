@@ -31,11 +31,11 @@ If determined as same as start of next validity, always 0.001 minute before stat
 ### Energy Source Types
 More and more operators introduce tariffs that differentiate by a vehicle's energy source. _APDS_ defines a wide range of source types not all of which are used within the _NPP_ context.
 
-* For petrol-powered vehicles, the NPP only differentiates between _**petrol**_ and **_petrolBatteryHybrid_**. Specialisations concerning octane and lead are not used, they all fall under the _**petrol**_ categorisation.
-* The same applies to the Diesel energy source. The NPP only differentiates between _**diesel**_ and _**dieselBatteryHybrid**_. Hence, _**biodiesel**_ counts as diesel.
-* The NPP only uses _**lpg**_, and _**liquidGas**_ counts as _**lpg**_.
+* For petrol-powered vehicles, the _NPP_ only differentiates between _**petrol**_ and **_petrolBatteryHybrid_**. Specialisations concerning octane and lead are not used, they all fall under the _**petrol**_ categorisation.
+* The same applies to the Diesel energy source. The _NPP_ only differentiates between _**diesel**_ and _**dieselBatteryHybrid**_. Hence, _**biodiesel**_ counts as diesel.
+* The _NPP_ only uses _**lpg**_, and _**liquidGas**_ counts as _**lpg**_.
 * Fully electric vehicles are categorised as _**battery**_.
 * The _**unknown**_ enum is used in all situations where the energy source is either unknown/uncategorised or cannot be otherwise categorised (using the set of _APDS_-defined enumeration values).
-* There is currently no NPP use case where the _**all**_ categorisation would be required.
+* There is currently no _NPP_ use case where the _**all**_ categorisation would be required.
 * The _**other**_ category is not used, because it creates contextual dependencies.
 
