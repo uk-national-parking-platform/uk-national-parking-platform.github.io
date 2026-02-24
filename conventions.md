@@ -39,3 +39,14 @@ More and more operators introduce tariffs that differentiate by a vehicle's ener
 * There is currently no _NPP_ use case where the _**all**_ categorisation would be required.
 * The _**other**_ category is not used, because it creates contextual dependencies.
 
+### Order of Priority
+There is always a remaining risk of slight inconsistencies in the inventory. To provide guidance on how to handle such situations, the following **order of priority** has been defined:
+1. `Place.operatingRestrictions` (operating restrictions defined for a parking location)
+2. `RightSpecification.validity` (validity as specified in the _hours groups_ definition)
+3. `RightSpecification.eligibility` (specified eligibilities)
+4. `RateTable.validity` (validity as specified in the _tariff_ - if any)
+5. `RateTable.rateLineCollections.rateLines` (increments in the tariff)
+
+A higher-level element (according to this order) always overrules subsequent items.
+
+
