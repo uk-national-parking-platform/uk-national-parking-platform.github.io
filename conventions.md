@@ -45,7 +45,8 @@ There is always a remaining risk of slight inconsistencies in the inventory. To 
 2. `RightSpecification.validity` (validity as specified in the _hours groups_ definition)
 3. `RightSpecification.eligibility` (specified eligibilities)
 4. `RateTable.validity` (validity as specified in the _tariff_ - if any)
-5. `RateTable.rateLineCollections.rateLines` (increments in the tariff)
+5. `RateTable.rateLineCollections.maxTime` (max. duration of stay)
+6. `RateTable.rateLineCollections.rateLines` (increments in the tariff)
 
 A higher-level element (according to this order) always overrules subsequent items.
 
