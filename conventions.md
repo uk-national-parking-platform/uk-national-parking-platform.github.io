@@ -39,6 +39,28 @@ More and more operators introduce tariffs that differentiate by a vehicle's ener
 * There is currently no _NPP_ use case where the _**all**_ categorisation would be required.
 * The _**other**_ category is not used, because it creates contextual dependencies.
 
+
+### Vehicle Types
+The APDS model defines an extensive list of vehicle types not all of which are used in the NPP context. The following table lists the APDS vehicle type enumeration values used for the NPP along with an information of implicitly included APDS enumeration values and a mapping to the nearest DVLA category equivalent.
+
+| NPP category in use  | included additional APDS categories<br/>(i.e. not explicitly used) | nearest DVLA category |
+| --- | --- | --- | 
+| agriculturalVehicle | | T |
+| bicycle | | |
+| bus | articulatedBus, articulatedTrolleyBus, trolleyBus | M3 |
+| car | carOrLightVehicle, fourWheelDrive, largeCar, passengerCar,smallCar | M1 |
+| carWithCaravan | vehicleWithCaravan | |
+| carWithTrailer | vehicleWithTrailer | |
+| heavyGoodsVehicle | heavyDutyTransporter, heavyGoodsVehicleWithTrailer, heavyVehicle,<br/>highSidedVehicle, largeGoodsVehicle, longHeavyLorry, lorry, tanker | N3 |
+| minibus | | M2 |
+| motorcycle | moped, motorScooter, twoWheeledVehicle | L1, L3 |
+| motorcycleWithSideCar | | L4 |
+| motorhome | | M1 "motor caravan" |
+| threeWheeledVehicle | | L5 |
+| trailer | | O |
+| van | | N1 |
+
+
 ### Order of Priority
 There is always a remaining risk of slight inconsistencies in the inventory. To provide guidance on how to handle such situations, the following **order of priority** has been defined:
 1. `Place.operatingRestrictions` (operating restrictions defined for a parking location)
