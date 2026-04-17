@@ -7,8 +7,10 @@ sidemain:
     children:
       - title: "NPP API Specification"
         url: "/assets/pdf/20250723 NPP API Specification v2.2.pdf"
-      - title: "NPP Developer Guide"
-        url: "/assets/pdf/20260225 NPP Developer Guide v2.16.pdf"
+      - title: "NPP Developer Guide (Full Scope)"
+        url: "/assets/pdf/20260414 NPP Developer Guide v2.20.pdf"
+      - title: "NPP Developer Guide (Connected Suppliers)"
+        url: "/assets/pdf/20260414 NPP CS Developer Guide v1.0.pdf"
   - title: "Platform API"
     children:
       - title: "API Specification (Swagger)"
