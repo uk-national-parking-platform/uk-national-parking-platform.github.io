@@ -45,20 +45,25 @@ The APDS model defines an extensive list of vehicle types not all of which are u
 
 | NPP category in use  | included additional APDS categories<br/>(i.e. not explicitly used) | nearest DVLA category |
 | --- | --- | --- | 
-| agriculturalVehicle | | T |
+| agriculturalVehicle | | T, R, S |
 | bicycle | | |
 | bus | articulatedBus, articulatedTrolleyBus, trolleyBus | M3 |
-| car | carOrLightVehicle, fourWheelDrive, largeCar, passengerCar,smallCar | M1 |
-| carWithCaravan | vehicleWithCaravan | |
-| carWithTrailer | vehicleWithTrailer | |
-| heavyGoodsVehicle | heavyDutyTransporter, heavyGoodsVehicleWithTrailer, heavyVehicle,<br/>highSidedVehicle, largeGoodsVehicle, longHeavyLorry, lorry, tanker | N3 |
+| car | carOrLightVehicle, fourWheelDrive, largeCar, passengerCar | M1 |
+| caravan | | O2 |
+| carWithCaravan | | |
+| carWithTrailer | | |
+| heavyGoodsVehicle | heavyDutyTransporter, heavyGoodsVehicleWithTrailer, heavyVehicle,<br/>highSidedVehicle, longHeavyLorry, lorry, tanker | N3 |
+| largeGoodsVehicle | |N2|
 | minibus | | M2 |
 | motorcycle | moped, motorScooter, twoWheeledVehicle | L1, L3 |
 | motorcycleWithSideCar | | L4 |
 | motorhome | | M1 "motor caravan" |
-| threeWheeledVehicle | | L5 |
+| smallCar | | L6, L7 |
+| threeWheeledVehicle | | L5, L2 |
 | trailer | | O |
 | van | | N1 |
+| vehicleWithCaravan | | |
+| vehicleWithTrailer | | |
 
 
 ### Order of Priority
