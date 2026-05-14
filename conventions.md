@@ -88,5 +88,6 @@ VAT amounts shall be rounded to the nearest 1p by rounding up any amount of 0.5p
 To avoid introducing significant rounding errors into commission fees, amounts of Commission to be charged to Operators shall be calculated on the total parking tariff (including VAT where appropriate) collected on behalf of a Parking Operator in the Reconciliation Period. Whilst indicative Commission shall be provided in transaction data, this should not be used to calculate the commission charged.
 #### Rounding
 Indicative Commission shall be rounded to the nearest 0.1p by rounding up any amount of 0.05p and higher and rounding down any amount lower than 0.05p
+
 Commission amounts calculated on the total parking tariff shall be rounded to the nearest 1p by rounding up any amount of 0.5p and higher and rounding down any amount lower than 0.5p.
 
