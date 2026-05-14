@@ -80,7 +80,7 @@ A higher-level element (according to this order) always overrules subsequent ite
 ## Transactions and Reconciliation
 ### VAT Amounts
 #### VAT calculation
-VAT should be calculated for each transaction, based on the appropriate rate for the location. Right Specifications should therefore never refer to locations with differing VAT rates (i.e. on and off street).
+VAT should be calculated for each transaction, based on the appropriate rate for the location. Individul Right Specifications should therefore never refer to multiple locations with differing VAT rates (i.e. on and off street).
 #### Rounding
 VAT amounts shall be rounded to the nearest 1p by rounding up any amount of 0.5p and higher and rounding down any amount lower than 0.5p as defined in the VAT Traders’ Records Manual <a href="https://www.gov.uk/hmrc-internal-manuals/vat-trader-records/vatrec12030" target="_blank">“VATREC12030”</a>.
 ### Commission Amounts
