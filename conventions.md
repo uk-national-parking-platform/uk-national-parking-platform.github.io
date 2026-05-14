@@ -72,4 +72,16 @@ There is always a remaining risk of slight inconsistencies in the inventory. To 
 
 A higher-level element (according to this order) always overrules subsequent items.
 
+## Transactions and Reconciliation
+### VAT Amounts
+#### VAT calculation
+VAT should be calculated for each transaction, based on the appropriate rate for the location. Right Specifications should therefore never refer to locations with differing VAT rates (i.e. on and off street).
+#### Rounding
+VAT amounts shall be rounded to the nearest 1p by rounding up any amount of 0.5p and higher and rounding down any amount lower than 0.5p as defined in the VAT Traders’ Records Manual <a href="https://www.gov.uk/hmrc-internal-manuals/vat-trader-records/vatrec12030" target="_blank">“VATREC12030”</a>.
+### Commission Amounts
+#### Commission Calculation
+To avoid introducing significant rounding errors into commission fees, amounts of Commission to be charged to Operators shall be calculated on the total parking tariff (including VAT where appropriate) collected on behalf of a Parking Operator in the Reconciliation Period. Whilst indicative Commission shall be provided in transaction data, this should not be used to calculate the commission charged.
+#### Rounding
+Indicative Commission shall be rounded to the nearest 0.1p by rounding up any amount of 0.05p and higher and rounding down any amount lower than 0.05p
+Commission amounts calculated on the total parking tariff shall be rounded to the nearest 1p by rounding up any amount of 0.5p and higher and rounding down any amount lower than 0.5p.
 
