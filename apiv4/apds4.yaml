@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.17"
+  version: "1.0.18"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -3142,6 +3142,8 @@ components:
               description: Contact point location.
               items:
                 $ref: '#/components/schemas/PointLocation'
+            extensions:
+              $ref: '#/components/schemas/ExtensionType'
           required:
             - type
 
@@ -7825,3 +7827,35 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ReconciliationTransaction"
+
+
+    ExtensionType:
+      title: ExtensionType
+      description: flexible type container for project-specific extensions
+
+    CommissionSettings:
+      title: CommissionSettings
+      type: object
+      properties:
+        commissionSettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommissionSetting'
+
+    CommissionSetting:
+      title: CommissionSetting
+      type: object
+      properties:
+        id:
+          description: unique identifier for this commission setting
+          type: string
+        version:
+          description: the version of this commission setting
+          type: integer
+        commissionRate:
+          description: the applicable commission rate (percentage)
+          type: number
+        validity:
+          description: validity of this commission setting
+          $ref: '#/components/schemas/OverallPeriod'
+
