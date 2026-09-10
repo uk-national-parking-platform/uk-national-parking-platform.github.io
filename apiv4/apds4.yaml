@@ -3759,7 +3759,7 @@ components:
               items:
                 $ref: '#/components/schemas/PointLocation'
             extensions:
-				$ref: '#/components/schemas/ExtensionType'
+                $ref: '#/components/schemas/ExtensionType'
           required:
             - timeZone
 
