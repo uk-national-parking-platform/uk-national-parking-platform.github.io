@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: "NPP API Specification" 
-  version: "1.0.19"
+  version: "1.0.20"
   contact:
     name: API Support
     email: development@npp.uk.net
@@ -1922,6 +1922,69 @@ paths:
                     code: 500
                     message: the transaction could not be retrieved due to an internal NPP error, please try again later
 
+    delete:
+      operationId: void-reconciliation-transaction
+      tags:
+        - Reconciliation
+      summary: service provider voids a specific transaction
+      description: |-
+        a service provider identified the need for voiding a transaction (typically in preparation for sending a corrected version of it)
+        please note that transaction ids must not be re-used. New versions of a voided transaction must come with a new, unique transaction id
+      parameters:
+        - in: path
+          name: txnId
+          required: true  
+          description: unique id of transaction to be voided
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK, transaction has been voided
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReconciliationTransaction'
+        "404":
+          description: Not Found, referenced transaction is not known to the NPP
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error 
+                    code: 404
+                    message: transaction not found
+        "409":
+          description: |-
+            Conflict, this transaction cannot be voided
+            Possible reasons: 
+            - transaction type does not allow voiding (is already voided)
+            - the transaction is included in a confirmed close-out 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error 
+                    code: 419
+                    message: transaction type void cannot be voided 
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseStatus'
+              examples:
+                missing-data:
+                  value:
+                    status: error
+                    code: 500
+                    message: the transaction could not be retrieved due to an internal NPP error, please try again later
+
   /reconciliation/submittals:
     post:
       operationId: submit-reconciliation-close-out
@@ -3759,7 +3822,7 @@ components:
               items:
                 $ref: '#/components/schemas/PointLocation'
             extensions:
-                $ref: '#/components/schemas/ExtensionType'
+              $ref: '#/components/schemas/ExtensionType'
           required:
             - timeZone
 
@@ -7469,13 +7532,13 @@ components:
         enumeration of possible transaction types 
         * payment: a parking right was purchased
         * refund: a previous payment was refunded
-        * cancellation: a previous payment transaction was cancelled
+        * void: a previous payment/refund transaction was voided
       x-package: reconciliation
       type: string
       enum:
         - payment
         - refund
-        - cancellation
+        - void
       examples: ["payment"]
 
     ReconciliationTransaction:
