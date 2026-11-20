@@ -68,12 +68,15 @@ The APDS model defines an extensive list of vehicle types not all of which are u
 
 ### Order of Priority
 There is always a remaining risk of slight inconsistencies in the inventory. To provide guidance on how to handle such situations, the following **order of priority** has been defined:
-1. `Place.operatingRestrictions` (operating restrictions defined for a parking location)
-2. `RightSpecification.validity` (validity as specified in the _hours groups_ definition)
-3. `RightSpecification.eligibility` (specified eligibilities)
-4. `RateTable.validity` (validity as specified in the _tariff_ - if any)
-5. `RateTable.rateLineCollections.maxTime` (max. duration of stay)
-6. `RateTable.rateLineCollections.rateLines` (increments in the tariff)
+1. `item.version` (the most recent _valid_ version of a resource is always the one to be used, i.e. the one that has the highest version and is valid)
+2. `Place.operatingRestrictions` (operating restrictions defined for a parking location)
+3. `RightSpecification.validity` (validity as specified in the _hours groups_ definition)
+4. `RightSpecification.eligibility` (specified eligibilities)
+5. `RateTable.validity` (validity as specified in the _tariff_ - if any)
+6. `RateTable.rateLineCollections.maxTime` (max. duration of stay)
+7. `RateTable.rateLineCollections.rateLines` (increments in the tariff)
+8. `RateTable.rateLineCollections.taxRate` (VAT rate configured in the _rate table_)
+9. `Place.extensions.apds-ext:npp:placevatrate@1` (VAT rate fall-back setting if not available via _rate line collection_)
 
 A higher-level element (according to this order) always overrules subsequent items.
 
